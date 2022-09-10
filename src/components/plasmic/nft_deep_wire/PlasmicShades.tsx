@@ -31,7 +31,6 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import Button from "../../Button"; // plasmic-import: a9hmcfoqSQcWZ/component
 import TextInput from "../../TextInput"; // plasmic-import: 0jfYEX-SfGn8K/component
 import { Reveal } from "@plasmicpkgs/react-awesome-reveal"; // plasmic-import: R6s1FdhksG/codeComponent
 import BidButton from "../../BidButton"; // plasmic-import: TW0Ca_Ns9A2yO/component
@@ -43,9 +42,9 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_nft_deep_wire.module.css"; // plasmic-import: j5CDP9MgqbRapi7mxENKQG/projectcss
 import sty from "./PlasmicShades.module.css"; // plasmic-import: TpXp-HtNY_R/css
 
+import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: awgxW5ZUPDKTds/icon
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: SpSM8I8Z8pYH6F/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: GDo5sayAt37nOm/icon
-import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: awgxW5ZUPDKTds/icon
 import captureDecran20220525A200826PngXUdItNoqUxIjj4 from "./images/captureDecran20220525A200826Png.png"; // plasmic-import: xUdITNoqUxIjj4/picture
 
 export type PlasmicShades__VariantMembers = {};
@@ -60,12 +59,12 @@ export const PlasmicShades__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicShades__OverridesType = {
   root?: p.Flex<"div">;
-  button?: p.Flex<typeof Button>;
-  header?: p.Flex<"div">;
+  header2?: p.Flex<"div">;
   h1?: p.Flex<"h1">;
   h5?: p.Flex<"h5">;
   textInput?: p.Flex<typeof TextInput>;
   bidButton?: p.Flex<typeof BidButton>;
+  footer?: p.Flex<"div">;
   textbox?: p.Flex<typeof TextInput>;
 };
 
@@ -118,105 +117,85 @@ function PlasmicShades__RenderFunc(props: {
             sty.root
           )}
         >
-          {true ? (
-            <div className={classNames(projectcss.all, sty.freeBox__rtDaU)}>
-              {true ? (
-                <Button
-                  data-plasmic-name={"button"}
-                  data-plasmic-override={overrides.button}
-                  className={classNames("__wab_instance", sty.button)}
-                  color={"softRed" as const}
-                  link={`/`}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__fOe9G
-                    )}
-                  >
-                    {"Back"}
-                  </div>
-                </Button>
-              ) : null}
-
-              <div
-                data-plasmic-name={"header"}
-                data-plasmic-override={overrides.header}
-                className={classNames(projectcss.all, sty.header)}
+          <div
+            data-plasmic-name={"header2"}
+            data-plasmic-override={overrides.header2}
+            className={classNames(projectcss.all, sty.header2)}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__kX0R)}>
+              <a
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  projectcss.__wab_text,
+                  sty.link__dsT7K
+                )}
+                href={`/`}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__xuzb)}>
-                  <a
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      projectcss.__wab_text,
-                      sty.link__ew4Mj
-                    )}
+                <React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
                   >
-                    <React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ fontWeight: 700 }}
-                      >
-                        {"NDW"}
-                      </span>
-                    </React.Fragment>
-                  </a>
-                </div>
-
-                {true ? (
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__ghwbd)}
-                  >
-                    <a
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link__qHuFh
-                      )}
-                    >
-                      {"About"}
-                    </a>
-
-                    <a
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link__rQau0
-                      )}
-                    >
-                      {"Artists"}
-                    </a>
-
-                    <a
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link___5HHfh
-                      )}
-                    >
-                      {"Vision"}
-                    </a>
-
-                    <a
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link__obz5M
-                      )}
-                    >
-                      {"Login"}
-                    </a>
-                  </div>
-                ) : null}
-              </div>
+                    {"NDW"}
+                  </span>
+                </React.Fragment>
+              </a>
             </div>
-          ) : null}
+
+            {true ? (
+              <div className={classNames(projectcss.all, sty.freeBox__rldhw)}>
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__hNaa0
+                  )}
+                  href={`/`}
+                >
+                  {"About"}
+                </a>
+
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link___6I8Pb
+                  )}
+                  href={`/`}
+                >
+                  {"Artists"}
+                </a>
+
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__eTzzq
+                  )}
+                  href={`/`}
+                >
+                  {"Vision"}
+                </a>
+
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__wekGs
+                  )}
+                  href={`/`}
+                >
+                  {"Login"}
+                </a>
+              </div>
+            ) : null}
+          </div>
+
           {(
             hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
           ) ? (
@@ -246,29 +225,38 @@ function PlasmicShades__RenderFunc(props: {
                       className={"plasmic_default__all plasmic_default__span"}
                       style={{ color: "#FFFFFF" }}
                     >
-                      {"Collection #1"}
+                      {"Exclusive shades"}
                     </span>
                   </React.Fragment>
                 )}
               </h1>
 
-              <p.PlasmicImg
-                alt={""}
-                className={classNames(sty.img__szvi6)}
-                displayHeight={"auto" as const}
-                displayMaxHeight={"none" as const}
-                displayMaxWidth={"100%" as const}
-                displayMinHeight={"0" as const}
-                displayMinWidth={"0" as const}
-                displayWidth={"auto" as const}
-                loading={"lazy" as const}
-                src={{
-                  src: captureDecran20220525A200826PngXUdItNoqUxIjj4,
-                  fullWidth: 1232,
-                  fullHeight: 1172,
-                  aspectRatio: undefined
-                }}
-              />
+              <a
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  sty.link__hUzeJ
+                )}
+                href={`/nft`}
+              >
+                <p.PlasmicImg
+                  alt={""}
+                  className={classNames(sty.img__szvi6)}
+                  displayHeight={"auto" as const}
+                  displayMaxHeight={"none" as const}
+                  displayMaxWidth={"100%" as const}
+                  displayMinHeight={"0" as const}
+                  displayMinWidth={"0" as const}
+                  displayWidth={"auto" as const}
+                  loading={"lazy" as const}
+                  src={{
+                    src: captureDecran20220525A200826PngXUdItNoqUxIjj4,
+                    fullWidth: 1232,
+                    fullHeight: 1172,
+                    aspectRatio: undefined
+                  }}
+                />
+              </a>
 
               <h4
                 className={classNames(
@@ -558,6 +546,60 @@ function PlasmicShades__RenderFunc(props: {
               </a>
             </div>
           ) : null}
+
+          <div
+            data-plasmic-name={"footer"}
+            data-plasmic-override={overrides.footer}
+            className={classNames(projectcss.all, sty.footer)}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__dr3Iy)}>
+              <a
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  projectcss.__wab_text,
+                  sty.link__apk6F
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "mobileOnly")
+                  ? "NFT Deep Wire\nAll rights reserved © 2022"
+                  : "NFT Deep Wire | All rights reserved © 2022"}
+              </a>
+            </div>
+
+            {true ? (
+              <div className={classNames(projectcss.all, sty.freeBox__v6Ia3)}>
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link___5Lmi
+                  )}
+                  href={`/`}
+                >
+                  {"Terms & conditions"}
+                </a>
+
+                {(
+                  hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? true
+                    : false
+                ) ? (
+                  <a
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link__a7I8H
+                    )}
+                  >
+                    {"Contact us"}
+                  </a>
+                ) : null}
+              </div>
+            ) : null}
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -567,32 +609,32 @@ function PlasmicShades__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
-    "button",
-    "header",
+    "header2",
     "h1",
     "h5",
     "textInput",
     "textbox",
-    "bidButton"
+    "bidButton",
+    "footer"
   ],
-  button: ["button"],
-  header: ["header"],
+  header2: ["header2"],
   h1: ["h1"],
   h5: ["h5"],
   textInput: ["textInput", "textbox"],
-  bidButton: ["bidButton"]
+  bidButton: ["bidButton"],
+  footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  button: typeof Button;
-  header: "div";
+  header2: "div";
   h1: "h1";
   h5: "h5";
   textInput: typeof TextInput;
   bidButton: typeof BidButton;
+  footer: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -656,12 +698,12 @@ export const PlasmicShades = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    button: makeNodeComponent("button"),
-    header: makeNodeComponent("header"),
+    header2: makeNodeComponent("header2"),
     h1: makeNodeComponent("h1"),
     h5: makeNodeComponent("h5"),
     textInput: makeNodeComponent("textInput"),
     bidButton: makeNodeComponent("bidButton"),
+    footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicShades
     internalVariantProps: PlasmicShades__VariantProps,

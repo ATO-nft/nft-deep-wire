@@ -31,9 +31,6 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import Button from "../../Button"; // plasmic-import: a9hmcfoqSQcWZ/component
-import TextInput from "../../TextInput"; // plasmic-import: 0jfYEX-SfGn8K/component
-import { Reveal } from "@plasmicpkgs/react-awesome-reveal"; // plasmic-import: R6s1FdhksG/codeComponent
 import BidButton from "../../BidButton"; // plasmic-import: TW0Ca_Ns9A2yO/component
 
 import { useScreenVariants as useScreenVariantsi1EpI54Sd5XS4R } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: i1epI54SD5xS4r/globalVariant
@@ -45,7 +42,6 @@ import sty from "./PlasmicJfe.module.css"; // plasmic-import: FxeHyubbo0Q8o/css
 
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: SpSM8I8Z8pYH6F/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: GDo5sayAt37nOm/icon
-import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: awgxW5ZUPDKTds/icon
 import captureDecran20220525A200826PngXUdItNoqUxIjj4 from "./images/captureDecran20220525A200826Png.png"; // plasmic-import: xUdITNoqUxIjj4/picture
 
 export type PlasmicJfe__VariantMembers = {};
@@ -60,13 +56,10 @@ export const PlasmicJfe__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicJfe__OverridesType = {
   root?: p.Flex<"div">;
-  button?: p.Flex<typeof Button>;
   header?: p.Flex<"div">;
   h1?: p.Flex<"h1">;
-  h5?: p.Flex<"h5">;
-  textInput?: p.Flex<typeof TextInput>;
   bidButton?: p.Flex<typeof BidButton>;
-  textbox?: p.Flex<typeof TextInput>;
+  footer?: p.Flex<"div">;
 };
 
 export interface DefaultJfeProps {
@@ -118,105 +111,85 @@ function PlasmicJfe__RenderFunc(props: {
             sty.root
           )}
         >
-          {true ? (
-            <div className={classNames(projectcss.all, sty.freeBox__o34S8)}>
-              {true ? (
-                <Button
-                  data-plasmic-name={"button"}
-                  data-plasmic-override={overrides.button}
-                  className={classNames("__wab_instance", sty.button)}
-                  color={"softRed" as const}
-                  link={`/`}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__m0Jd3
-                    )}
-                  >
-                    {"Back"}
-                  </div>
-                </Button>
-              ) : null}
-
-              <div
-                data-plasmic-name={"header"}
-                data-plasmic-override={overrides.header}
-                className={classNames(projectcss.all, sty.header)}
+          <div
+            data-plasmic-name={"header"}
+            data-plasmic-override={overrides.header}
+            className={classNames(projectcss.all, sty.header)}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__hlEc)}>
+              <a
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  projectcss.__wab_text,
+                  sty.link__fqldf
+                )}
+                href={`/`}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__a69Bw)}>
-                  <a
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      projectcss.__wab_text,
-                      sty.link__ebJq8
-                    )}
+                <React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
                   >
-                    <React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ fontWeight: 700 }}
-                      >
-                        {"NDW"}
-                      </span>
-                    </React.Fragment>
-                  </a>
-                </div>
-
-                {true ? (
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___3GNf1)}
-                  >
-                    <a
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link___8Zcp
-                      )}
-                    >
-                      {"About"}
-                    </a>
-
-                    <a
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link__hsjUj
-                      )}
-                    >
-                      {"Artists"}
-                    </a>
-
-                    <a
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link__rhNwf
-                      )}
-                    >
-                      {"Vision"}
-                    </a>
-
-                    <a
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link__wNtje
-                      )}
-                    >
-                      {"Login"}
-                    </a>
-                  </div>
-                ) : null}
-              </div>
+                    {"NDW"}
+                  </span>
+                </React.Fragment>
+              </a>
             </div>
-          ) : null}
+
+            {true ? (
+              <div className={classNames(projectcss.all, sty.freeBox___5Yf5)}>
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__vnZfn
+                  )}
+                  href={`/`}
+                >
+                  {"About"}
+                </a>
+
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__zzKHv
+                  )}
+                  href={`/`}
+                >
+                  {"Artists"}
+                </a>
+
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__ayMbu
+                  )}
+                  href={`/`}
+                >
+                  {"Vision"}
+                </a>
+
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link___0H4G2
+                  )}
+                  href={`/`}
+                >
+                  {"Login"}
+                </a>
+              </div>
+            ) : null}
+          </div>
+
           {(
             hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
           ) ? (
@@ -246,29 +219,38 @@ function PlasmicJfe__RenderFunc(props: {
                       className={"plasmic_default__all plasmic_default__span"}
                       style={{ color: "#FFFFFF" }}
                     >
-                      {"Collection #1"}
+                      {"Jesus Fernandez Escobar"}
                     </span>
                   </React.Fragment>
                 )}
               </h1>
 
-              <p.PlasmicImg
-                alt={""}
-                className={classNames(sty.img__vlZsc)}
-                displayHeight={"auto" as const}
-                displayMaxHeight={"none" as const}
-                displayMaxWidth={"100%" as const}
-                displayMinHeight={"0" as const}
-                displayMinWidth={"0" as const}
-                displayWidth={"auto" as const}
-                loading={"lazy" as const}
-                src={{
-                  src: captureDecran20220525A200826PngXUdItNoqUxIjj4,
-                  fullWidth: 1232,
-                  fullHeight: 1172,
-                  aspectRatio: undefined
-                }}
-              />
+              <a
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  sty.link__s9HKl
+                )}
+                href={`/nft`}
+              >
+                <p.PlasmicImg
+                  alt={""}
+                  className={classNames(sty.img__vlZsc)}
+                  displayHeight={"auto" as const}
+                  displayMaxHeight={"none" as const}
+                  displayMaxWidth={"100%" as const}
+                  displayMinHeight={"0" as const}
+                  displayMinWidth={"0" as const}
+                  displayWidth={"auto" as const}
+                  loading={"lazy" as const}
+                  src={{
+                    src: captureDecran20220525A200826PngXUdItNoqUxIjj4,
+                    fullWidth: 1232,
+                    fullHeight: 1172,
+                    aspectRatio: undefined
+                  }}
+                />
+              </a>
 
               <h4
                 className={classNames(
@@ -278,17 +260,23 @@ function PlasmicJfe__RenderFunc(props: {
                   sty.h4__mo9G
                 )}
               >
-                {"by Jean-Michel Plastic"}
+                <React.Fragment>
+                  <React.Fragment>{"by "}</React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "#FFFFFF" }}
+                  >
+                    {"Jesus Fernandez Escobar"}
+                  </span>
+                </React.Fragment>
               </h4>
 
               <h5
-                data-plasmic-name={"h5"}
-                data-plasmic-override={overrides.h5}
                 className={classNames(
                   projectcss.all,
                   projectcss.h5,
                   projectcss.__wab_text,
-                  sty.h5
+                  sty.h5__nlspn
                 )}
               >
                 {
@@ -310,13 +298,13 @@ function PlasmicJfe__RenderFunc(props: {
                 <div className={classNames(projectcss.all, sty.freeBox__fBdqA)}>
                   {true ? (
                     <div
-                      className={classNames(projectcss.all, sty.freeBox__psNdf)}
+                      className={classNames(projectcss.all, sty.freeBox__eFRfQ)}
                     >
                       <div
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__bilLr
+                          sty.text___9FsVs
                         )}
                       >
                         <React.Fragment>
@@ -326,30 +314,22 @@ function PlasmicJfe__RenderFunc(props: {
                             }
                             style={{ fontWeight: 700 }}
                           >
-                            {"4,230"}
-                          </span>
-                          <React.Fragment>{""}</React.Fragment>
-                          <span
-                            className={
-                              "plasmic_default__all plasmic_default__span"
-                            }
-                            style={{ fontWeight: 700 }}
-                          >
-                            {" "}
+                            {"888 "}
                           </span>
                           <React.Fragment>{"MATIC"}</React.Fragment>
                         </React.Fragment>
                       </div>
 
-                      <div
+                      <h4
                         className={classNames(
                           projectcss.all,
+                          projectcss.h4,
                           projectcss.__wab_text,
-                          sty.text__m5BdF
+                          sty.h4__xuRgN
                         )}
                       >
-                        {"Current highest bid "}
-                      </div>
+                        {"( = 507 USD eq. )"}
+                      </h4>
                     </div>
                   ) : null}
                   {(
@@ -378,186 +358,109 @@ function PlasmicJfe__RenderFunc(props: {
                 </div>
               ) : null}
 
-              <div
+              <h5
                 className={classNames(
                   projectcss.all,
+                  projectcss.h5,
                   projectcss.__wab_text,
-                  sty.text___9IAe4
+                  sty.h5__nCim3
                 )}
               >
-                {"(0 USD eq.)"}
-              </div>
-
-              <TextInput
-                data-plasmic-name={"textInput"}
-                data-plasmic-override={overrides.textInput}
-                className={classNames("__wab_instance", sty.textInput)}
-                color={"dark" as const}
-                placeholder={"Your offer" as const}
-              />
-
-              <Reveal
-                className={classNames("__wab_instance", sty.reveal__yRb6X)}
-                duration={3000 as const}
-                effect={"fade" as const}
-                triggerOnce={true}
-              >
-                <BidButton
-                  data-plasmic-name={"bidButton"}
-                  data-plasmic-override={overrides.bidButton}
-                  className={classNames("__wab_instance", sty.bidButton)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__eeJuy
-                    )}
+                <React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "#8C1C84", fontWeight: 700 }}
                   >
-                    {"Bid"}
-                  </div>
-                </BidButton>
-              </Reveal>
+                    {"389"}
+                  </span>
+                  <React.Fragment>{""}</React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "#FBF0F0" }}
+                  >
+                    {" / 3000 e"}
+                  </span>
+                  <React.Fragment>{""}</React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "#FFFFFF" }}
+                  >
+                    {"dition"}
+                  </span>
+                </React.Fragment>
+              </h5>
 
-              <Reveal
-                className={classNames("__wab_instance", sty.reveal__zGr3J)}
-                effect={"flip" as const}
-                triggerOnce={true}
+              <BidButton
+                data-plasmic-name={"bidButton"}
+                data-plasmic-override={overrides.bidButton}
+                className={classNames("__wab_instance", sty.bidButton)}
               >
                 <div
                   className={classNames(
                     projectcss.all,
                     projectcss.__wab_text,
-                    sty.text__g74ZX
+                    sty.text__nTg9S
                   )}
                 >
-                  <React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 700 }}
-                    >
-                      {"You're currently the highest bidder "}
-                    </span>
-                    <React.Fragment>{"✅"}</React.Fragment>
-                  </React.Fragment>
+                  {"Buy"}
                 </div>
-              </Reveal>
-
-              <h4
-                className={classNames(
-                  projectcss.all,
-                  projectcss.h4,
-                  projectcss.__wab_text,
-                  sty.h4__aZMl3
-                )}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#FFFFFF" }}
-                  >
-                    {"Previous bids"}
-                  </span>
-                </React.Fragment>
-              </h4>
-
-              <a
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.__wab_text,
-                  sty.link__u3AJa
-                )}
-                href={
-                  "https://etherscan.io/tx/0x6c74bca6ad4f417ffaa892f0d20b055b2f915a83d5c47a1ed736686aac65e0e8" as const
-                }
-                target={"_blank" as const}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#FFFFFF" }}
-                  >
-                    {
-                      "May-27-2022 04:35:28 PM +UTC                                                                                                   3,600 MATIC"
-                    }
-                  </span>
-                </React.Fragment>
-              </a>
-
-              <a
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.__wab_text,
-                  sty.link__czSnM
-                )}
-                href={
-                  "https://etherscan.io/tx/0x6c74bca6ad4f417ffaa892f0d20b055b2f915a83d5c47a1ed736686aac65e0e8" as const
-                }
-                target={"_blank" as const}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#FFFFFF" }}
-                  >
-                    {
-                      "May-27-2022 04:35:28 PM +UTC                                                                                                   3,500 MATIC"
-                    }
-                  </span>
-                </React.Fragment>
-              </a>
-
-              <a
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.__wab_text,
-                  sty.link___8MXns
-                )}
-                href={
-                  "https://etherscan.io/tx/0x6c74bca6ad4f417ffaa892f0d20b055b2f915a83d5c47a1ed736686aac65e0e8" as const
-                }
-                target={"_blank" as const}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#FFFFFF" }}
-                  >
-                    {
-                      "May-27-2022 04:35:28 PM +UTC                                                                                                   2,000 MATIC"
-                    }
-                  </span>
-                </React.Fragment>
-              </a>
-
-              <a
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.__wab_text,
-                  sty.link__nn7Ji
-                )}
-                href={
-                  "https://etherscan.io/tx/0x6c74bca6ad4f417ffaa892f0d20b055b2f915a83d5c47a1ed736686aac65e0e8" as const
-                }
-                target={"_blank" as const}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#FFFFFF" }}
-                  >
-                    {
-                      "May-27-2022 04:35:28 PM +UTC                                                                                                   1,000 MATIC"
-                    }
-                  </span>
-                </React.Fragment>
-              </a>
+              </BidButton>
             </div>
           ) : null}
+
+          <div
+            data-plasmic-name={"footer"}
+            data-plasmic-override={overrides.footer}
+            className={classNames(projectcss.all, sty.footer)}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox___1P6Zt)}>
+              <a
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  projectcss.__wab_text,
+                  sty.link___421
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "mobileOnly")
+                  ? "NFT Deep Wire\nAll rights reserved © 2022"
+                  : "NFT Deep Wire | All rights reserved © 2022"}
+              </a>
+            </div>
+
+            {true ? (
+              <div className={classNames(projectcss.all, sty.freeBox__lIrig)}>
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__pYeqH
+                  )}
+                  href={`/`}
+                >
+                  {"Terms & conditions"}
+                </a>
+
+                {(
+                  hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? true
+                    : false
+                ) ? (
+                  <a
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link__wQi3N
+                    )}
+                  >
+                    {"Contact us"}
+                  </a>
+                ) : null}
+              </div>
+            ) : null}
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -565,34 +468,21 @@ function PlasmicJfe__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "button",
-    "header",
-    "h1",
-    "h5",
-    "textInput",
-    "textbox",
-    "bidButton"
-  ],
-  button: ["button"],
+  root: ["root", "header", "h1", "bidButton", "footer"],
   header: ["header"],
   h1: ["h1"],
-  h5: ["h5"],
-  textInput: ["textInput", "textbox"],
-  bidButton: ["bidButton"]
+  bidButton: ["bidButton"],
+  footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  button: typeof Button;
   header: "div";
   h1: "h1";
-  h5: "h5";
-  textInput: typeof TextInput;
   bidButton: typeof BidButton;
+  footer: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -656,12 +546,10 @@ export const PlasmicJfe = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    button: makeNodeComponent("button"),
     header: makeNodeComponent("header"),
     h1: makeNodeComponent("h1"),
-    h5: makeNodeComponent("h5"),
-    textInput: makeNodeComponent("textInput"),
     bidButton: makeNodeComponent("bidButton"),
+    footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicJfe
     internalVariantProps: PlasmicJfe__VariantProps,

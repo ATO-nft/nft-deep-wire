@@ -31,7 +31,6 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import Button from "../../Button"; // plasmic-import: a9hmcfoqSQcWZ/component
 import { Reveal } from "@plasmicpkgs/react-awesome-reveal"; // plasmic-import: R6s1FdhksG/codeComponent
 import BidButton from "../../BidButton"; // plasmic-import: TW0Ca_Ns9A2yO/component
 
@@ -58,11 +57,11 @@ export const PlasmicNft__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicNft__OverridesType = {
   root?: p.Flex<"div">;
-  button?: p.Flex<typeof Button>;
   header?: p.Flex<"div">;
   h1?: p.Flex<"h1">;
   reveal?: p.Flex<typeof Reveal>;
   bidButton?: p.Flex<typeof BidButton>;
+  footer?: p.Flex<"div">;
 };
 
 export interface DefaultNftProps {
@@ -114,105 +113,85 @@ function PlasmicNft__RenderFunc(props: {
             sty.root
           )}
         >
-          {true ? (
-            <div className={classNames(projectcss.all, sty.freeBox__hLnnk)}>
-              {true ? (
-                <Button
-                  data-plasmic-name={"button"}
-                  data-plasmic-override={overrides.button}
-                  className={classNames("__wab_instance", sty.button)}
-                  color={"softRed" as const}
-                  link={`/`}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__ekE
-                    )}
-                  >
-                    {"Back"}
-                  </div>
-                </Button>
-              ) : null}
-
-              <div
-                data-plasmic-name={"header"}
-                data-plasmic-override={overrides.header}
-                className={classNames(projectcss.all, sty.header)}
+          <div
+            data-plasmic-name={"header"}
+            data-plasmic-override={overrides.header}
+            className={classNames(projectcss.all, sty.header)}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox___0NukO)}>
+              <a
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  projectcss.__wab_text,
+                  sty.link__eErV8
+                )}
+                href={`/`}
               >
-                <div className={classNames(projectcss.all, sty.freeBox__yw6P3)}>
-                  <a
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      projectcss.__wab_text,
-                      sty.link__y3Kj4
-                    )}
+                <React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ fontWeight: 700 }}
                   >
-                    <React.Fragment>
-                      <span
-                        className={"plasmic_default__all plasmic_default__span"}
-                        style={{ fontWeight: 700 }}
-                      >
-                        {"NDW"}
-                      </span>
-                    </React.Fragment>
-                  </a>
-                </div>
-
-                {true ? (
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__etE2F)}
-                  >
-                    <a
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link___4Kv5W
-                      )}
-                    >
-                      {"About"}
-                    </a>
-
-                    <a
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link___28Jju
-                      )}
-                    >
-                      {"Artists"}
-                    </a>
-
-                    <a
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link__l49Zi
-                      )}
-                    >
-                      {"Vision"}
-                    </a>
-
-                    <a
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link__uhkj6
-                      )}
-                    >
-                      {"Login"}
-                    </a>
-                  </div>
-                ) : null}
-              </div>
+                    {"NDW"}
+                  </span>
+                </React.Fragment>
+              </a>
             </div>
-          ) : null}
+
+            {true ? (
+              <div className={classNames(projectcss.all, sty.freeBox__hMgpq)}>
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__b8QKu
+                  )}
+                  href={`/`}
+                >
+                  {"About"}
+                </a>
+
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link___44YeG
+                  )}
+                  href={`/`}
+                >
+                  {"Artists"}
+                </a>
+
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__mQqLk
+                  )}
+                  href={`/`}
+                >
+                  {"Vision"}
+                </a>
+
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__ufg9
+                  )}
+                  href={`/`}
+                >
+                  {"Login"}
+                </a>
+              </div>
+            ) : null}
+          </div>
+
           {(
             hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
           ) ? (
@@ -242,7 +221,7 @@ function PlasmicNft__RenderFunc(props: {
                       className={"plasmic_default__all plasmic_default__span"}
                       style={{ color: "#FFFFFF" }}
                     >
-                      {"Āto  NFT  series  #1"}
+                      {"NFT #x"}
                     </span>
                   </React.Fragment>
                 )}
@@ -290,23 +269,7 @@ function PlasmicNft__RenderFunc(props: {
                     className={"plasmic_default__all plasmic_default__span"}
                     style={{ color: "#FFFFFF" }}
                   >
-                    {"Āto NFT series #1"}
-                  </span>
-                  <React.Fragment>{"\n\n"}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#FFFFFF" }}
-                  >
-                    {
-                      "The first 300 were transferred to the earliest community members."
-                    }
-                  </span>
-                  <React.Fragment>{"\n\n"}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#FFFFFF" }}
-                  >
-                    {"The holder of this NFT: "}
+                    {"This is an NFT."}
                   </span>
                   <React.Fragment>{"\n\n"}</React.Fragment>
                   {
@@ -355,28 +318,6 @@ function PlasmicNft__RenderFunc(props: {
                             style={{ color: "#FFFFFF" }}
                           >
                             {"Gets a discount at the next funding round"}
-                          </span>
-                        </React.Fragment>
-                      </li>
-
-                      <li
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.__wab_text,
-                          sty.li__iuIbj
-                        )}
-                      >
-                        <React.Fragment>
-                          <span
-                            className={
-                              "plasmic_default__all plasmic_default__span"
-                            }
-                            style={{ color: "#FFFFFF" }}
-                          >
-                            {
-                              "Can select which NFT is featured at https://ato.network/first"
-                            }
                           </span>
                         </React.Fragment>
                       </li>
@@ -635,6 +576,60 @@ function PlasmicNft__RenderFunc(props: {
               </div>
             </div>
           ) : null}
+
+          <div
+            data-plasmic-name={"footer"}
+            data-plasmic-override={overrides.footer}
+            className={classNames(projectcss.all, sty.footer)}
+          >
+            <div className={classNames(projectcss.all, sty.freeBox__qqcu1)}>
+              <a
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  projectcss.__wab_text,
+                  sty.link__qNv37
+                )}
+              >
+                {hasVariant(globalVariants, "screen", "mobileOnly")
+                  ? "NFT Deep Wire\nAll rights reserved © 2022"
+                  : "NFT Deep Wire | All rights reserved © 2022"}
+              </a>
+            </div>
+
+            {true ? (
+              <div className={classNames(projectcss.all, sty.freeBox__hnRki)}>
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    projectcss.__wab_text,
+                    sty.link__yvd7H
+                  )}
+                  href={`/`}
+                >
+                  {"Terms & conditions"}
+                </a>
+
+                {(
+                  hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? true
+                    : false
+                ) ? (
+                  <a
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link__gTzAk
+                    )}
+                  >
+                    {"Contact us"}
+                  </a>
+                ) : null}
+              </div>
+            ) : null}
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -642,23 +637,23 @@ function PlasmicNft__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "button", "header", "h1", "reveal", "bidButton"],
-  button: ["button"],
+  root: ["root", "header", "h1", "reveal", "bidButton", "footer"],
   header: ["header"],
   h1: ["h1"],
   reveal: ["reveal", "bidButton"],
-  bidButton: ["bidButton"]
+  bidButton: ["bidButton"],
+  footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  button: typeof Button;
   header: "div";
   h1: "h1";
   reveal: typeof Reveal;
   bidButton: typeof BidButton;
+  footer: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -722,11 +717,11 @@ export const PlasmicNft = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    button: makeNodeComponent("button"),
     header: makeNodeComponent("header"),
     h1: makeNodeComponent("h1"),
     reveal: makeNodeComponent("reveal"),
     bidButton: makeNodeComponent("bidButton"),
+    footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicNft
     internalVariantProps: PlasmicNft__VariantProps,

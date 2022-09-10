@@ -7,7 +7,7 @@
   },
   "style": {
     "scheme": "css-modules",
-    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
   },
   "images": {
     "scheme": "files",
@@ -43,7 +43,8 @@
           "name": "ParallaxProviderWrapper",
           "componentImportPath": "@plasmicpkgs/react-scroll-parallax"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "58GpZjZCWTaJ8AUhpCwt2K",
@@ -62,7 +63,8 @@
           "name": "Reveal",
           "componentImportPath": "@plasmicpkgs/react-awesome-reveal"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "j5CDP9MgqbRapi7mxENKQG",

@@ -57,7 +57,7 @@ export type PlasmicHomepage__OverridesType = {
   header?: p.Flex<"div">;
   h1?: p.Flex<"h1">;
   text?: p.Flex<"div">;
-  header2?: p.Flex<"div">;
+  footer?: p.Flex<"div">;
 };
 
 export interface DefaultHomepageProps {
@@ -116,14 +116,15 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-override={overrides.header}
             className={classNames(projectcss.all, sty.header)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__hhUsk)}>
+            <div className={classNames(projectcss.all, sty.freeBox__ccQj0)}>
               <a
                 className={classNames(
                   projectcss.all,
                   projectcss.a,
                   projectcss.__wab_text,
-                  sty.link__b7Jr
+                  sty.link__zlYiK
                 )}
+                href={`/`}
               >
                 <React.Fragment>
                   <span
@@ -137,14 +138,15 @@ function PlasmicHomepage__RenderFunc(props: {
             </div>
 
             {true ? (
-              <div className={classNames(projectcss.all, sty.freeBox__noGUg)}>
+              <div className={classNames(projectcss.all, sty.freeBox__edjwf)}>
                 <a
                   className={classNames(
                     projectcss.all,
                     projectcss.a,
                     projectcss.__wab_text,
-                    sty.link__qJxRz
+                    sty.link__cEQp
                   )}
+                  href={`/`}
                 >
                   {"About"}
                 </a>
@@ -154,8 +156,9 @@ function PlasmicHomepage__RenderFunc(props: {
                     projectcss.all,
                     projectcss.a,
                     projectcss.__wab_text,
-                    sty.link__moqT
+                    sty.link__uiitL
                   )}
+                  href={`/`}
                 >
                   {"Artists"}
                 </a>
@@ -165,8 +168,9 @@ function PlasmicHomepage__RenderFunc(props: {
                     projectcss.all,
                     projectcss.a,
                     projectcss.__wab_text,
-                    sty.link__e2Zz
+                    sty.link___7VWip
                   )}
+                  href={`/`}
                 >
                   {"Vision"}
                 </a>
@@ -176,8 +180,9 @@ function PlasmicHomepage__RenderFunc(props: {
                     projectcss.all,
                     projectcss.a,
                     projectcss.__wab_text,
-                    sty.link__hk9U
+                    sty.link__gMguC
                   )}
+                  href={`/`}
                 >
                   {"Login"}
                 </a>
@@ -270,7 +275,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     projectcss.a,
                     sty.link__tvbNx
                   )}
-                  href={`/jfe`}
+                  href={`/shades`}
                 >
                   <p.PlasmicImg
                     alt={"" as const}
@@ -295,9 +300,9 @@ function PlasmicHomepage__RenderFunc(props: {
           ) : null}
 
           <div
-            data-plasmic-name={"header2"}
-            data-plasmic-override={overrides.header2}
-            className={classNames(projectcss.all, sty.header2)}
+            data-plasmic-name={"footer"}
+            data-plasmic-override={overrides.footer}
+            className={classNames(projectcss.all, sty.footer)}
           >
             <div className={classNames(projectcss.all, sty.freeBox__aRaIh)}>
               <a
@@ -323,6 +328,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     projectcss.__wab_text,
                     sty.link__xNqMt
                   )}
+                  href={`/`}
                 >
                   {"Terms & conditions"}
                 </a>
@@ -353,11 +359,11 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "h1", "text", "header2"],
+  root: ["root", "header", "h1", "text", "footer"],
   header: ["header"],
   h1: ["h1"],
   text: ["text"],
-  header2: ["header2"]
+  footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -367,7 +373,7 @@ type NodeDefaultElementType = {
   header: "div";
   h1: "h1";
   text: "div";
-  header2: "div";
+  footer: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -434,7 +440,7 @@ export const PlasmicHomepage = Object.assign(
     header: makeNodeComponent("header"),
     h1: makeNodeComponent("h1"),
     text: makeNodeComponent("text"),
-    header2: makeNodeComponent("header2"),
+    footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
