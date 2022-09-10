@@ -31,6 +31,7 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import Button from "../../Button"; // plasmic-import: a9hmcfoqSQcWZ/component
 
 import { useScreenVariants as useScreenVariantsi1EpI54Sd5XS4R } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: i1epI54SD5xS4r/globalVariant
 
@@ -39,6 +40,8 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_nft_deep_wire.module.css"; // plasmic-import: j5CDP9MgqbRapi7mxENKQG/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: o9LGBwNid8E-e/css
 
+import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: SpSM8I8Z8pYH6F/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: GDo5sayAt37nOm/icon
 import captureDecran20220525A200826PngXUdItNoqUxIjj4 from "./images/captureDecran20220525A200826Png.png"; // plasmic-import: xUdITNoqUxIjj4/picture
 import harmenJelleVanMourikIyOoKwXxmumUnsplashjpgT3ShQhMvC4NAuG from "./images/harmenJelleVanMourikIyOoKwXxmumUnsplashjpg.jpeg"; // plasmic-import: t3SHQhMvC4NAuG/picture
 
@@ -48,19 +51,37 @@ export type PlasmicHomepage__VariantsArgs = {};
 type VariantPropType = keyof PlasmicHomepage__VariantsArgs;
 export const PlasmicHomepage__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicHomepage__ArgsType = {};
+export type PlasmicHomepage__ArgsType = {
+  startIcon?: React.ReactNode;
+  children?: React.ReactNode;
+  endIcon?: React.ReactNode;
+};
+
 type ArgPropType = keyof PlasmicHomepage__ArgsType;
-export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
+export const PlasmicHomepage__ArgProps = new Array<ArgPropType>(
+  "startIcon",
+  "children",
+  "endIcon"
+);
 
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<"div">;
+  connect?: p.Flex<typeof Button>;
   h1?: p.Flex<"h1">;
   text?: p.Flex<"div">;
+  latestTx?: p.Flex<"div">;
+  buy?: p.Flex<"button">;
+  startIconContainer?: p.Flex<"div">;
+  contentContainer?: p.Flex<"div">;
+  endIconContainer?: p.Flex<"div">;
   footer?: p.Flex<"div">;
 };
 
 export interface DefaultHomepageProps {
+  startIcon?: React.ReactNode;
+  children?: React.ReactNode;
+  endIcon?: React.ReactNode;
   className?: string;
 }
 
@@ -175,17 +196,11 @@ function PlasmicHomepage__RenderFunc(props: {
                   {"Vision"}
                 </a>
 
-                <a
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__gMguC
-                  )}
-                  href={`/`}
-                >
-                  {"Login"}
-                </a>
+                <Button
+                  data-plasmic-name={"connect"}
+                  data-plasmic-override={overrides.connect}
+                  className={classNames("__wab_instance", sty.connect)}
+                />
               </div>
             ) : null}
           </div>
@@ -300,6 +315,78 @@ function PlasmicHomepage__RenderFunc(props: {
           ) : null}
 
           <div
+            data-plasmic-name={"latestTx"}
+            data-plasmic-override={overrides.latestTx}
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.latestTx
+            )}
+          >
+            {"Enter some text"}
+          </div>
+
+          <p.Stack
+            as={"button"}
+            data-plasmic-name={"buy"}
+            data-plasmic-override={overrides.buy}
+            hasGap={true}
+            className={classNames(projectcss.all, projectcss.button, sty.buy)}
+          >
+            {true ? (
+              <div
+                data-plasmic-name={"startIconContainer"}
+                data-plasmic-override={overrides.startIconContainer}
+                className={classNames(projectcss.all, sty.startIconContainer)}
+              >
+                {p.renderPlasmicSlot({
+                  defaultContents: (
+                    <ChecksvgIcon
+                      className={classNames(projectcss.all, sty.svg__b42E)}
+                      role={"img"}
+                    />
+                  ),
+
+                  value: args.startIcon,
+                  className: classNames(sty.slotTargetStartIcon)
+                })}
+              </div>
+            ) : null}
+
+            <div
+              data-plasmic-name={"contentContainer"}
+              data-plasmic-override={overrides.contentContainer}
+              className={classNames(projectcss.all, sty.contentContainer)}
+            >
+              {p.renderPlasmicSlot({
+                defaultContents: "Buy",
+                value: args.children,
+                className: classNames(sty.slotTargetChildren)
+              })}
+            </div>
+
+            {false ? (
+              <div
+                data-plasmic-name={"endIconContainer"}
+                data-plasmic-override={overrides.endIconContainer}
+                className={classNames(projectcss.all, sty.endIconContainer)}
+              >
+                {p.renderPlasmicSlot({
+                  defaultContents: (
+                    <IconIcon
+                      className={classNames(projectcss.all, sty.svg___2DC0Q)}
+                      role={"img"}
+                    />
+                  ),
+
+                  value: args.endIcon,
+                  className: classNames(sty.slotTargetEndIcon)
+                })}
+              </div>
+            ) : null}
+          </p.Stack>
+
+          <div
             data-plasmic-name={"footer"}
             data-plasmic-override={overrides.footer}
             className={classNames(projectcss.all, sty.footer)}
@@ -359,10 +446,28 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "h1", "text", "footer"],
-  header: ["header"],
+  root: [
+    "root",
+    "header",
+    "connect",
+    "h1",
+    "text",
+    "latestTx",
+    "buy",
+    "startIconContainer",
+    "contentContainer",
+    "endIconContainer",
+    "footer"
+  ],
+  header: ["header", "connect"],
+  connect: ["connect"],
   h1: ["h1"],
   text: ["text"],
+  latestTx: ["latestTx"],
+  buy: ["buy", "startIconContainer", "contentContainer", "endIconContainer"],
+  startIconContainer: ["startIconContainer"],
+  contentContainer: ["contentContainer"],
+  endIconContainer: ["endIconContainer"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -371,8 +476,14 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: "div";
+  connect: typeof Button;
   h1: "h1";
   text: "div";
+  latestTx: "div";
+  buy: "button";
+  startIconContainer: "div";
+  contentContainer: "div";
+  endIconContainer: "div";
   footer: "div";
 };
 
@@ -438,8 +549,14 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
+    connect: makeNodeComponent("connect"),
     h1: makeNodeComponent("h1"),
     text: makeNodeComponent("text"),
+    latestTx: makeNodeComponent("latestTx"),
+    buy: makeNodeComponent("buy"),
+    startIconContainer: makeNodeComponent("startIconContainer"),
+    contentContainer: makeNodeComponent("contentContainer"),
+    endIconContainer: makeNodeComponent("endIconContainer"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicHomepage

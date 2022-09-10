@@ -368,7 +368,7 @@ function PlasmicButton__RenderFunc(props: {
         })}
       >
         {p.renderPlasmicSlot({
-          defaultContents: "Button",
+          defaultContents: "Yo",
           value: args.children,
           className: classNames(sty.slotTargetChildren, {
             [sty.slotTargetChildren___focusVisibleWithin]:

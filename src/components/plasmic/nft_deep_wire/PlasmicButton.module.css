@@ -2,7 +2,7 @@
   flex-direction: row;
   display: flex;
   position: relative;
-  background: #232320;
+  background: var(--token-1VxxH-VppOaQ5G);
   cursor: pointer;
   transition-property: background;
   transition-duration: 0.1s;
