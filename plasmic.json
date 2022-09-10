@@ -1,0 +1,227 @@
+{
+  "platform": "react",
+  "code": {
+    "lang": "ts",
+    "scheme": "blackbox",
+    "reactRuntime": "classic"
+  },
+  "style": {
+    "scheme": "css-modules",
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+  },
+  "images": {
+    "scheme": "files",
+    "publicDir": "../../public",
+    "publicUrlPrefix": "/static/"
+  },
+  "tokens": {
+    "scheme": "theo",
+    "tokensFilePath": "plasmic-tokens.theo.json"
+  },
+  "srcDir": "src/components",
+  "defaultPlasmicDir": "./plasmic",
+  "projects": [
+    {
+      "projectId": "84wxoth5npGrp6RRXPL88z",
+      "projectApiToken": "hOzXksPB8gkTrKnfJeV9VDS8m8dnIXQn1xxDQZ5MHxv9orQY6JNgwmk6aDMZPLkocV2KtD9gNJXv5JwIbbzIQ",
+      "projectName": "react-scroll-parallax-global",
+      "version": "4.2.0",
+      "cssFilePath": "plasmic/react_scroll_parallax_global/plasmic_react_scroll_parallax_global.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "plasmic/react_scroll_parallax_global/PlasmicGlobalContextsProvider.tsx",
+      "codeComponents": [
+        {
+          "id": "bozP4lLlAZ",
+          "name": "ParallaxWrapper",
+          "componentImportPath": "@plasmicpkgs/react-scroll-parallax"
+        },
+        {
+          "id": "L6MfauX2Cw",
+          "name": "ParallaxProviderWrapper",
+          "componentImportPath": "@plasmicpkgs/react-scroll-parallax"
+        }
+      ]
+    },
+    {
+      "projectId": "58GpZjZCWTaJ8AUhpCwt2K",
+      "projectApiToken": "DIkcfhBwjMCJSjcxfBkMuy4NImyytq5EWylxVcpS9t9EpdhnPQuBgBGxmk00AB1itMFa1KXTxOKnrjN2PN9nlA",
+      "projectName": "react-awesome-reveal",
+      "version": "3.2.0",
+      "cssFilePath": "plasmic/react_awesome_reveal/plasmic_react_awesome_reveal.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "codeComponents": [
+        {
+          "id": "R6s1FdhksG",
+          "name": "Reveal",
+          "componentImportPath": "@plasmicpkgs/react-awesome-reveal"
+        }
+      ]
+    },
+    {
+      "projectId": "j5CDP9MgqbRapi7mxENKQG",
+      "projectApiToken": "aUvxAKVIazIRqm2ypZHYdxZ0qRC4VwBy4M2FeBgBYgIy6X0vATbDQhO5VziS66u4lolCCLePaRFLPGtjMWsA",
+      "projectName": "nft-deep-wire",
+      "version": "latest",
+      "cssFilePath": "plasmic/nft_deep_wire/plasmic_nft_deep_wire.module.css",
+      "components": [
+        {
+          "id": "o9LGBwNid8E-e",
+          "name": "Homepage",
+          "type": "managed",
+          "projectId": "j5CDP9MgqbRapi7mxENKQG",
+          "renderModuleFilePath": "plasmic/nft_deep_wire/PlasmicHomepage.tsx",
+          "importSpec": {
+            "modulePath": "Homepage.tsx"
+          },
+          "cssFilePath": "plasmic/nft_deep_wire/PlasmicHomepage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "a9hmcfoqSQcWZ",
+          "name": "Button",
+          "type": "managed",
+          "projectId": "j5CDP9MgqbRapi7mxENKQG",
+          "renderModuleFilePath": "plasmic/nft_deep_wire/PlasmicButton.tsx",
+          "importSpec": {
+            "modulePath": "Button.tsx"
+          },
+          "cssFilePath": "plasmic/nft_deep_wire/PlasmicButton.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "button"
+        },
+        {
+          "id": "FxeHyubbo0Q8o",
+          "name": "Jfe",
+          "type": "managed",
+          "projectId": "j5CDP9MgqbRapi7mxENKQG",
+          "renderModuleFilePath": "plasmic/nft_deep_wire/PlasmicJfe.tsx",
+          "importSpec": {
+            "modulePath": "Jfe.tsx"
+          },
+          "cssFilePath": "plasmic/nft_deep_wire/PlasmicJfe.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "TW0Ca_Ns9A2yO",
+          "name": "BidButton",
+          "type": "managed",
+          "projectId": "j5CDP9MgqbRapi7mxENKQG",
+          "renderModuleFilePath": "plasmic/nft_deep_wire/PlasmicBidButton.tsx",
+          "importSpec": {
+            "modulePath": "BidButton.tsx"
+          },
+          "cssFilePath": "plasmic/nft_deep_wire/PlasmicBidButton.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "button"
+        },
+        {
+          "id": "0jfYEX-SfGn8K",
+          "name": "TextInput",
+          "type": "managed",
+          "projectId": "j5CDP9MgqbRapi7mxENKQG",
+          "renderModuleFilePath": "plasmic/nft_deep_wire/PlasmicTextInput.tsx",
+          "importSpec": {
+            "modulePath": "TextInput.tsx"
+          },
+          "cssFilePath": "plasmic/nft_deep_wire/PlasmicTextInput.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "text-input"
+        },
+        {
+          "id": "-rZ2FLCY9RqHCq",
+          "name": "Nft",
+          "type": "managed",
+          "projectId": "j5CDP9MgqbRapi7mxENKQG",
+          "renderModuleFilePath": "plasmic/nft_deep_wire/PlasmicNft.tsx",
+          "importSpec": {
+            "modulePath": "Nft.tsx"
+          },
+          "cssFilePath": "plasmic/nft_deep_wire/PlasmicNft.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "TpXp-HtNY_R",
+          "name": "Shades",
+          "type": "managed",
+          "projectId": "j5CDP9MgqbRapi7mxENKQG",
+          "renderModuleFilePath": "plasmic/nft_deep_wire/PlasmicShades.tsx",
+          "importSpec": {
+            "modulePath": "Shades.tsx"
+          },
+          "cssFilePath": "plasmic/nft_deep_wire/PlasmicShades.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        }
+      ],
+      "icons": [
+        {
+          "id": "SpSM8I8Z8pYH6F",
+          "name": "ChecksvgIcon",
+          "moduleFilePath": "plasmic/nft_deep_wire/icons/PlasmicIcon__Checksvg.tsx"
+        },
+        {
+          "id": "GDo5sayAt37nOm",
+          "name": "IconIcon",
+          "moduleFilePath": "plasmic/nft_deep_wire/icons/PlasmicIcon__Icon.tsx"
+        },
+        {
+          "id": "awgxW5ZUPDKTds",
+          "name": "SearchsvgIcon",
+          "moduleFilePath": "plasmic/nft_deep_wire/icons/PlasmicIcon__Searchsvg.tsx"
+        }
+      ],
+      "images": [
+        {
+          "id": "xUdITNoqUxIjj4",
+          "name": "Capture d’écran 2022-05-25 à 20.08.26.png",
+          "filePath": "plasmic/nft_deep_wire/images/captureDecran20220525A200826Png.png"
+        },
+        {
+          "id": "dt8Q0T8uNZIa1E",
+          "name": "post1.gif",
+          "filePath": "plasmic/nft_deep_wire/images/post1Gif.gif"
+        },
+        {
+          "id": "t3SHQhMvC4NAuG",
+          "name": "harmen-jelle-van-mourik-IyOOKwXXMUM-unsplash.jpg",
+          "filePath": "plasmic/nft_deep_wire/images/harmenJelleVanMourikIyOoKwXxmumUnsplashjpg.jpeg"
+        }
+      ],
+      "indirect": false,
+      "globalContextsFilePath": "plasmic/nft_deep_wire/PlasmicGlobalContextsProvider.tsx",
+      "codeComponents": [
+        {
+          "id": "ZcFjJ_zY_GA0-F",
+          "name": "PlasmicHead",
+          "componentImportPath": "@plasmicapp/react-web"
+        }
+      ]
+    }
+  ],
+  "globalVariants": {
+    "variantGroups": [
+      {
+        "id": "i1epI54SD5xS4r",
+        "name": "Screen",
+        "projectId": "j5CDP9MgqbRapi7mxENKQG",
+        "contextFilePath": "plasmic/nft_deep_wire/PlasmicGlobalVariant__Screen.tsx"
+      }
+    ]
+  },
+  "wrapPagesWithGlobalContexts": true,
+  "cliVersion": "0.1.186",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.186/dist/plasmic.schema.json"
+}
