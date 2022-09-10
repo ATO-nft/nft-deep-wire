@@ -1,5 +1,9 @@
 # NFT Deep Wire
 
+- Online staging version: [https://nft-deep-wire.netlify.app/](https://nft-deep-wire.netlify.app/)
+- View Plasmic project: [https://studio.plasmic.app/projects/j5CDP9MgqbRapi7mxENKQG](https://studio.plasmic.app/projects/j5CDP9MgqbRapi7mxENKQG)
+- Google drive: [https://drive.google.com/drive/u/0/folders/1Wawd8J9VahQvYQGJEqorIErQnRunk3JX](https://drive.google.com/drive/u/0/folders/1Wawd8J9VahQvYQGJEqorIErQnRunk3JX)
+
 ## Install
 
 ```shell
