@@ -1,25 +1,17 @@
-This is a React project bootstrapped with [`create-plasmic-app`](https://www.npmjs.com/package/create-plasmic-app).
+# NFT Deep Wire
 
-## Getting Started
+## Install
 
-First, run the development server:
-
-```bash
-npm run start
+```shell
+npm i
 ```
 
-Open your browser to see the result.
+## Test
 
-You can start editing your project in Plasmic Studio. The page auto-updates as you edit the project.
+```shell
+npm start
+```
 
-## Learn More
+## Support
 
-With Plasmic, you can enable non-developers on your team to publish pages and content into your website or app.
-
-To learn more about Plasmic, take a look at the following resources:
-
-- [Plasmic Website](https://www.plasmic.app/)
-- [Plasmic Documentation](https://docs.plasmic.app/learn/)
-- [Plasmic Slack Community](https://www.plasmic.app/slack)
-
-You can check out [the Plasmic GitHub repository](https://github.com/plasmicapp/plasmic) - your feedback and contributions are welcome!
+You can contact us via [Element](https://matrix.to/#/@julienbrg:matrix.org) (preferred), [Twitter](https://twitter.com/julienbrg), [Discord](https://discord.gg/xw9dCeQ94Y), [LinkedIn](https://www.linkedin.com/in/julienberanger/) or [email](mailto:julien@ato.network).
