@@ -166,6 +166,58 @@
           "cssFilePath": "plasmic/nft_deep_wire/PlasmicShades.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "hb8wjuDZPDE",
+          "name": "Artist",
+          "type": "managed",
+          "projectId": "j5CDP9MgqbRapi7mxENKQG",
+          "renderModuleFilePath": "plasmic/nft_deep_wire/PlasmicArtist.tsx",
+          "importSpec": {
+            "modulePath": "Artist.tsx"
+          },
+          "cssFilePath": "plasmic/nft_deep_wire/PlasmicArtist.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "gr_eq2hlK0",
+          "name": "Header",
+          "type": "managed",
+          "projectId": "j5CDP9MgqbRapi7mxENKQG",
+          "renderModuleFilePath": "plasmic/nft_deep_wire/PlasmicHeader.tsx",
+          "importSpec": {
+            "modulePath": "Header.tsx"
+          },
+          "cssFilePath": "plasmic/nft_deep_wire/PlasmicHeader.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "BP2l_uTL3G7",
+          "name": "About",
+          "type": "managed",
+          "projectId": "j5CDP9MgqbRapi7mxENKQG",
+          "renderModuleFilePath": "plasmic/nft_deep_wire/PlasmicAbout.tsx",
+          "importSpec": {
+            "modulePath": "About.tsx"
+          },
+          "cssFilePath": "plasmic/nft_deep_wire/PlasmicAbout.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "Y2jNpTsOMwD",
+          "name": "Vision",
+          "type": "managed",
+          "projectId": "j5CDP9MgqbRapi7mxENKQG",
+          "renderModuleFilePath": "plasmic/nft_deep_wire/PlasmicVision.tsx",
+          "importSpec": {
+            "modulePath": "Vision.tsx"
+          },
+          "cssFilePath": "plasmic/nft_deep_wire/PlasmicVision.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [
@@ -200,6 +252,51 @@
           "id": "t3SHQhMvC4NAuG",
           "name": "harmen-jelle-van-mourik-IyOOKwXXMUM-unsplash.jpg",
           "filePath": "plasmic/nft_deep_wire/images/harmenJelleVanMourikIyOoKwXxmumUnsplashjpg.jpeg"
+        },
+        {
+          "id": "4qAkCZinU",
+          "name": "image",
+          "filePath": "plasmic/nft_deep_wire/images/image.png"
+        },
+        {
+          "id": "L6zFLXb07",
+          "name": "Full of Energy 2.jpg",
+          "filePath": "plasmic/nft_deep_wire/images/fullOfEnergy2Jpg.jpeg"
+        },
+        {
+          "id": "rqpfMjqq1",
+          "name": "Allegory of Agoraphobia.jpg",
+          "filePath": "plasmic/nft_deep_wire/images/allegoryOfAgoraphobiajpg.jpeg"
+        },
+        {
+          "id": "sKTYnwe46",
+          "name": "Counting The Days.jpg",
+          "filePath": "plasmic/nft_deep_wire/images/countingTheDaysjpg.jpeg"
+        },
+        {
+          "id": "6a39mu0mO",
+          "name": "Under the Watchful Eye.jpg",
+          "filePath": "plasmic/nft_deep_wire/images/underTheWatchfulEyejpg.jpeg"
+        },
+        {
+          "id": "-nI20k-bB",
+          "name": "Viola Grappe x mapeinturePro.com.png",
+          "filePath": "plasmic/nft_deep_wire/images/violaGrappeXMapeintureProcompng.png"
+        },
+        {
+          "id": "5oWUuqkaS",
+          "name": "YAKAMO-I-ByGuillaumeEtLaurie-X-MaPeinturePro-2022-V02.jpg",
+          "filePath": "plasmic/nft_deep_wire/images/yakamoIByGuillaumeEtLaurieXMaPeinturePro2022V02Jpg.jpeg"
+        },
+        {
+          "id": "5SdSeqe4q",
+          "name": "YAKAMOCOLOR-I-ByGuillaumeEtLaurie-X-MaPeinturePro-2022-V02.jpg",
+          "filePath": "plasmic/nft_deep_wire/images/yakamocolorIByGuillaumeEtLaurieXMaPeinturePro2022V02Jpg.jpeg"
+        },
+        {
+          "id": "o0JtabYHV",
+          "name": "pièce 2 galerie arte mejor.jpg",
+          "filePath": "plasmic/nft_deep_wire/images/piece2GalerieArteMejorjpg.jpeg"
         }
       ],
       "indirect": false,

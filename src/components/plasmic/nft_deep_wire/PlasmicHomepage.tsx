@@ -42,8 +42,9 @@ import sty from "./PlasmicHomepage.module.css"; // plasmic-import: o9LGBwNid8E-e
 
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: SpSM8I8Z8pYH6F/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: GDo5sayAt37nOm/icon
-import captureDecran20220525A200826PngXUdItNoqUxIjj4 from "./images/captureDecran20220525A200826Png.png"; // plasmic-import: xUdITNoqUxIjj4/picture
-import harmenJelleVanMourikIyOoKwXxmumUnsplashjpgT3ShQhMvC4NAuG from "./images/harmenJelleVanMourikIyOoKwXxmumUnsplashjpg.jpeg"; // plasmic-import: t3SHQhMvC4NAuG/picture
+import piece2GalerieArteMejorjpgO0JtabYhv from "./images/piece2GalerieArteMejorjpg.jpeg"; // plasmic-import: o0JtabYHV/picture
+import allegoryOfAgoraphobiajpgRqpfMjqq1 from "./images/allegoryOfAgoraphobiajpg.jpeg"; // plasmic-import: rqpfMjqq1/picture
+import violaGrappeXMapeintureProcompngNI20KBB from "./images/violaGrappeXMapeintureProcompng.png"; // plasmic-import: -nI20k-bB/picture
 
 export type PlasmicHomepage__VariantMembers = {};
 
@@ -69,7 +70,6 @@ export type PlasmicHomepage__OverridesType = {
   header?: p.Flex<"div">;
   connect?: p.Flex<typeof Button>;
   h1?: p.Flex<"h1">;
-  text?: p.Flex<"div">;
   latestTx?: p.Flex<"div">;
   buy?: p.Flex<"button">;
   startIconContainer?: p.Flex<"div">;
@@ -105,7 +105,10 @@ function PlasmicHomepage__RenderFunc(props: {
     [props.args]
   );
 
-  const $props = args;
+  const $props = {
+    ...args,
+    ...variants
+  };
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsi1EpI54Sd5XS4R()
@@ -179,7 +182,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     projectcss.__wab_text,
                     sty.link__uiitL
                   )}
-                  href={`/`}
+                  href={`/artist`}
                 >
                   {"Artists"}
                 </a>
@@ -200,7 +203,9 @@ function PlasmicHomepage__RenderFunc(props: {
                   data-plasmic-name={"connect"}
                   data-plasmic-override={overrides.connect}
                   className={classNames("__wab_instance", sty.connect)}
-                />
+                >
+                  {"Connect"}
+                </Button>
               </div>
             ) : null}
           </div>
@@ -235,13 +240,29 @@ function PlasmicHomepage__RenderFunc(props: {
                 </h1>
               ) : null}
 
+              <p.PlasmicImg
+                alt={""}
+                className={classNames(sty.img__o3Om7)}
+                displayHeight={"auto" as const}
+                displayMaxHeight={"none" as const}
+                displayMaxWidth={"100%" as const}
+                displayMinHeight={"0" as const}
+                displayMinWidth={"0" as const}
+                displayWidth={"auto" as const}
+                loading={"lazy" as const}
+                src={{
+                  src: piece2GalerieArteMejorjpgO0JtabYhv,
+                  fullWidth: 1800,
+                  fullHeight: 1200,
+                  aspectRatio: undefined
+                }}
+              />
+
               <div
-                data-plasmic-name={"text"}
-                data-plasmic-override={overrides.text}
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text
+                  sty.text__giEy8
                 )}
               >
                 <React.Fragment>
@@ -250,8 +271,25 @@ function PlasmicHomepage__RenderFunc(props: {
                     style={{ color: "#FFFFFF" }}
                   >
                     {
-                      "NFT Deep Wire is an NFT Marketplace. There will always be some text here. There will always be some text here. There will always be some text here. There will always be some text here. There will always be some text here. There will always be some text here. There will always be some text here. There will always be some text here. There will always be some text here. There will always be some text here. There will always be some text here. There will always be some text here. There will always be some text here. "
+                      "Hello, make yourself confortable and welcome to NFT Deep Wire! "
                     }
+                  </span>
+                </React.Fragment>
+              </div>
+
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__gAliA
+                )}
+              >
+                <React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "#FFFFFF" }}
+                  >
+                    {"Our NFT collections"}
                   </span>
                 </React.Fragment>
               </div>
@@ -268,7 +306,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   <p.PlasmicImg
                     alt={"" as const}
                     className={classNames(sty.img__rykaG)}
-                    displayHeight={"auto" as const}
+                    displayHeight={"180px" as const}
                     displayMaxHeight={"none" as const}
                     displayMaxWidth={"none" as const}
                     displayMinHeight={"0" as const}
@@ -276,9 +314,9 @@ function PlasmicHomepage__RenderFunc(props: {
                     displayWidth={"100%" as const}
                     loading={"lazy" as const}
                     src={{
-                      src: captureDecran20220525A200826PngXUdItNoqUxIjj4,
-                      fullWidth: 1232,
-                      fullHeight: 1172,
+                      src: allegoryOfAgoraphobiajpgRqpfMjqq1,
+                      fullWidth: 6030,
+                      fullHeight: 3930,
                       aspectRatio: undefined
                     }}
                   />
@@ -288,14 +326,14 @@ function PlasmicHomepage__RenderFunc(props: {
                   className={classNames(
                     projectcss.all,
                     projectcss.a,
-                    sty.link__tvbNx
+                    sty.link__i5S4W
                   )}
                   href={`/shades`}
                 >
                   <p.PlasmicImg
                     alt={"" as const}
-                    className={classNames(sty.img__oPTsM)}
-                    displayHeight={"100%" as const}
+                    className={classNames(sty.img__lmTmf)}
+                    displayHeight={"180px" as const}
                     displayMaxHeight={"none" as const}
                     displayMaxWidth={"none" as const}
                     displayMinHeight={"0" as const}
@@ -303,9 +341,9 @@ function PlasmicHomepage__RenderFunc(props: {
                     displayWidth={"100%" as const}
                     loading={"lazy" as const}
                     src={{
-                      src: harmenJelleVanMourikIyOoKwXxmumUnsplashjpgT3ShQhMvC4NAuG,
-                      fullWidth: 2400,
-                      fullHeight: 1600,
+                      src: violaGrappeXMapeintureProcompngNI20KBB,
+                      fullWidth: 1059,
+                      fullHeight: 389,
                       aspectRatio: undefined
                     }}
                   />
@@ -451,7 +489,6 @@ const PlasmicDescendants = {
     "header",
     "connect",
     "h1",
-    "text",
     "latestTx",
     "buy",
     "startIconContainer",
@@ -462,7 +499,6 @@ const PlasmicDescendants = {
   header: ["header", "connect"],
   connect: ["connect"],
   h1: ["h1"],
-  text: ["text"],
   latestTx: ["latestTx"],
   buy: ["buy", "startIconContainer", "contentContainer", "endIconContainer"],
   startIconContainer: ["startIconContainer"],
@@ -478,7 +514,6 @@ type NodeDefaultElementType = {
   header: "div";
   connect: typeof Button;
   h1: "h1";
-  text: "div";
   latestTx: "div";
   buy: "button";
   startIconContainer: "div";
@@ -551,7 +586,6 @@ export const PlasmicHomepage = Object.assign(
     header: makeNodeComponent("header"),
     connect: makeNodeComponent("connect"),
     h1: makeNodeComponent("h1"),
-    text: makeNodeComponent("text"),
     latestTx: makeNodeComponent("latestTx"),
     buy: makeNodeComponent("buy"),
     startIconContainer: makeNodeComponent("startIconContainer"),

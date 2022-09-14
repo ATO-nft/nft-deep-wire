@@ -31,9 +31,7 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import TextInput from "../../TextInput"; // plasmic-import: 0jfYEX-SfGn8K/component
-import { Reveal } from "@plasmicpkgs/react-awesome-reveal"; // plasmic-import: R6s1FdhksG/codeComponent
-import BidButton from "../../BidButton"; // plasmic-import: TW0Ca_Ns9A2yO/component
+import Button from "../../Button"; // plasmic-import: a9hmcfoqSQcWZ/component
 
 import { useScreenVariants as useScreenVariantsi1EpI54Sd5XS4R } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: i1epI54SD5xS4r/globalVariant
 
@@ -42,10 +40,11 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_nft_deep_wire.module.css"; // plasmic-import: j5CDP9MgqbRapi7mxENKQG/projectcss
 import sty from "./PlasmicShades.module.css"; // plasmic-import: TpXp-HtNY_R/css
 
-import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: awgxW5ZUPDKTds/icon
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: SpSM8I8Z8pYH6F/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: GDo5sayAt37nOm/icon
-import captureDecran20220525A200826PngXUdItNoqUxIjj4 from "./images/captureDecran20220525A200826Png.png"; // plasmic-import: xUdITNoqUxIjj4/picture
+import violaGrappeXMapeintureProcompngNI20KBB from "./images/violaGrappeXMapeintureProcompng.png"; // plasmic-import: -nI20k-bB/picture
+import yakamoIByGuillaumeEtLaurieXMaPeinturePro2022V02Jpg5OWUuqkaS from "./images/yakamoIByGuillaumeEtLaurieXMaPeinturePro2022V02Jpg.jpeg"; // plasmic-import: 5oWUuqkaS/picture
+import yakamocolorIByGuillaumeEtLaurieXMaPeinturePro2022V02Jpg5SdSeqe4Q from "./images/yakamocolorIByGuillaumeEtLaurieXMaPeinturePro2022V02Jpg.jpeg"; // plasmic-import: 5SdSeqe4q/picture
 
 export type PlasmicShades__VariantMembers = {};
 
@@ -60,12 +59,11 @@ export const PlasmicShades__ArgProps = new Array<ArgPropType>();
 export type PlasmicShades__OverridesType = {
   root?: p.Flex<"div">;
   header2?: p.Flex<"div">;
+  connect?: p.Flex<typeof Button>;
   h1?: p.Flex<"h1">;
+  h4?: p.Flex<"h4">;
   h5?: p.Flex<"h5">;
-  textInput?: p.Flex<typeof TextInput>;
-  bidButton?: p.Flex<typeof BidButton>;
   footer?: p.Flex<"div">;
-  textbox?: p.Flex<typeof TextInput>;
 };
 
 export interface DefaultShadesProps {
@@ -92,7 +90,10 @@ function PlasmicShades__RenderFunc(props: {
     [props.args]
   );
 
-  const $props = args;
+  const $props = {
+    ...args,
+    ...variants
+  };
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsi1EpI54Sd5XS4R()
@@ -164,7 +165,7 @@ function PlasmicShades__RenderFunc(props: {
                     projectcss.__wab_text,
                     sty.link___6I8Pb
                   )}
-                  href={`/`}
+                  href={`/artist`}
                 >
                   {"Artists"}
                 </a>
@@ -181,17 +182,13 @@ function PlasmicShades__RenderFunc(props: {
                   {"Vision"}
                 </a>
 
-                <a
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__wekGs
-                  )}
-                  href={`/`}
+                <Button
+                  data-plasmic-name={"connect"}
+                  data-plasmic-override={overrides.connect}
+                  className={classNames("__wab_instance", sty.connect)}
                 >
-                  {"Login"}
-                </a>
+                  {"Connect"}
+                </Button>
               </div>
             ) : null}
           </div>
@@ -199,7 +196,7 @@ function PlasmicShades__RenderFunc(props: {
           {(
             hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
           ) ? (
-            <div className={classNames(projectcss.all, sty.freeBox__cu2XM)}>
+            <div className={classNames(projectcss.all, sty.freeBox__mrIb6)}>
               <h1
                 data-plasmic-name={"h1"}
                 data-plasmic-override={overrides.h1}
@@ -235,14 +232,14 @@ function PlasmicShades__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.a,
-                  sty.link__hUzeJ
+                  sty.link__wfSzb
                 )}
                 href={`/nft`}
               >
                 <p.PlasmicImg
                   alt={""}
-                  className={classNames(sty.img__szvi6)}
-                  displayHeight={"auto" as const}
+                  className={classNames(sty.img__aopw8)}
+                  displayHeight={"802px" as const}
                   displayMaxHeight={"none" as const}
                   displayMaxWidth={"100%" as const}
                   displayMinHeight={"0" as const}
@@ -250,23 +247,25 @@ function PlasmicShades__RenderFunc(props: {
                   displayWidth={"auto" as const}
                   loading={"lazy" as const}
                   src={{
-                    src: captureDecran20220525A200826PngXUdItNoqUxIjj4,
-                    fullWidth: 1232,
-                    fullHeight: 1172,
+                    src: violaGrappeXMapeintureProcompngNI20KBB,
+                    fullWidth: 1059,
+                    fullHeight: 389,
                     aspectRatio: undefined
                   }}
                 />
               </a>
 
               <h4
+                data-plasmic-name={"h4"}
+                data-plasmic-override={overrides.h4}
                 className={classNames(
                   projectcss.all,
                   projectcss.h4,
                   projectcss.__wab_text,
-                  sty.h4__g0Rcj
+                  sty.h4
                 )}
               >
-                {"by Jean-Michel Plastic"}
+                {"by Guillaume and Laurie"}
               </h4>
 
               <h5
@@ -284,266 +283,277 @@ function PlasmicShades__RenderFunc(props: {
                 }
               </h5>
 
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__lYqe9
-                )}
-              >
-                {"00:00:00:08"}
-              </div>
-
-              {true ? (
-                <div className={classNames(projectcss.all, sty.freeBox__cAHhb)}>
-                  {true ? (
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__hxqZx)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__mI3Bi
-                        )}
-                      >
-                        <React.Fragment>
-                          <span
-                            className={
-                              "plasmic_default__all plasmic_default__span"
-                            }
-                            style={{ fontWeight: 700 }}
-                          >
-                            {"4,230"}
-                          </span>
-                          <React.Fragment>{""}</React.Fragment>
-                          <span
-                            className={
-                              "plasmic_default__all plasmic_default__span"
-                            }
-                            style={{ fontWeight: 700 }}
-                          >
-                            {" "}
-                          </span>
-                          <React.Fragment>{"MATIC"}</React.Fragment>
-                        </React.Fragment>
-                      </div>
-
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__okggQ
-                        )}
-                      >
-                        {"Current highest bid "}
-                      </div>
-                    </div>
-                  ) : null}
-                  {(
-                    hasVariant(globalVariants, "screen", "mobileOnly")
-                      ? true
-                      : true
-                  ) ? (
-                    <p.PlasmicImg
-                      alt={""}
-                      className={classNames(sty.img__tFyfB)}
-                      displayHeight={"auto" as const}
-                      displayMaxHeight={"none" as const}
-                      displayMaxWidth={"38.79%" as const}
-                      displayMinHeight={"0" as const}
-                      displayMinWidth={"0" as const}
-                      displayWidth={"100%" as const}
-                      loading={"lazy" as const}
-                      src={{
-                        src: captureDecran20220525A200826PngXUdItNoqUxIjj4,
-                        fullWidth: 1232,
-                        fullHeight: 1172,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  ) : null}
-                </div>
-              ) : null}
-
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__t4WUn
-                )}
-              >
-                {"(0 USD eq.)"}
-              </div>
-
-              <TextInput
-                data-plasmic-name={"textInput"}
-                data-plasmic-override={overrides.textInput}
-                className={classNames("__wab_instance", sty.textInput)}
-                color={"dark" as const}
-                placeholder={"Your offer" as const}
-              />
-
-              <Reveal
-                className={classNames("__wab_instance", sty.reveal__ov3Iz)}
-                duration={3000 as const}
-                effect={"fade" as const}
-                triggerOnce={true}
-              >
-                <BidButton
-                  data-plasmic-name={"bidButton"}
-                  data-plasmic-override={overrides.bidButton}
-                  className={classNames("__wab_instance", sty.bidButton)}
-                >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__jSnuq
-                    )}
-                  >
-                    {"Bid"}
-                  </div>
-                </BidButton>
-              </Reveal>
-
-              <Reveal
-                className={classNames("__wab_instance", sty.reveal__kxnmc)}
-                effect={"flip" as const}
-                triggerOnce={true}
-              >
-                <div
+              <div className={classNames(projectcss.all, sty.freeBox__r16Ic)}>
+                <a
                   className={classNames(
                     projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__xLhKs
+                    projectcss.a,
+                    sty.link__f0N4M
                   )}
+                  href={`/nft`}
                 >
-                  <React.Fragment>
-                    <span
-                      className={"plasmic_default__all plasmic_default__span"}
-                      style={{ fontWeight: 700 }}
-                    >
-                      {"You're currently the highest bidder "}
-                    </span>
-                    <React.Fragment>{"✅"}</React.Fragment>
-                  </React.Fragment>
-                </div>
-              </Reveal>
+                  <p.PlasmicImg
+                    alt={"" as const}
+                    className={classNames(sty.img__auGdl)}
+                    displayHeight={"180px" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"none" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"100%" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: violaGrappeXMapeintureProcompngNI20KBB,
+                      fullWidth: 1059,
+                      fullHeight: 389,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </a>
 
-              <h4
-                className={classNames(
-                  projectcss.all,
-                  projectcss.h4,
-                  projectcss.__wab_text,
-                  sty.h4__gBk7R
-                )}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#FFFFFF" }}
-                  >
-                    {"Previous bids"}
-                  </span>
-                </React.Fragment>
-              </h4>
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    sty.link__izAlt
+                  )}
+                  href={`/nft`}
+                >
+                  <p.PlasmicImg
+                    alt={"" as const}
+                    className={classNames(sty.img__mpHaX)}
+                    displayHeight={"180px" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"none" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"100%" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: yakamoIByGuillaumeEtLaurieXMaPeinturePro2022V02Jpg5OWUuqkaS,
+                      fullWidth: 3508,
+                      fullHeight: 4961,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </a>
 
-              <a
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.__wab_text,
-                  sty.link__zjgie
-                )}
-                href={
-                  "https://etherscan.io/tx/0x6c74bca6ad4f417ffaa892f0d20b055b2f915a83d5c47a1ed736686aac65e0e8" as const
-                }
-                target={"_blank" as const}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#FFFFFF" }}
-                  >
-                    {
-                      "May-27-2022 04:35:28 PM +UTC                                                                                                   3,600 MATIC"
-                    }
-                  </span>
-                </React.Fragment>
-              </a>
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    sty.link__m5Ozz
+                  )}
+                  href={`/nft`}
+                >
+                  <p.PlasmicImg
+                    alt={"" as const}
+                    className={classNames(sty.img__ytLzI)}
+                    displayHeight={"180px" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"none" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"100%" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: yakamocolorIByGuillaumeEtLaurieXMaPeinturePro2022V02Jpg5SdSeqe4Q,
+                      fullWidth: 3508,
+                      fullHeight: 4961,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </a>
 
-              <a
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.__wab_text,
-                  sty.link__nNrlw
-                )}
-                href={
-                  "https://etherscan.io/tx/0x6c74bca6ad4f417ffaa892f0d20b055b2f915a83d5c47a1ed736686aac65e0e8" as const
-                }
-                target={"_blank" as const}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#FFFFFF" }}
-                  >
-                    {
-                      "May-27-2022 04:35:28 PM +UTC                                                                                                   3,500 MATIC"
-                    }
-                  </span>
-                </React.Fragment>
-              </a>
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    sty.link___9X5Ug
+                  )}
+                  href={`/nft`}
+                >
+                  <p.PlasmicImg
+                    alt={"" as const}
+                    className={classNames(sty.img___5Aheq)}
+                    displayHeight={"180px" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"none" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"100%" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: yakamocolorIByGuillaumeEtLaurieXMaPeinturePro2022V02Jpg5SdSeqe4Q,
+                      fullWidth: 3508,
+                      fullHeight: 4961,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </a>
 
-              <a
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.__wab_text,
-                  sty.link___5T54M
-                )}
-                href={
-                  "https://etherscan.io/tx/0x6c74bca6ad4f417ffaa892f0d20b055b2f915a83d5c47a1ed736686aac65e0e8" as const
-                }
-                target={"_blank" as const}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#FFFFFF" }}
-                  >
-                    {
-                      "May-27-2022 04:35:28 PM +UTC                                                                                                   2,000 MATIC"
-                    }
-                  </span>
-                </React.Fragment>
-              </a>
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    sty.link__oxIsp
+                  )}
+                  href={`/nft`}
+                >
+                  <p.PlasmicImg
+                    alt={"" as const}
+                    className={classNames(sty.img___6ZXcr)}
+                    displayHeight={"180px" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"none" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"100%" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: yakamocolorIByGuillaumeEtLaurieXMaPeinturePro2022V02Jpg5SdSeqe4Q,
+                      fullWidth: 3508,
+                      fullHeight: 4961,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </a>
 
-              <a
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.__wab_text,
-                  sty.link___0S7T9
-                )}
-                href={
-                  "https://etherscan.io/tx/0x6c74bca6ad4f417ffaa892f0d20b055b2f915a83d5c47a1ed736686aac65e0e8" as const
-                }
-                target={"_blank" as const}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#FFFFFF" }}
-                  >
-                    {
-                      "May-27-2022 04:35:28 PM +UTC                                                                                                   1,000 MATIC"
-                    }
-                  </span>
-                </React.Fragment>
-              </a>
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    sty.link__mRs9J
+                  )}
+                  href={`/nft`}
+                >
+                  <p.PlasmicImg
+                    alt={"" as const}
+                    className={classNames(sty.img__s5SgJ)}
+                    displayHeight={"180px" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"none" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"100%" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: yakamocolorIByGuillaumeEtLaurieXMaPeinturePro2022V02Jpg5SdSeqe4Q,
+                      fullWidth: 3508,
+                      fullHeight: 4961,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </a>
+
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    sty.link__nC6Ey
+                  )}
+                  href={`/nft`}
+                >
+                  <p.PlasmicImg
+                    alt={"" as const}
+                    className={classNames(sty.img__bsl8O)}
+                    displayHeight={"180px" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"none" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"100%" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: yakamocolorIByGuillaumeEtLaurieXMaPeinturePro2022V02Jpg5SdSeqe4Q,
+                      fullWidth: 3508,
+                      fullHeight: 4961,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </a>
+
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    sty.link__lGz06
+                  )}
+                  href={`/nft`}
+                >
+                  <p.PlasmicImg
+                    alt={"" as const}
+                    className={classNames(sty.img__ue3A)}
+                    displayHeight={"180px" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"none" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"100%" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: yakamocolorIByGuillaumeEtLaurieXMaPeinturePro2022V02Jpg5SdSeqe4Q,
+                      fullWidth: 3508,
+                      fullHeight: 4961,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </a>
+
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    sty.link__mt5HO
+                  )}
+                  href={`/nft`}
+                >
+                  <p.PlasmicImg
+                    alt={"" as const}
+                    className={classNames(sty.img___7Qgti)}
+                    displayHeight={"180px" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"none" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"100%" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: yakamocolorIByGuillaumeEtLaurieXMaPeinturePro2022V02Jpg5SdSeqe4Q,
+                      fullWidth: 3508,
+                      fullHeight: 4961,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </a>
+
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    sty.link__ezEl3
+                  )}
+                  href={`/nft`}
+                >
+                  <p.PlasmicImg
+                    alt={"" as const}
+                    className={classNames(sty.img__gLvy)}
+                    displayHeight={"180px" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"none" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"100%" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: yakamocolorIByGuillaumeEtLaurieXMaPeinturePro2022V02Jpg5SdSeqe4Q,
+                      fullWidth: 3508,
+                      fullHeight: 4961,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </a>
+              </div>
             </div>
           ) : null}
 
@@ -607,21 +617,12 @@ function PlasmicShades__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "header2",
-    "h1",
-    "h5",
-    "textInput",
-    "textbox",
-    "bidButton",
-    "footer"
-  ],
-  header2: ["header2"],
+  root: ["root", "header2", "connect", "h1", "h4", "h5", "footer"],
+  header2: ["header2", "connect"],
+  connect: ["connect"],
   h1: ["h1"],
+  h4: ["h4"],
   h5: ["h5"],
-  textInput: ["textInput", "textbox"],
-  bidButton: ["bidButton"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -630,10 +631,10 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header2: "div";
+  connect: typeof Button;
   h1: "h1";
+  h4: "h4";
   h5: "h5";
-  textInput: typeof TextInput;
-  bidButton: typeof BidButton;
   footer: "div";
 };
 
@@ -699,10 +700,10 @@ export const PlasmicShades = Object.assign(
   {
     // Helper components rendering sub-elements
     header2: makeNodeComponent("header2"),
+    connect: makeNodeComponent("connect"),
     h1: makeNodeComponent("h1"),
+    h4: makeNodeComponent("h4"),
     h5: makeNodeComponent("h5"),
-    textInput: makeNodeComponent("textInput"),
-    bidButton: makeNodeComponent("bidButton"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicShades

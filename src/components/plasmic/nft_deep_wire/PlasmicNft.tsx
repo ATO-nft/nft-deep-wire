@@ -31,6 +31,7 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import Button from "../../Button"; // plasmic-import: a9hmcfoqSQcWZ/component
 import { Reveal } from "@plasmicpkgs/react-awesome-reveal"; // plasmic-import: R6s1FdhksG/codeComponent
 import BidButton from "../../BidButton"; // plasmic-import: TW0Ca_Ns9A2yO/component
 
@@ -43,7 +44,7 @@ import sty from "./PlasmicNft.module.css"; // plasmic-import: -rZ2FLCY9RqHCq/css
 
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: SpSM8I8Z8pYH6F/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: GDo5sayAt37nOm/icon
-import post1GifDt8Q0T8UNzIa1E from "./images/post1Gif.gif"; // plasmic-import: dt8Q0T8uNZIa1E/picture
+import allegoryOfAgoraphobiajpgRqpfMjqq1 from "./images/allegoryOfAgoraphobiajpg.jpeg"; // plasmic-import: rqpfMjqq1/picture
 
 export type PlasmicNft__VariantMembers = {};
 
@@ -58,8 +59,10 @@ export const PlasmicNft__ArgProps = new Array<ArgPropType>();
 export type PlasmicNft__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<"div">;
+  connect?: p.Flex<typeof Button>;
   h1?: p.Flex<"h1">;
   reveal?: p.Flex<typeof Reveal>;
+  buy?: p.Flex<typeof BidButton>;
   bidButton?: p.Flex<typeof BidButton>;
   footer?: p.Flex<"div">;
 };
@@ -88,7 +91,10 @@ function PlasmicNft__RenderFunc(props: {
     [props.args]
   );
 
-  const $props = args;
+  const $props = {
+    ...args,
+    ...variants
+  };
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsi1EpI54Sd5XS4R()
@@ -160,7 +166,7 @@ function PlasmicNft__RenderFunc(props: {
                     projectcss.__wab_text,
                     sty.link___44YeG
                   )}
-                  href={`/`}
+                  href={`/artist`}
                 >
                   {"Artists"}
                 </a>
@@ -177,17 +183,13 @@ function PlasmicNft__RenderFunc(props: {
                   {"Vision"}
                 </a>
 
-                <a
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__ufg9
-                  )}
-                  href={`/`}
+                <Button
+                  data-plasmic-name={"connect"}
+                  data-plasmic-override={overrides.connect}
+                  className={classNames("__wab_instance", sty.connect)}
                 >
-                  {"Login"}
-                </a>
+                  {"Connect"}
+                </Button>
               </div>
             ) : null}
           </div>
@@ -212,7 +214,7 @@ function PlasmicNft__RenderFunc(props: {
                       className={"plasmic_default__all plasmic_default__span"}
                       style={{ color: "#FFFFFF" }}
                     >
-                      {"NFT #2"}
+                      {"Allegory of Agoraphobia"}
                     </span>
                   </React.Fragment>
                 ) : (
@@ -221,7 +223,7 @@ function PlasmicNft__RenderFunc(props: {
                       className={"plasmic_default__all plasmic_default__span"}
                       style={{ color: "#FFFFFF" }}
                     >
-                      {"NFT #x"}
+                      {"Allegory of Agoraphobia"}
                     </span>
                   </React.Fragment>
                 )}
@@ -230,7 +232,7 @@ function PlasmicNft__RenderFunc(props: {
               <p.PlasmicImg
                 alt={""}
                 className={classNames(sty.img__aLaQh)}
-                displayHeight={"auto" as const}
+                displayHeight={"562px" as const}
                 displayMaxHeight={"none" as const}
                 displayMaxWidth={"100%" as const}
                 displayMinHeight={"0" as const}
@@ -238,9 +240,9 @@ function PlasmicNft__RenderFunc(props: {
                 displayWidth={"auto" as const}
                 loading={"lazy" as const}
                 src={{
-                  src: post1GifDt8Q0T8UNzIa1E,
-                  fullWidth: 1080,
-                  fullHeight: 1080,
+                  src: allegoryOfAgoraphobiajpgRqpfMjqq1,
+                  fullWidth: 6030,
+                  fullHeight: 3930,
                   aspectRatio: undefined
                 }}
               />
@@ -253,79 +255,29 @@ function PlasmicNft__RenderFunc(props: {
                   sty.h4__fMasq
                 )}
               >
-                {"by Āto"}
-              </h4>
-
-              <h4
-                className={classNames(
-                  projectcss.all,
-                  projectcss.h4,
-                  projectcss.__wab_text,
-                  sty.h4__mjuW
-                )}
-              >
                 <React.Fragment>
+                  <React.Fragment>{"by "}</React.Fragment>
                   <span
                     className={"plasmic_default__all plasmic_default__span"}
                     style={{ color: "#FFFFFF" }}
                   >
-                    {"This is an NFT."}
+                    {"Jesus Fernandez Escobar"}
                   </span>
-                  <React.Fragment>{"\n\n"}</React.Fragment>
-                  {
-                    <ul
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.ul,
-                        sty.ul__stYd2
-                      )}
-                    >
-                      <li
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.__wab_text,
-                          sty.li__kmKz
-                        )}
-                      >
-                        <React.Fragment>
-                          <span
-                            className={
-                              "plasmic_default__all plasmic_default__span"
-                            }
-                            style={{ color: "#FFFFFF" }}
-                          >
-                            {
-                              "Lifetime access to the license generator // free access"
-                            }
-                          </span>
-                        </React.Fragment>
-                      </li>
-
-                      <li
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.__wab_text,
-                          sty.li___9CDb3
-                        )}
-                      >
-                        <React.Fragment>
-                          <span
-                            className={
-                              "plasmic_default__all plasmic_default__span"
-                            }
-                            style={{ color: "#FFFFFF" }}
-                          >
-                            {"Gets a discount at the next funding round"}
-                          </span>
-                        </React.Fragment>
-                      </li>
-                    </ul>
-                  }
-                  <React.Fragment>{""}</React.Fragment>
                 </React.Fragment>
               </h4>
+
+              <h5
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h5,
+                  projectcss.__wab_text,
+                  sty.h5__fioDj
+                )}
+              >
+                {
+                  'Allegory of Agoraphobia\n\n• Mixed media on canvas 190x300cm\n• This piece was made to mention the omnipresent theme of coronavirus, COVID-19. It\nsymbolises the psychosis caused by the virus in social relations, no without reason, and\nhow returning to a « normal life », walking down the streets, created an agoraphobia\nfeeling.\n• The different characters were found on the internet after Googling: "How do people protect\nthemselves from the coronavirus?". Among the images found on the internet are crazy\noutfits, such as the famous dinosaur costume, or people completely covered in plastic.\n• Irony is used here to express how the society\'s behaviour drastically changed during this crisis.\nIt is clear that the mass reacts differently to the individual facing these issues.'
+                }
+              </h5>
 
               {true ? (
                 <div className={classNames(projectcss.all, sty.freeBox__r1Dx)}>
@@ -350,9 +302,8 @@ function PlasmicNft__RenderFunc(props: {
                             }
                             style={{ fontWeight: 700 }}
                           >
-                            {"888 "}
+                            {"45 000 EUR"}
                           </span>
-                          <React.Fragment>{"MATIC"}</React.Fragment>
                         </React.Fragment>
                       </div>
 
@@ -364,7 +315,7 @@ function PlasmicNft__RenderFunc(props: {
                           sty.h4__t1Pug
                         )}
                       >
-                        {"( = 507 USD eq. )"}
+                        {"Physical artwork"}
                       </h4>
                     </div>
                   ) : null}
@@ -384,9 +335,9 @@ function PlasmicNft__RenderFunc(props: {
                       displayWidth={"100%" as const}
                       loading={"lazy" as const}
                       src={{
-                        src: post1GifDt8Q0T8UNzIa1E,
-                        fullWidth: 1080,
-                        fullHeight: 1080,
+                        src: allegoryOfAgoraphobiajpgRqpfMjqq1,
+                        fullWidth: 6030,
+                        fullHeight: 3930,
                         aspectRatio: undefined
                       }}
                     />
@@ -399,7 +350,7 @@ function PlasmicNft__RenderFunc(props: {
                   projectcss.all,
                   projectcss.h5,
                   projectcss.__wab_text,
-                  sty.h5__bkxX
+                  sty.h5__pRu1Y
                 )}
               >
                 <React.Fragment>
@@ -407,14 +358,14 @@ function PlasmicNft__RenderFunc(props: {
                     className={"plasmic_default__all plasmic_default__span"}
                     style={{ color: "#8C1C84", fontWeight: 700 }}
                   >
-                    {"389"}
+                    {"1"}
                   </span>
                   <React.Fragment>{""}</React.Fragment>
                   <span
                     className={"plasmic_default__all plasmic_default__span"}
                     style={{ color: "#FBF0F0" }}
                   >
-                    {" / 3000 e"}
+                    {" / 1 e"}
                   </span>
                   <React.Fragment>{""}</React.Fragment>
                   <span
@@ -435,9 +386,9 @@ function PlasmicNft__RenderFunc(props: {
                 triggerOnce={true}
               >
                 <BidButton
-                  data-plasmic-name={"bidButton"}
-                  data-plasmic-override={overrides.bidButton}
-                  className={classNames("__wab_instance", sty.bidButton)}
+                  data-plasmic-name={"buy"}
+                  data-plasmic-override={overrides.buy}
+                  className={classNames("__wab_instance", sty.buy)}
                 >
                   <div
                     className={classNames(
@@ -449,133 +400,129 @@ function PlasmicNft__RenderFunc(props: {
                     {"Buy"}
                   </div>
                 </BidButton>
+
+                <div
+                  className={classNames(projectcss.all, sty.freeBox__aYzyU)}
+                />
+
+                {true ? (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__iOnM)}
+                  >
+                    {(
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? true
+                        : true
+                    ) ? (
+                      <p.PlasmicImg
+                        alt={""}
+                        className={classNames(sty.img___0F21Y)}
+                        displayHeight={"auto" as const}
+                        displayMaxHeight={"none" as const}
+                        displayMaxWidth={"38.79%" as const}
+                        displayMinHeight={"0" as const}
+                        displayMinWidth={"0" as const}
+                        displayWidth={"100%" as const}
+                        loading={"lazy" as const}
+                        src={{
+                          src: allegoryOfAgoraphobiajpgRqpfMjqq1,
+                          fullWidth: 6030,
+                          fullHeight: 3930,
+                          aspectRatio: undefined
+                        }}
+                      />
+                    ) : null}
+                    {true ? (
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__gd2D9
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__tg7Qq
+                          )}
+                        >
+                          <React.Fragment>
+                            <span
+                              className={
+                                "plasmic_default__all plasmic_default__span"
+                              }
+                              style={{ fontWeight: 700 }}
+                            >
+                              {"200 EUR"}
+                            </span>
+                          </React.Fragment>
+                        </div>
+
+                        <h4
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.h4,
+                            projectcss.__wab_text,
+                            sty.h4__rAqsv
+                          )}
+                        >
+                          {"Digital"}
+                        </h4>
+                      </div>
+                    ) : null}
+                  </div>
+                ) : null}
               </Reveal>
-
-              <h5
-                className={classNames(
-                  projectcss.all,
-                  projectcss.h5,
-                  projectcss.__wab_text,
-                  sty.h5__fioDj
-                )}
-              >
-                <React.Fragment>
-                  <React.Fragment>{""}</React.Fragment>
-                  {
-                    <ul
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.ul,
-                        sty.ul___1E0Xi
-                      )}
-                    >
-                      <li
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.__wab_text,
-                          sty.li__ydXzZ
-                        )}
-                      >
-                        {"troll box in a sticky footer"}
-                      </li>
-
-                      <li
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.__wab_text,
-                          sty.li__vjqFa
-                        )}
-                      >
-                        {"sticky menu (shows if you’re balance allows a bid)"}
-                      </li>
-
-                      <li
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.__wab_text,
-                          sty.li__neFk0
-                        )}
-                      >
-                        {"Current highest bid blinks when order broadcasted "}
-                      </li>
-
-                      <li
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.__wab_text,
-                          sty.li__t1WLx
-                        )}
-                      >
-                        {"Stop blinking when on-chain"}
-                      </li>
-
-                      <li
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.__wab_text,
-                          sty.li__mrlcB
-                        )}
-                      >
-                        {"something happens when you’re bid gets on-chain"}
-                      </li>
-
-                      <li
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.li,
-                          projectcss.__wab_text,
-                          sty.li__l8N60
-                        )}
-                      >
-                        {"mini image says “view HD file” "}
-                      </li>
-                    </ul>
-                  }
-                  <React.Fragment>{""}</React.Fragment>
-                </React.Fragment>
-              </h5>
-
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text___3Sa4O
-                )}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#F7F6F6" }}
-                  >
-                    {
-                      "Hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I. Hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I."
-                    }
-                  </span>
-                  <React.Fragment>{"\n"}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#F7F6F6" }}
-                  >
-                    {""}
-                  </span>
-                  <React.Fragment>{"\n"}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#F7F6F6" }}
-                  >
-                    {
-                      "hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I, hello I."
-                    }
-                  </span>
-                </React.Fragment>
-              </div>
             </div>
           ) : null}
+
+          <h5
+            className={classNames(
+              projectcss.all,
+              projectcss.h5,
+              projectcss.__wab_text,
+              sty.h5__bkxX
+            )}
+          >
+            <React.Fragment>
+              <span
+                className={"plasmic_default__all plasmic_default__span"}
+                style={{ color: "#8C1C84", fontWeight: 700 }}
+              >
+                {"389"}
+              </span>
+              <React.Fragment>{""}</React.Fragment>
+              <span
+                className={"plasmic_default__all plasmic_default__span"}
+                style={{ color: "#FBF0F0" }}
+              >
+                {" / 3000 e"}
+              </span>
+              <React.Fragment>{""}</React.Fragment>
+              <span
+                className={"plasmic_default__all plasmic_default__span"}
+                style={{ color: "#FFFFFF" }}
+              >
+                {"dition"}
+              </span>
+            </React.Fragment>
+          </h5>
+
+          <BidButton
+            data-plasmic-name={"bidButton"}
+            data-plasmic-override={overrides.bidButton}
+            className={classNames("__wab_instance", sty.bidButton)}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__jZ8
+              )}
+            >
+              {"Buy"}
+            </div>
+          </BidButton>
 
           <div
             data-plasmic-name={"footer"}
@@ -637,10 +584,21 @@ function PlasmicNft__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "h1", "reveal", "bidButton", "footer"],
-  header: ["header"],
+  root: [
+    "root",
+    "header",
+    "connect",
+    "h1",
+    "reveal",
+    "buy",
+    "bidButton",
+    "footer"
+  ],
+  header: ["header", "connect"],
+  connect: ["connect"],
   h1: ["h1"],
-  reveal: ["reveal", "bidButton"],
+  reveal: ["reveal", "buy"],
+  buy: ["buy"],
   bidButton: ["bidButton"],
   footer: ["footer"]
 } as const;
@@ -650,8 +608,10 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: "div";
+  connect: typeof Button;
   h1: "h1";
   reveal: typeof Reveal;
+  buy: typeof BidButton;
   bidButton: typeof BidButton;
   footer: "div";
 };
@@ -718,8 +678,10 @@ export const PlasmicNft = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
+    connect: makeNodeComponent("connect"),
     h1: makeNodeComponent("h1"),
     reveal: makeNodeComponent("reveal"),
+    buy: makeNodeComponent("buy"),
     bidButton: makeNodeComponent("bidButton"),
     footer: makeNodeComponent("footer"),
 

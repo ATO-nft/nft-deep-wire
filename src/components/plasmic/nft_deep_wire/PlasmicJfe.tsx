@@ -31,7 +31,7 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import BidButton from "../../BidButton"; // plasmic-import: TW0Ca_Ns9A2yO/component
+import Button from "../../Button"; // plasmic-import: a9hmcfoqSQcWZ/component
 
 import { useScreenVariants as useScreenVariantsi1EpI54Sd5XS4R } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: i1epI54SD5xS4r/globalVariant
 
@@ -42,7 +42,9 @@ import sty from "./PlasmicJfe.module.css"; // plasmic-import: FxeHyubbo0Q8o/css
 
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: SpSM8I8Z8pYH6F/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: GDo5sayAt37nOm/icon
-import captureDecran20220525A200826PngXUdItNoqUxIjj4 from "./images/captureDecran20220525A200826Png.png"; // plasmic-import: xUdITNoqUxIjj4/picture
+import allegoryOfAgoraphobiajpgRqpfMjqq1 from "./images/allegoryOfAgoraphobiajpg.jpeg"; // plasmic-import: rqpfMjqq1/picture
+import countingTheDaysjpgSKtYnwe46 from "./images/countingTheDaysjpg.jpeg"; // plasmic-import: sKTYnwe46/picture
+import underTheWatchfulEyejpg6A39Mu0MO from "./images/underTheWatchfulEyejpg.jpeg"; // plasmic-import: 6a39mu0mO/picture
 
 export type PlasmicJfe__VariantMembers = {};
 
@@ -57,8 +59,10 @@ export const PlasmicJfe__ArgProps = new Array<ArgPropType>();
 export type PlasmicJfe__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<"div">;
+  connect?: p.Flex<typeof Button>;
   h1?: p.Flex<"h1">;
-  bidButton?: p.Flex<typeof BidButton>;
+  h4?: p.Flex<"h4">;
+  h5?: p.Flex<"h5">;
   footer?: p.Flex<"div">;
 };
 
@@ -86,7 +90,10 @@ function PlasmicJfe__RenderFunc(props: {
     [props.args]
   );
 
-  const $props = args;
+  const $props = {
+    ...args,
+    ...variants
+  };
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsi1EpI54Sd5XS4R()
@@ -158,7 +165,7 @@ function PlasmicJfe__RenderFunc(props: {
                     projectcss.__wab_text,
                     sty.link__zzKHv
                   )}
-                  href={`/`}
+                  href={`/artist`}
                 >
                   {"Artists"}
                 </a>
@@ -175,17 +182,13 @@ function PlasmicJfe__RenderFunc(props: {
                   {"Vision"}
                 </a>
 
-                <a
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link___0H4G2
-                  )}
-                  href={`/`}
+                <Button
+                  data-plasmic-name={"connect"}
+                  data-plasmic-override={overrides.connect}
+                  className={classNames("__wab_instance", sty.connect)}
                 >
-                  {"Login"}
-                </a>
+                  {"Connect"}
+                </Button>
               </div>
             ) : null}
           </div>
@@ -219,7 +222,7 @@ function PlasmicJfe__RenderFunc(props: {
                       className={"plasmic_default__all plasmic_default__span"}
                       style={{ color: "#FFFFFF" }}
                     >
-                      {"Jesus Fernandez Escobar"}
+                      {"Artworks"}
                     </span>
                   </React.Fragment>
                 )}
@@ -244,20 +247,22 @@ function PlasmicJfe__RenderFunc(props: {
                   displayWidth={"auto" as const}
                   loading={"lazy" as const}
                   src={{
-                    src: captureDecran20220525A200826PngXUdItNoqUxIjj4,
-                    fullWidth: 1232,
-                    fullHeight: 1172,
+                    src: allegoryOfAgoraphobiajpgRqpfMjqq1,
+                    fullWidth: 6030,
+                    fullHeight: 3930,
                     aspectRatio: undefined
                   }}
                 />
               </a>
 
               <h4
+                data-plasmic-name={"h4"}
+                data-plasmic-override={overrides.h4}
                 className={classNames(
                   projectcss.all,
                   projectcss.h4,
                   projectcss.__wab_text,
-                  sty.h4__mo9G
+                  sty.h4
                 )}
               >
                 <React.Fragment>
@@ -272,11 +277,13 @@ function PlasmicJfe__RenderFunc(props: {
               </h4>
 
               <h5
+                data-plasmic-name={"h5"}
+                data-plasmic-override={overrides.h5}
                 className={classNames(
                   projectcss.all,
                   projectcss.h5,
                   projectcss.__wab_text,
-                  sty.h5__nlspn
+                  sty.h5
                 )}
               >
                 {
@@ -284,127 +291,277 @@ function PlasmicJfe__RenderFunc(props: {
                 }
               </h5>
 
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__tOis6
-                )}
-              >
-                {"00:00:00:08"}
-              </div>
-
-              {true ? (
-                <div className={classNames(projectcss.all, sty.freeBox__fBdqA)}>
-                  {true ? (
-                    <div
-                      className={classNames(projectcss.all, sty.freeBox__eFRfQ)}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___9FsVs
-                        )}
-                      >
-                        <React.Fragment>
-                          <span
-                            className={
-                              "plasmic_default__all plasmic_default__span"
-                            }
-                            style={{ fontWeight: 700 }}
-                          >
-                            {"888 "}
-                          </span>
-                          <React.Fragment>{"MATIC"}</React.Fragment>
-                        </React.Fragment>
-                      </div>
-
-                      <h4
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.h4,
-                          projectcss.__wab_text,
-                          sty.h4__xuRgN
-                        )}
-                      >
-                        {"( = 507 USD eq. )"}
-                      </h4>
-                    </div>
-                  ) : null}
-                  {(
-                    hasVariant(globalVariants, "screen", "mobileOnly")
-                      ? true
-                      : true
-                  ) ? (
-                    <p.PlasmicImg
-                      alt={""}
-                      className={classNames(sty.img__isT8D)}
-                      displayHeight={"auto" as const}
-                      displayMaxHeight={"none" as const}
-                      displayMaxWidth={"38.79%" as const}
-                      displayMinHeight={"0" as const}
-                      displayMinWidth={"0" as const}
-                      displayWidth={"100%" as const}
-                      loading={"lazy" as const}
-                      src={{
-                        src: captureDecran20220525A200826PngXUdItNoqUxIjj4,
-                        fullWidth: 1232,
-                        fullHeight: 1172,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  ) : null}
-                </div>
-              ) : null}
-
-              <h5
-                className={classNames(
-                  projectcss.all,
-                  projectcss.h5,
-                  projectcss.__wab_text,
-                  sty.h5__nCim3
-                )}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#8C1C84", fontWeight: 700 }}
-                  >
-                    {"389"}
-                  </span>
-                  <React.Fragment>{""}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#FBF0F0" }}
-                  >
-                    {" / 3000 e"}
-                  </span>
-                  <React.Fragment>{""}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#FFFFFF" }}
-                  >
-                    {"dition"}
-                  </span>
-                </React.Fragment>
-              </h5>
-
-              <BidButton
-                data-plasmic-name={"bidButton"}
-                data-plasmic-override={overrides.bidButton}
-                className={classNames("__wab_instance", sty.bidButton)}
-              >
-                <div
+              <div className={classNames(projectcss.all, sty.freeBox__erWwe)}>
+                <a
                   className={classNames(
                     projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__nTg9S
+                    projectcss.a,
+                    sty.link__de7Ke
                   )}
+                  href={`/nft`}
                 >
-                  {"Buy"}
-                </div>
-              </BidButton>
+                  <p.PlasmicImg
+                    alt={"" as const}
+                    className={classNames(sty.img__bVx7G)}
+                    displayHeight={"180px" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"none" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"100%" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: allegoryOfAgoraphobiajpgRqpfMjqq1,
+                      fullWidth: 6030,
+                      fullHeight: 3930,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </a>
+
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    sty.link__mkv8O
+                  )}
+                  href={`/nft`}
+                >
+                  <p.PlasmicImg
+                    alt={"" as const}
+                    className={classNames(sty.img__ikLjw)}
+                    displayHeight={"180px" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"none" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"100%" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: countingTheDaysjpgSKtYnwe46,
+                      fullWidth: 3641,
+                      fullHeight: 5446,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </a>
+
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    sty.link__mpdVj
+                  )}
+                  href={`/nft`}
+                >
+                  <p.PlasmicImg
+                    alt={"" as const}
+                    className={classNames(sty.img__d0Gzt)}
+                    displayHeight={"180px" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"none" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"100%" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: underTheWatchfulEyejpg6A39Mu0MO,
+                      fullWidth: 5080,
+                      fullHeight: 3798,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </a>
+
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    sty.link__neO0K
+                  )}
+                  href={`/nft`}
+                >
+                  <p.PlasmicImg
+                    alt={"" as const}
+                    className={classNames(sty.img__wGhu2)}
+                    displayHeight={"180px" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"none" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"100%" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: underTheWatchfulEyejpg6A39Mu0MO,
+                      fullWidth: 5080,
+                      fullHeight: 3798,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </a>
+
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    sty.link__gjIe
+                  )}
+                  href={`/nft`}
+                >
+                  <p.PlasmicImg
+                    alt={"" as const}
+                    className={classNames(sty.img__qoBZe)}
+                    displayHeight={"180px" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"none" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"100%" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: underTheWatchfulEyejpg6A39Mu0MO,
+                      fullWidth: 5080,
+                      fullHeight: 3798,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </a>
+
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    sty.link__wF3Xv
+                  )}
+                  href={`/nft`}
+                >
+                  <p.PlasmicImg
+                    alt={"" as const}
+                    className={classNames(sty.img__dT548)}
+                    displayHeight={"180px" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"none" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"100%" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: underTheWatchfulEyejpg6A39Mu0MO,
+                      fullWidth: 5080,
+                      fullHeight: 3798,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </a>
+
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    sty.link__xJteJ
+                  )}
+                  href={`/nft`}
+                >
+                  <p.PlasmicImg
+                    alt={"" as const}
+                    className={classNames(sty.img__xqXpu)}
+                    displayHeight={"180px" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"none" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"100%" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: underTheWatchfulEyejpg6A39Mu0MO,
+                      fullWidth: 5080,
+                      fullHeight: 3798,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </a>
+
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    sty.link___3Vne6
+                  )}
+                  href={`/nft`}
+                >
+                  <p.PlasmicImg
+                    alt={"" as const}
+                    className={classNames(sty.img__iVCgr)}
+                    displayHeight={"180px" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"none" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"100%" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: underTheWatchfulEyejpg6A39Mu0MO,
+                      fullWidth: 5080,
+                      fullHeight: 3798,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </a>
+
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    sty.link__zCk3Y
+                  )}
+                  href={`/nft`}
+                >
+                  <p.PlasmicImg
+                    alt={"" as const}
+                    className={classNames(sty.img__cAea6)}
+                    displayHeight={"180px" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"none" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"100%" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: underTheWatchfulEyejpg6A39Mu0MO,
+                      fullWidth: 5080,
+                      fullHeight: 3798,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </a>
+
+                <a
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.a,
+                    sty.link__mVleu
+                  )}
+                  href={`/nft`}
+                >
+                  <p.PlasmicImg
+                    alt={"" as const}
+                    className={classNames(sty.img__kOZe)}
+                    displayHeight={"180px" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"none" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"100%" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: underTheWatchfulEyejpg6A39Mu0MO,
+                      fullWidth: 5080,
+                      fullHeight: 3798,
+                      aspectRatio: undefined
+                    }}
+                  />
+                </a>
+              </div>
             </div>
           ) : null}
 
@@ -468,10 +625,12 @@ function PlasmicJfe__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "h1", "bidButton", "footer"],
-  header: ["header"],
+  root: ["root", "header", "connect", "h1", "h4", "h5", "footer"],
+  header: ["header", "connect"],
+  connect: ["connect"],
   h1: ["h1"],
-  bidButton: ["bidButton"],
+  h4: ["h4"],
+  h5: ["h5"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -480,8 +639,10 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: "div";
+  connect: typeof Button;
   h1: "h1";
-  bidButton: typeof BidButton;
+  h4: "h4";
+  h5: "h5";
   footer: "div";
 };
 
@@ -547,8 +708,10 @@ export const PlasmicJfe = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
+    connect: makeNodeComponent("connect"),
     h1: makeNodeComponent("h1"),
-    bidButton: makeNodeComponent("bidButton"),
+    h4: makeNodeComponent("h4"),
+    h5: makeNodeComponent("h5"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicJfe
