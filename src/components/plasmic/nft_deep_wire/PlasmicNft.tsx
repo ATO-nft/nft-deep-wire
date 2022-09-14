@@ -154,7 +154,7 @@ function PlasmicNft__RenderFunc(props: {
                     projectcss.__wab_text,
                     sty.link__b8QKu
                   )}
-                  href={`/`}
+                  href={`/about`}
                 >
                   {"About"}
                 </a>
@@ -178,7 +178,7 @@ function PlasmicNft__RenderFunc(props: {
                     projectcss.__wab_text,
                     sty.link__mQqLk
                   )}
-                  href={`/`}
+                  href={`/vision`}
                 >
                   {"Vision"}
                 </a>

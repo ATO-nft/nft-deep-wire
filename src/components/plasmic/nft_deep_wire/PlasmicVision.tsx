@@ -149,7 +149,7 @@ function PlasmicVision__RenderFunc(props: {
                     projectcss.__wab_text,
                     sty.link__chFiw
                   )}
-                  href={`/`}
+                  href={`/about`}
                 >
                   {"About"}
                 </a>
@@ -173,7 +173,7 @@ function PlasmicVision__RenderFunc(props: {
                     projectcss.__wab_text,
                     sty.link__lx0I
                   )}
-                  href={`/`}
+                  href={`/vision`}
                 >
                   {"Vision"}
                 </a>

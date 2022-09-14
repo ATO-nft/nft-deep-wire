@@ -153,7 +153,7 @@ function PlasmicJfe__RenderFunc(props: {
                     projectcss.__wab_text,
                     sty.link__vnZfn
                   )}
-                  href={`/`}
+                  href={`/about`}
                 >
                   {"About"}
                 </a>
@@ -177,7 +177,7 @@ function PlasmicJfe__RenderFunc(props: {
                     projectcss.__wab_text,
                     sty.link__ayMbu
                   )}
-                  href={`/`}
+                  href={`/vision`}
                 >
                   {"Vision"}
                 </a>
