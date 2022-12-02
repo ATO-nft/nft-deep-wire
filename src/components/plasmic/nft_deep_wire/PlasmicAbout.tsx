@@ -389,7 +389,15 @@ export const PlasmicAbout = Object.assign(
 
     // Metadata about props expected for PlasmicAbout
     internalVariantProps: PlasmicAbout__VariantProps,
-    internalArgProps: PlasmicAbout__ArgProps
+    internalArgProps: PlasmicAbout__ArgProps,
+
+    // Page metadata
+    pageMetadata: {
+      title: "",
+      description: "",
+      ogImageSrc: "",
+      canonical: ""
+    }
   }
 );
 

@@ -32,6 +32,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Button from "../../Button"; // plasmic-import: a9hmcfoqSQcWZ/component
+import { Reveal } from "@plasmicpkgs/react-awesome-reveal"; // plasmic-import: R6s1FdhksG/codeComponent
 
 import { useScreenVariants as useScreenVariantsi1EpI54Sd5XS4R } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: i1epI54SD5xS4r/globalVariant
 
@@ -303,23 +304,30 @@ function PlasmicHomepage__RenderFunc(props: {
                   )}
                   href={`/jfe`}
                 >
-                  <p.PlasmicImg
-                    alt={"" as const}
-                    className={classNames(sty.img__rykaG)}
-                    displayHeight={"180px" as const}
-                    displayMaxHeight={"none" as const}
-                    displayMaxWidth={"none" as const}
-                    displayMinHeight={"0" as const}
-                    displayMinWidth={"0" as const}
-                    displayWidth={"100%" as const}
-                    loading={"lazy" as const}
-                    src={{
-                      src: allegoryOfAgoraphobiajpgRqpfMjqq1,
-                      fullWidth: 6030,
-                      fullHeight: 3930,
-                      aspectRatio: undefined
-                    }}
-                  />
+                  <Reveal
+                    className={classNames("__wab_instance", sty.reveal__fz6Fc)}
+                    delay={1000 as const}
+                    duration={2000 as const}
+                    triggerOnce={true}
+                  >
+                    <p.PlasmicImg
+                      alt={"" as const}
+                      className={classNames(sty.img__rykaG)}
+                      displayHeight={"180px" as const}
+                      displayMaxHeight={"none" as const}
+                      displayMaxWidth={"none" as const}
+                      displayMinHeight={"0" as const}
+                      displayMinWidth={"0" as const}
+                      displayWidth={"100%" as const}
+                      loading={"lazy" as const}
+                      src={{
+                        src: allegoryOfAgoraphobiajpgRqpfMjqq1,
+                        fullWidth: 6030,
+                        fullHeight: 3930,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </Reveal>
                 </a>
 
                 <a
@@ -330,23 +338,30 @@ function PlasmicHomepage__RenderFunc(props: {
                   )}
                   href={`/shades`}
                 >
-                  <p.PlasmicImg
-                    alt={"" as const}
-                    className={classNames(sty.img__lmTmf)}
-                    displayHeight={"180px" as const}
-                    displayMaxHeight={"none" as const}
-                    displayMaxWidth={"none" as const}
-                    displayMinHeight={"0" as const}
-                    displayMinWidth={"0" as const}
-                    displayWidth={"100%" as const}
-                    loading={"lazy" as const}
-                    src={{
-                      src: violaGrappeXMapeintureProcompngNI20KBB,
-                      fullWidth: 1059,
-                      fullHeight: 389,
-                      aspectRatio: undefined
-                    }}
-                  />
+                  <Reveal
+                    className={classNames("__wab_instance", sty.reveal__uizk3)}
+                    delay={1500 as const}
+                    duration={2000 as const}
+                    triggerOnce={true}
+                  >
+                    <p.PlasmicImg
+                      alt={"" as const}
+                      className={classNames(sty.img__lmTmf)}
+                      displayHeight={"180px" as const}
+                      displayMaxHeight={"none" as const}
+                      displayMaxWidth={"none" as const}
+                      displayMinHeight={"0" as const}
+                      displayMinWidth={"0" as const}
+                      displayWidth={"100%" as const}
+                      loading={"lazy" as const}
+                      src={{
+                        src: violaGrappeXMapeintureProcompngNI20KBB,
+                        fullWidth: 1059,
+                        fullHeight: 389,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </Reveal>
                 </a>
               </div>
             </div>
@@ -595,7 +610,15 @@ export const PlasmicHomepage = Object.assign(
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
-    internalArgProps: PlasmicHomepage__ArgProps
+    internalArgProps: PlasmicHomepage__ArgProps,
+
+    // Page metadata
+    pageMetadata: {
+      title: "NFT Deep Wire",
+      description: "Your NFT Marketplace.",
+      ogImageSrc: "",
+      canonical: ""
+    }
   }
 );
 

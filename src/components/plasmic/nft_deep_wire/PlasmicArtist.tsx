@@ -823,7 +823,15 @@ export const PlasmicArtist = Object.assign(
 
     // Metadata about props expected for PlasmicArtist
     internalVariantProps: PlasmicArtist__VariantProps,
-    internalArgProps: PlasmicArtist__ArgProps
+    internalArgProps: PlasmicArtist__ArgProps,
+
+    // Page metadata
+    pageMetadata: {
+      title: "",
+      description: "",
+      ogImageSrc: "",
+      canonical: ""
+    }
   }
 );
 

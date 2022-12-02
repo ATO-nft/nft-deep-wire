@@ -1,11 +1,11 @@
 .root {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   position: relative;
-  width: auto;
-  height: auto;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
+  width: 100%;
+  min-width: 0;
 }
 .header {
   display: flex;
@@ -13,13 +13,12 @@
   flex-direction: row;
   align-items: stretch;
   justify-content: flex-start;
+  background: var(--token-9qSNJQr-9);
   width: 100%;
-  height: auto;
-  max-width: 100%;
   min-width: 0;
   padding: 8px;
 }
-.freeBox__uadOa {
+.freeBox__mTDr {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -31,14 +30,14 @@
   min-width: 0;
   padding: 8px;
 }
-.link___5Rz {
+.link__n94NC {
   width: auto;
   max-width: 800px;
   color: var(--token-NxmCtU8ug);
   font-size: 32px;
   padding-left: 0px;
 }
-.freeBox__pnk9O {
+.freeBox__mm6Vt {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -51,37 +50,51 @@
   padding: 8px;
 }
 @media (min-width: 0px) and (max-width: 768px) {
-  .freeBox__pnk9O {
+  .freeBox__mm6Vt {
     display: flex;
     flex-direction: column;
     flex-column-gap: 0px;
   }
 }
-.link__uGiie {
+.link__bArC {
   width: auto;
   max-width: 800px;
   color: var(--token-NxmCtU8ug);
   font-size: 24px;
   padding-left: 30px;
 }
-.link__rKtaY {
+.link__gYxzE {
   width: auto;
   max-width: 800px;
   color: var(--token-NxmCtU8ug);
   font-size: 24px;
   padding-left: 30px;
 }
-.link__q8Obx {
+.link___7Dib8 {
   width: auto;
   max-width: 800px;
   color: var(--token-NxmCtU8ug);
   font-size: 24px;
   padding-left: 30px;
 }
-.link___5W1WL {
-  width: auto;
-  max-width: 800px;
-  color: var(--token-TbPH_7Dh2R9LOD);
-  font-size: 24px;
-  padding-left: 30px;
+.connect:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  height: 34px;
+  margin-left: 30px;
+  width: 77px;
+  margin-right: 14px;
+  flex-shrink: 0;
+}
+.svg__aXdZ {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg__keJem {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
 }

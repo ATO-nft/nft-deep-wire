@@ -31,6 +31,7 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import Button from "../../Button"; // plasmic-import: a9hmcfoqSQcWZ/component
 
 import { useScreenVariants as useScreenVariantsi1EpI54Sd5XS4R } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: i1epI54SD5xS4r/globalVariant
 
@@ -38,6 +39,9 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_nft_deep_wire.module.css"; // plasmic-import: j5CDP9MgqbRapi7mxENKQG/projectcss
 import sty from "./PlasmicHeader.module.css"; // plasmic-import: gr_eq2hlK0/css
+
+import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: SpSM8I8Z8pYH6F/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: GDo5sayAt37nOm/icon
 
 export type PlasmicHeader__VariantMembers = {};
 
@@ -52,6 +56,7 @@ export const PlasmicHeader__ArgProps = new Array<ArgPropType>();
 export type PlasmicHeader__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<"div">;
+  connect?: p.Flex<typeof Button>;
 };
 
 export interface DefaultHeaderProps {
@@ -107,13 +112,13 @@ function PlasmicHeader__RenderFunc(props: {
         data-plasmic-override={overrides.header}
         className={classNames(projectcss.all, sty.header)}
       >
-        <div className={classNames(projectcss.all, sty.freeBox__uadOa)}>
+        <div className={classNames(projectcss.all, sty.freeBox__mTDr)}>
           <a
             className={classNames(
               projectcss.all,
               projectcss.a,
               projectcss.__wab_text,
-              sty.link___5Rz
+              sty.link__n94NC
             )}
             href={`/`}
           >
@@ -129,15 +134,15 @@ function PlasmicHeader__RenderFunc(props: {
         </div>
 
         {true ? (
-          <div className={classNames(projectcss.all, sty.freeBox__pnk9O)}>
+          <div className={classNames(projectcss.all, sty.freeBox__mm6Vt)}>
             <a
               className={classNames(
                 projectcss.all,
                 projectcss.a,
                 projectcss.__wab_text,
-                sty.link__uGiie
+                sty.link__bArC
               )}
-              href={`/`}
+              href={`/about`}
             >
               {"About"}
             </a>
@@ -147,9 +152,9 @@ function PlasmicHeader__RenderFunc(props: {
                 projectcss.all,
                 projectcss.a,
                 projectcss.__wab_text,
-                sty.link__rKtaY
+                sty.link__gYxzE
               )}
-              href={`/`}
+              href={`/artist`}
             >
               {"Artists"}
             </a>
@@ -159,24 +164,20 @@ function PlasmicHeader__RenderFunc(props: {
                 projectcss.all,
                 projectcss.a,
                 projectcss.__wab_text,
-                sty.link__q8Obx
+                sty.link___7Dib8
               )}
-              href={`/`}
+              href={`/vision`}
             >
               {"Vision"}
             </a>
 
-            <a
-              className={classNames(
-                projectcss.all,
-                projectcss.a,
-                projectcss.__wab_text,
-                sty.link___5W1WL
-              )}
-              href={`/`}
+            <Button
+              data-plasmic-name={"connect"}
+              data-plasmic-override={overrides.connect}
+              className={classNames("__wab_instance", sty.connect)}
             >
-              {"Login"}
-            </a>
+              {"Connect"}
+            </Button>
           </div>
         ) : null}
       </div>
@@ -185,8 +186,9 @@ function PlasmicHeader__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header"],
-  header: ["header"]
+  root: ["root", "header", "connect"],
+  header: ["header", "connect"],
+  connect: ["connect"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -194,6 +196,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: "div";
+  connect: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -258,6 +261,7 @@ export const PlasmicHeader = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
+    connect: makeNodeComponent("connect"),
 
     // Metadata about props expected for PlasmicHeader
     internalVariantProps: PlasmicHeader__VariantProps,

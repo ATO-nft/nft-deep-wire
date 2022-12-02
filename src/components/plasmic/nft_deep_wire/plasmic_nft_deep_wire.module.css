@@ -11,10 +11,12 @@
   --plasmic-token-unnamed-style-token: var(--token-BYH6Lr4PW);
   --token-9lvhKHiNf: 10px;
   --plasmic-token-item-in-grid: var(--token-9lvhKHiNf);
+  --token-9qSNJQr-9: #000000;
+  --plasmic-token-black: var(--token-9qSNJQr-9);
 }
 
 .plasmic_default_styles {
-  --mixin-fol0Wp_kTDnmht_font-family: "Inter";
+  --mixin-fol0Wp_kTDnmht_font-family: "Inter", sans-serif;
   --mixin-fol0Wp_kTDnmht_font-size: 16px;
   --mixin-fol0Wp_kTDnmht_font-weight: 400;
   --mixin-fol0Wp_kTDnmht_font-style: normal;
@@ -33,7 +35,7 @@
   --mixin-jfpLMasAOAdIKl_line-height: 1;
   --mixin-jfpLMasAOAdIKl_letter-spacing: -4px;
   --mixin-jfpLMasAOAdIKl_white-space: pre-wrap;
-  --mixin-yYrZG5bkUr6C9q_font-family: "Inter";
+  --mixin-yYrZG5bkUr6C9q_font-family: "Inter", sans-serif;
   --mixin-yYrZG5bkUr6C9q_color: #000000;
   --mixin-yYrZG5bkUr6C9q_font-size: 48px;
   --mixin-yYrZG5bkUr6C9q_font-weight: 700;
@@ -42,14 +44,14 @@
   --mixin-yYrZG5bkUr6C9q_white-space: pre-wrap;
   --mixin-h-IPuGaIXPq5kn_color: #0070f3;
   --mixin-h-IPuGaIXPq5kn_white-space: pre-wrap;
-  --mixin-MhbAfUvV9aaugt_font-family: "Inter";
+  --mixin-MhbAfUvV9aaugt_font-family: "Inter", sans-serif;
   --mixin-MhbAfUvV9aaugt_color: #000000;
   --mixin-MhbAfUvV9aaugt_font-size: 32px;
   --mixin-MhbAfUvV9aaugt_font-weight: 600;
   --mixin-MhbAfUvV9aaugt_letter-spacing: -0.8px;
   --mixin-MhbAfUvV9aaugt_line-height: 1.2;
   --mixin-MhbAfUvV9aaugt_white-space: pre-wrap;
-  --mixin-6b6fHZMTHzCfsg_font-family: "Inter";
+  --mixin-6b6fHZMTHzCfsg_font-family: "Inter", sans-serif;
   --mixin-6b6fHZMTHzCfsg_color: #000000;
   --mixin-6b6fHZMTHzCfsg_font-size: 24px;
   --mixin-6b6fHZMTHzCfsg_font-weight: 600;
@@ -126,14 +128,14 @@
   --mixin-QKMWNaTGxZVzwp_position: relative;
   --mixin-QKMWNaTGxZVzwp_list-style-type: decimal;
   --mixin-QKMWNaTGxZVzwp_white-space: pre-wrap;
-  --mixin-ZOMCk-c6Lqjkzz_font-family: "Inter";
+  --mixin-ZOMCk-c6Lqjkzz_font-family: "Inter", sans-serif;
   --mixin-ZOMCk-c6Lqjkzz_color: #000000;
   --mixin-ZOMCk-c6Lqjkzz_font-size: 20px;
   --mixin-ZOMCk-c6Lqjkzz_font-weight: 600;
   --mixin-ZOMCk-c6Lqjkzz_letter-spacing: -0.3px;
   --mixin-ZOMCk-c6Lqjkzz_line-height: 1.5;
   --mixin-ZOMCk-c6Lqjkzz_white-space: pre-wrap;
-  --mixin-rSvNRU5TuvRfrL_font-family: "Inter";
+  --mixin-rSvNRU5TuvRfrL_font-family: "Inter", sans-serif;
   --mixin-rSvNRU5TuvRfrL_color: #000000;
   --mixin-rSvNRU5TuvRfrL_font-size: 16px;
   --mixin-rSvNRU5TuvRfrL_font-weight: 600;
@@ -522,7 +524,7 @@
 :where(.root_reset .code),
 :where(.root_reset :global(.__wab_expr_html_text) code),
 :where(.root_reset.plasmic_default__code) {
-  background: var(--mixin-SvTCTT2dH1zaew_background);
+  background: #f8f8f8;
   font-family: var(--mixin-SvTCTT2dH1zaew_font-family);
   border-radius: var(--mixin-SvTCTT2dH1zaew_border-top-left-radius)
     var(--mixin-SvTCTT2dH1zaew_border-top-right-radius)
@@ -561,7 +563,7 @@
 :where(.root_reset .pre),
 :where(.root_reset :global(.__wab_expr_html_text) pre),
 :where(.root_reset.plasmic_default__pre) {
-  background: var(--mixin-iNN88vLgO2lfUb_background);
+  background: #f8f8f8;
   font-family: var(--mixin-iNN88vLgO2lfUb_font-family);
   border-radius: var(--mixin-iNN88vLgO2lfUb_border-top-left-radius)
     var(--mixin-iNN88vLgO2lfUb_border-top-right-radius)

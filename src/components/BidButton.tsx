@@ -16,7 +16,12 @@ function BidButton_(props: BidButtonProps, ref: ButtonRef) {
     props,
     ref
   );
-  return <PlasmicBidButton {...plasmicProps} />;
+  return <PlasmicBidButton {...plasmicProps} 
+  
+  
+  
+  
+  />;
 }
 
 type ButtonComponentType = {

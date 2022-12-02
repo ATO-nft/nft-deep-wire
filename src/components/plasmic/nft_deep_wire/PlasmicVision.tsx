@@ -389,7 +389,15 @@ export const PlasmicVision = Object.assign(
 
     // Metadata about props expected for PlasmicVision
     internalVariantProps: PlasmicVision__VariantProps,
-    internalArgProps: PlasmicVision__ArgProps
+    internalArgProps: PlasmicVision__ArgProps,
+
+    // Page metadata
+    pageMetadata: {
+      title: "",
+      description: "",
+      ogImageSrc: "",
+      canonical: ""
+    }
   }
 );
 

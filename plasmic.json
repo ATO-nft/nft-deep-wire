@@ -306,6 +306,11 @@
           "id": "ZcFjJ_zY_GA0-F",
           "name": "PlasmicHead",
           "componentImportPath": "@plasmicapp/react-web"
+        },
+        {
+          "id": "YnMfpj58lj",
+          "name": "Fetcher",
+          "componentImportPath": "@plasmicapp/data-sources"
         }
       ]
     }

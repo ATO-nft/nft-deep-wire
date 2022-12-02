@@ -716,7 +716,15 @@ export const PlasmicJfe = Object.assign(
 
     // Metadata about props expected for PlasmicJfe
     internalVariantProps: PlasmicJfe__VariantProps,
-    internalArgProps: PlasmicJfe__ArgProps
+    internalArgProps: PlasmicJfe__ArgProps,
+
+    // Page metadata
+    pageMetadata: {
+      title: "Jesus Fernandez Escobar",
+      description: "",
+      ogImageSrc: "",
+      canonical: ""
+    }
   }
 );
 

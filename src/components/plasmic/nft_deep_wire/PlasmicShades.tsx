@@ -708,7 +708,15 @@ export const PlasmicShades = Object.assign(
 
     // Metadata about props expected for PlasmicShades
     internalVariantProps: PlasmicShades__VariantProps,
-    internalArgProps: PlasmicShades__ArgProps
+    internalArgProps: PlasmicShades__ArgProps,
+
+    // Page metadata
+    pageMetadata: {
+      title: "Shades",
+      description: "",
+      ogImageSrc: "",
+      canonical: ""
+    }
   }
 );
 
