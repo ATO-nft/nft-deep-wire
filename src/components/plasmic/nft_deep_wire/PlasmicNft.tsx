@@ -31,7 +31,7 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import Button from "../../Button"; // plasmic-import: a9hmcfoqSQcWZ/component
+import Header from "../../Header"; // plasmic-import: gr_eq2hlK0/component
 import { Reveal } from "@plasmicpkgs/react-awesome-reveal"; // plasmic-import: R6s1FdhksG/codeComponent
 import BidButton from "../../BidButton"; // plasmic-import: TW0Ca_Ns9A2yO/component
 
@@ -47,7 +47,6 @@ import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: GDo5sayAt37
 import allegoryOfAgoraphobiajpgRqpfMjqq1 from "./images/allegoryOfAgoraphobiajpg.jpeg"; // plasmic-import: rqpfMjqq1/picture
 
 export type PlasmicNft__VariantMembers = {};
-
 export type PlasmicNft__VariantsArgs = {};
 type VariantPropType = keyof PlasmicNft__VariantsArgs;
 export const PlasmicNft__VariantProps = new Array<VariantPropType>();
@@ -58,11 +57,11 @@ export const PlasmicNft__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicNft__OverridesType = {
   root?: p.Flex<"div">;
-  header?: p.Flex<"div">;
-  connect?: p.Flex<typeof Button>;
+  header?: p.Flex<typeof Header>;
   h1?: p.Flex<"h1">;
   reveal?: p.Flex<typeof Reveal>;
   buy?: p.Flex<typeof BidButton>;
+  latestTx?: p.Flex<"div">;
   bidButton?: p.Flex<typeof BidButton>;
   footer?: p.Flex<"div">;
 };
@@ -81,20 +80,16 @@ function PlasmicNft__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const [$queries, setDollarQueries] = React.useState({});
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsi1EpI54Sd5XS4R()
@@ -119,80 +114,11 @@ function PlasmicNft__RenderFunc(props: {
             sty.root
           )}
         >
-          <div
+          <Header
             data-plasmic-name={"header"}
             data-plasmic-override={overrides.header}
-            className={classNames(projectcss.all, sty.header)}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox___0NukO)}>
-              <a
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.__wab_text,
-                  sty.link__eErV8
-                )}
-                href={`/`}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {"NDW"}
-                  </span>
-                </React.Fragment>
-              </a>
-            </div>
-
-            {true ? (
-              <div className={classNames(projectcss.all, sty.freeBox__hMgpq)}>
-                <a
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__b8QKu
-                  )}
-                  href={`/about`}
-                >
-                  {"About"}
-                </a>
-
-                <a
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link___44YeG
-                  )}
-                  href={`/artist`}
-                >
-                  {"Artists"}
-                </a>
-
-                <a
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__mQqLk
-                  )}
-                  href={`/vision`}
-                >
-                  {"Vision"}
-                </a>
-
-                <Button
-                  data-plasmic-name={"connect"}
-                  data-plasmic-override={overrides.connect}
-                  className={classNames("__wab_instance", sty.connect)}
-                >
-                  {"Connect"}
-                </Button>
-              </div>
-            ) : null}
-          </div>
+            className={classNames("__wab_instance", sty.header)}
+          />
 
           {(
             hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
@@ -344,135 +270,150 @@ function PlasmicNft__RenderFunc(props: {
                   ) : null}
                 </div>
               ) : null}
-
-              <h5
-                className={classNames(
-                  projectcss.all,
-                  projectcss.h5,
-                  projectcss.__wab_text,
-                  sty.h5__pRu1Y
-                )}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#8C1C84", fontWeight: 700 }}
-                  >
-                    {"1"}
-                  </span>
-                  <React.Fragment>{""}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#FBF0F0" }}
-                  >
-                    {" / 1 e"}
-                  </span>
-                  <React.Fragment>{""}</React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#FFFFFF" }}
-                  >
-                    {"dition"}
-                  </span>
-                </React.Fragment>
-              </h5>
-
-              <Reveal
-                data-plasmic-name={"reveal"}
-                data-plasmic-override={overrides.reveal}
-                className={classNames("__wab_instance", sty.reveal)}
-                duration={3000 as const}
-                effect={"fade" as const}
-                triggerOnce={true}
-              >
-                <BidButton
-                  data-plasmic-name={"buy"}
-                  data-plasmic-override={overrides.buy}
-                  className={classNames("__wab_instance", sty.buy)}
+              {true ? (
+                <h5
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.h5,
+                    projectcss.__wab_text,
+                    sty.h5__pRu1Y
+                  )}
                 >
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__qPl7
-                    )}
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "#8C1C84", fontWeight: 700 }}
+                    >
+                      {"1"}
+                    </span>
+                    <React.Fragment>{""}</React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "#FBF0F0" }}
+                    >
+                      {" / 1 e"}
+                    </span>
+                    <React.Fragment>{""}</React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "#FFFFFF" }}
+                    >
+                      {"dition"}
+                    </span>
+                  </React.Fragment>
+                </h5>
+              ) : null}
+              {true ? (
+                <Reveal
+                  data-plasmic-name={"reveal"}
+                  data-plasmic-override={overrides.reveal}
+                  className={classNames("__wab_instance", sty.reveal)}
+                  duration={3000 as const}
+                  effect={"fade" as const}
+                  triggerOnce={true}
+                >
+                  <BidButton
+                    data-plasmic-name={"buy"}
+                    data-plasmic-override={overrides.buy}
+                    className={classNames("__wab_instance", sty.buy)}
                   >
-                    {"Buy"}
-                  </div>
-                </BidButton>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__qPl7
+                      )}
+                    >
+                      {"Buy"}
+                    </div>
+                  </BidButton>
 
-                <div
-                  className={classNames(projectcss.all, sty.freeBox__aYzyU)}
-                />
-
-                {true ? (
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__iOnM)}
-                  >
-                    {(
-                      hasVariant(globalVariants, "screen", "mobileOnly")
-                        ? true
-                        : true
-                    ) ? (
-                      <p.PlasmicImg
-                        alt={""}
-                        className={classNames(sty.img___0F21Y)}
-                        displayHeight={"auto" as const}
-                        displayMaxHeight={"none" as const}
-                        displayMaxWidth={"38.79%" as const}
-                        displayMinHeight={"0" as const}
-                        displayMinWidth={"0" as const}
-                        displayWidth={"100%" as const}
-                        loading={"lazy" as const}
-                        src={{
-                          src: allegoryOfAgoraphobiajpgRqpfMjqq1,
-                          fullWidth: 6030,
-                          fullHeight: 3930,
-                          aspectRatio: undefined
-                        }}
-                      />
-                    ) : null}
-                    {true ? (
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__gd2D9
-                        )}
-                      >
+                    className={classNames(projectcss.all, sty.freeBox__aYzyU)}
+                  />
+
+                  {true ? (
+                    <div
+                      className={classNames(projectcss.all, sty.freeBox__iOnM)}
+                    >
+                      {(
+                        hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? true
+                          : true
+                      ) ? (
+                        <p.PlasmicImg
+                          alt={""}
+                          className={classNames(sty.img___0F21Y)}
+                          displayHeight={"auto" as const}
+                          displayMaxHeight={"none" as const}
+                          displayMaxWidth={"38.79%" as const}
+                          displayMinHeight={"0" as const}
+                          displayMinWidth={"0" as const}
+                          displayWidth={"100%" as const}
+                          loading={"lazy" as const}
+                          src={{
+                            src: allegoryOfAgoraphobiajpgRqpfMjqq1,
+                            fullWidth: 6030,
+                            fullHeight: 3930,
+                            aspectRatio: undefined
+                          }}
+                        />
+                      ) : null}
+                      {true ? (
                         <div
                           className={classNames(
                             projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__tg7Qq
+                            sty.freeBox__gd2D9
                           )}
                         >
-                          <React.Fragment>
-                            <span
-                              className={
-                                "plasmic_default__all plasmic_default__span"
-                              }
-                              style={{ fontWeight: 700 }}
-                            >
-                              {"200 EUR"}
-                            </span>
-                          </React.Fragment>
-                        </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__tg7Qq
+                            )}
+                          >
+                            <React.Fragment>
+                              <span
+                                className={
+                                  "plasmic_default__all plasmic_default__span"
+                                }
+                                style={{ fontWeight: 700 }}
+                              >
+                                {"200 EUR"}
+                              </span>
+                            </React.Fragment>
+                          </div>
 
-                        <h4
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.h4,
-                            projectcss.__wab_text,
-                            sty.h4__rAqsv
-                          )}
-                        >
-                          {"Digital"}
-                        </h4>
-                      </div>
-                    ) : null}
-                  </div>
-                ) : null}
-              </Reveal>
+                          <h4
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.h4,
+                              projectcss.__wab_text,
+                              sty.h4__rAqsv
+                            )}
+                          >
+                            {"Digital"}
+                          </h4>
+                        </div>
+                      ) : null}
+                    </div>
+                  ) : null}
+                </Reveal>
+              ) : null}
+            </div>
+          ) : null}
+          {true ? (
+            <div
+              data-plasmic-name={"latestTx"}
+              data-plasmic-override={overrides.latestTx}
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.latestTx
+              )}
+            >
+              {"Enter some text"}
             </div>
           ) : null}
 
@@ -489,14 +430,14 @@ function PlasmicNft__RenderFunc(props: {
                 className={"plasmic_default__all plasmic_default__span"}
                 style={{ color: "#8C1C84", fontWeight: 700 }}
               >
-                {"389"}
+                {"1"}
               </span>
               <React.Fragment>{""}</React.Fragment>
               <span
                 className={"plasmic_default__all plasmic_default__span"}
                 style={{ color: "#FBF0F0" }}
               >
-                {" / 3000 e"}
+                {" / 150 e"}
               </span>
               <React.Fragment>{""}</React.Fragment>
               <span
@@ -587,18 +528,18 @@ const PlasmicDescendants = {
   root: [
     "root",
     "header",
-    "connect",
     "h1",
     "reveal",
     "buy",
+    "latestTx",
     "bidButton",
     "footer"
   ],
-  header: ["header", "connect"],
-  connect: ["connect"],
+  header: ["header"],
   h1: ["h1"],
   reveal: ["reveal", "buy"],
   buy: ["buy"],
+  latestTx: ["latestTx"],
   bidButton: ["bidButton"],
   footer: ["footer"]
 } as const;
@@ -607,11 +548,11 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  header: "div";
-  connect: typeof Button;
+  header: typeof Header;
   h1: "h1";
   reveal: typeof Reveal;
   buy: typeof BidButton;
+  latestTx: "div";
   bidButton: typeof BidButton;
   footer: "div";
 };
@@ -628,15 +569,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicNft__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicNft__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicNft__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicNft__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;
@@ -678,16 +619,24 @@ export const PlasmicNft = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
-    connect: makeNodeComponent("connect"),
     h1: makeNodeComponent("h1"),
     reveal: makeNodeComponent("reveal"),
     buy: makeNodeComponent("buy"),
+    latestTx: makeNodeComponent("latestTx"),
     bidButton: makeNodeComponent("bidButton"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicNft
     internalVariantProps: PlasmicNft__VariantProps,
-    internalArgProps: PlasmicNft__ArgProps
+    internalArgProps: PlasmicNft__ArgProps,
+
+    // Page metadata
+    pageMetadata: {
+      title: "NFT Deep Wire NFT #1",
+      description: "",
+      ogImageSrc: "",
+      canonical: ""
+    }
   }
 );
 

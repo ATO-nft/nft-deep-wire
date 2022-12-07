@@ -26,29 +26,32 @@ export interface NftProps extends DefaultNftProps {}
 
 function Nft_(props: NftProps, ref: HTMLElementRefOf<"div">) {
 
-  const { 
-    userAddr, setUserAddr,
-    userShortenAddr, setShortenAddr,
-    web3auth, setWeb3auth,
-    provider, setProvider,
-    etherscanLink, setEtherscanLink,
-    txHash, setTxHash,
-    net, setNet,
-    bal, setBal,
-    firstName, setFirstName,
-    pfp, setPfp
-  } = useGlobalContext()
+  const {
+    // web3auth,
+    // setWeb3auth,
+    provider,
+    // setProvider,
+    userAddress,
+    isOwner,
+    setIsOwner,
+    // bal
+    // setUserAddress,
+    // userShortenAddr,
+    // setShortenAddr,
+    // signer,
+    // setSigner,
+  } = useGlobalContext();
 
-  const [loading, setLoading] = useState(false);
-const [party, setParty] = useState(false);
-const [freeMoney, setFreeMoney] = useState(false);
+//   const [loading, setLoading] = useState(false);
+// const [party, setParty] = useState(false);
+// const [freeMoney, setFreeMoney] = useState(false);
 
 
-console.log("userAddr:", userAddr);
+console.log("userAddr:", userAddress);
 
-// useEffect(() => {
-//   show();
-// }, [provider]);
+useEffect(() => {
+
+}, [provider]);
 
 // useEffect(() => {
 //   const init = async () => {

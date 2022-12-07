@@ -16,30 +16,34 @@ import { SafeEventEmitterProvider } from "@web3auth/base";
 function Index() {
 
   const [web3auth, setWeb3auth] = useState<Web3Auth | null>(null);
-
-  const [userAddr, setUserAddr] = useState<string>("")
-  const [userShortenAddr, setShortenAddr] = useState<string>("")
   const [provider, setProvider] = useState<SafeEventEmitterProvider | null>(null);
-  const [etherscanLink, setEtherscanLink] = useState("");
-  const [txHash, setTxHash] = useState("");
-  const [net, setNet] = useState("");
-  const [bal, setBal] = useState("");
-  const [firstName, setFirstName] = useState("anon");
-  const [pfp, setPfp] = useState(""); 
+  const [signer, setSigner] = useState<any | null>(null);
+  const [userAddress, setUserAddress] = useState<string>("")
+  const [bal, setBal] = useState<number>(0);
+  const [isOwner, setIsOwner] = useState<boolean>(false);
+
+  const [userShortenAddr, setShortenAddr] = useState<string>("")
+  // const [etherscanLink, setEtherscanLink] = useState("");
+  // const [txHash, setTxHash] = useState("");
+  // const [net, setNet] = useState("");
+  // const [firstName, setFirstName] = useState("anon");
+  // const [pfp, setPfp] = useState(loader); 
 
   return (
     <Router basename={'/'}>
       <Web3Context.Provider value={{
-          userAddr, setUserAddr,
-          userShortenAddr, setShortenAddr,
-          web3auth, setWeb3auth,
-          provider, setProvider,
-          etherscanLink, setEtherscanLink,
-          txHash, setTxHash,
-          net, setNet,
-          bal, setBal,
-          firstName, setFirstName,
-          pfp, setPfp
+           web3auth, setWeb3auth,
+           provider, setProvider,
+           userAddress, setUserAddress,
+           bal, setBal,
+           isOwner, setIsOwner,
+           userShortenAddr, setShortenAddr,
+           signer, setSigner,
+           // etherscanLink, setEtherscanLink,
+           // txHash, setTxHash,
+           // net, setNet,
+           // firstName, setFirstName,
+           // pfp, setPfp
         }}>
       <Routes>
         <Route path="/" element={<Homepage />} />

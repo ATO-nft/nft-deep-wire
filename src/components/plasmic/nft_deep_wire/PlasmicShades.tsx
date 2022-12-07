@@ -31,7 +31,7 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import Button from "../../Button"; // plasmic-import: a9hmcfoqSQcWZ/component
+import Header from "../../Header"; // plasmic-import: gr_eq2hlK0/component
 
 import { useScreenVariants as useScreenVariantsi1EpI54Sd5XS4R } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: i1epI54SD5xS4r/globalVariant
 
@@ -40,14 +40,11 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_nft_deep_wire.module.css"; // plasmic-import: j5CDP9MgqbRapi7mxENKQG/projectcss
 import sty from "./PlasmicShades.module.css"; // plasmic-import: TpXp-HtNY_R/css
 
-import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: SpSM8I8Z8pYH6F/icon
-import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: GDo5sayAt37nOm/icon
 import violaGrappeXMapeintureProcompngNI20KBB from "./images/violaGrappeXMapeintureProcompng.png"; // plasmic-import: -nI20k-bB/picture
 import yakamoIByGuillaumeEtLaurieXMaPeinturePro2022V02Jpg5OWUuqkaS from "./images/yakamoIByGuillaumeEtLaurieXMaPeinturePro2022V02Jpg.jpeg"; // plasmic-import: 5oWUuqkaS/picture
 import yakamocolorIByGuillaumeEtLaurieXMaPeinturePro2022V02Jpg5SdSeqe4Q from "./images/yakamocolorIByGuillaumeEtLaurieXMaPeinturePro2022V02Jpg.jpeg"; // plasmic-import: 5SdSeqe4q/picture
 
 export type PlasmicShades__VariantMembers = {};
-
 export type PlasmicShades__VariantsArgs = {};
 type VariantPropType = keyof PlasmicShades__VariantsArgs;
 export const PlasmicShades__VariantProps = new Array<VariantPropType>();
@@ -58,8 +55,7 @@ export const PlasmicShades__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicShades__OverridesType = {
   root?: p.Flex<"div">;
-  header2?: p.Flex<"div">;
-  connect?: p.Flex<typeof Button>;
+  header?: p.Flex<typeof Header>;
   h1?: p.Flex<"h1">;
   h4?: p.Flex<"h4">;
   h5?: p.Flex<"h5">;
@@ -80,20 +76,16 @@ function PlasmicShades__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const [$queries, setDollarQueries] = React.useState({});
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsi1EpI54Sd5XS4R()
@@ -118,80 +110,11 @@ function PlasmicShades__RenderFunc(props: {
             sty.root
           )}
         >
-          <div
-            data-plasmic-name={"header2"}
-            data-plasmic-override={overrides.header2}
-            className={classNames(projectcss.all, sty.header2)}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__kX0R)}>
-              <a
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.__wab_text,
-                  sty.link__dsT7K
-                )}
-                href={`/`}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {"NDW"}
-                  </span>
-                </React.Fragment>
-              </a>
-            </div>
-
-            {true ? (
-              <div className={classNames(projectcss.all, sty.freeBox__rldhw)}>
-                <a
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__hNaa0
-                  )}
-                  href={`/about`}
-                >
-                  {"About"}
-                </a>
-
-                <a
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link___6I8Pb
-                  )}
-                  href={`/artist`}
-                >
-                  {"Artists"}
-                </a>
-
-                <a
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__eTzzq
-                  )}
-                  href={`/vision`}
-                >
-                  {"Vision"}
-                </a>
-
-                <Button
-                  data-plasmic-name={"connect"}
-                  data-plasmic-override={overrides.connect}
-                  className={classNames("__wab_instance", sty.connect)}
-                >
-                  {"Connect"}
-                </Button>
-              </div>
-            ) : null}
-          </div>
+          <Header
+            data-plasmic-name={"header"}
+            data-plasmic-override={overrides.header}
+            className={classNames("__wab_instance", sty.header)}
+          />
 
           {(
             hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
@@ -617,9 +540,8 @@ function PlasmicShades__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header2", "connect", "h1", "h4", "h5", "footer"],
-  header2: ["header2", "connect"],
-  connect: ["connect"],
+  root: ["root", "header", "h1", "h4", "h5", "footer"],
+  header: ["header"],
   h1: ["h1"],
   h4: ["h4"],
   h5: ["h5"],
@@ -630,8 +552,7 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  header2: "div";
-  connect: typeof Button;
+  header: typeof Header;
   h1: "h1";
   h4: "h4";
   h5: "h5";
@@ -650,15 +571,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicShades__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicShades__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicShades__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicShades__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;
@@ -699,8 +620,7 @@ export const PlasmicShades = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    header2: makeNodeComponent("header2"),
-    connect: makeNodeComponent("connect"),
+    header: makeNodeComponent("header"),
     h1: makeNodeComponent("h1"),
     h4: makeNodeComponent("h4"),
     h5: makeNodeComponent("h5"),
@@ -708,7 +628,15 @@ export const PlasmicShades = Object.assign(
 
     // Metadata about props expected for PlasmicShades
     internalVariantProps: PlasmicShades__VariantProps,
-    internalArgProps: PlasmicShades__ArgProps
+    internalArgProps: PlasmicShades__ArgProps,
+
+    // Page metadata
+    pageMetadata: {
+      title: "Shades",
+      description: "",
+      ogImageSrc: "",
+      canonical: ""
+    }
   }
 );
 

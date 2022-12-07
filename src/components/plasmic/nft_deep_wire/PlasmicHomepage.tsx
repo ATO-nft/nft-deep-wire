@@ -31,7 +31,8 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import Button from "../../Button"; // plasmic-import: a9hmcfoqSQcWZ/component
+import Header from "../../Header"; // plasmic-import: gr_eq2hlK0/component
+import { Reveal } from "@plasmicpkgs/react-awesome-reveal"; // plasmic-import: R6s1FdhksG/codeComponent
 
 import { useScreenVariants as useScreenVariantsi1EpI54Sd5XS4R } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: i1epI54SD5xS4r/globalVariant
 
@@ -40,48 +41,27 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_nft_deep_wire.module.css"; // plasmic-import: j5CDP9MgqbRapi7mxENKQG/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: o9LGBwNid8E-e/css
 
-import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: SpSM8I8Z8pYH6F/icon
-import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: GDo5sayAt37nOm/icon
 import piece2GalerieArteMejorjpgO0JtabYhv from "./images/piece2GalerieArteMejorjpg.jpeg"; // plasmic-import: o0JtabYHV/picture
 import allegoryOfAgoraphobiajpgRqpfMjqq1 from "./images/allegoryOfAgoraphobiajpg.jpeg"; // plasmic-import: rqpfMjqq1/picture
 import violaGrappeXMapeintureProcompngNI20KBB from "./images/violaGrappeXMapeintureProcompng.png"; // plasmic-import: -nI20k-bB/picture
 
 export type PlasmicHomepage__VariantMembers = {};
-
 export type PlasmicHomepage__VariantsArgs = {};
 type VariantPropType = keyof PlasmicHomepage__VariantsArgs;
 export const PlasmicHomepage__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicHomepage__ArgsType = {
-  startIcon?: React.ReactNode;
-  children?: React.ReactNode;
-  endIcon?: React.ReactNode;
-};
-
+export type PlasmicHomepage__ArgsType = {};
 type ArgPropType = keyof PlasmicHomepage__ArgsType;
-export const PlasmicHomepage__ArgProps = new Array<ArgPropType>(
-  "startIcon",
-  "children",
-  "endIcon"
-);
+export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
-  header?: p.Flex<"div">;
-  connect?: p.Flex<typeof Button>;
+  header?: p.Flex<typeof Header>;
   h1?: p.Flex<"h1">;
-  latestTx?: p.Flex<"div">;
-  buy?: p.Flex<"button">;
-  startIconContainer?: p.Flex<"div">;
-  contentContainer?: p.Flex<"div">;
-  endIconContainer?: p.Flex<"div">;
   footer?: p.Flex<"div">;
 };
 
 export interface DefaultHomepageProps {
-  startIcon?: React.ReactNode;
-  children?: React.ReactNode;
-  endIcon?: React.ReactNode;
   className?: string;
 }
 
@@ -95,20 +75,16 @@ function PlasmicHomepage__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const [$queries, setDollarQueries] = React.useState({});
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsi1EpI54Sd5XS4R()
@@ -135,80 +111,11 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.root
           )}
         >
-          <div
+          <Header
             data-plasmic-name={"header"}
             data-plasmic-override={overrides.header}
-            className={classNames(projectcss.all, sty.header)}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__ccQj0)}>
-              <a
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.__wab_text,
-                  sty.link__zlYiK
-                )}
-                href={`/`}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {"NDW"}
-                  </span>
-                </React.Fragment>
-              </a>
-            </div>
-
-            {true ? (
-              <div className={classNames(projectcss.all, sty.freeBox__edjwf)}>
-                <a
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__cEQp
-                  )}
-                  href={`/about`}
-                >
-                  {"About"}
-                </a>
-
-                <a
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__uiitL
-                  )}
-                  href={`/artist`}
-                >
-                  {"Artists"}
-                </a>
-
-                <a
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link___7VWip
-                  )}
-                  href={`/vision`}
-                >
-                  {"Vision"}
-                </a>
-
-                <Button
-                  data-plasmic-name={"connect"}
-                  data-plasmic-override={overrides.connect}
-                  className={classNames("__wab_instance", sty.connect)}
-                >
-                  {"Connect"}
-                </Button>
-              </div>
-            ) : null}
-          </div>
+            className={classNames("__wab_instance", sty.header)}
+          />
 
           {true ? (
             <div className={classNames(projectcss.all, sty.freeBox__n4UmO)}>
@@ -303,23 +210,30 @@ function PlasmicHomepage__RenderFunc(props: {
                   )}
                   href={`/jfe`}
                 >
-                  <p.PlasmicImg
-                    alt={"" as const}
-                    className={classNames(sty.img__rykaG)}
-                    displayHeight={"180px" as const}
-                    displayMaxHeight={"none" as const}
-                    displayMaxWidth={"none" as const}
-                    displayMinHeight={"0" as const}
-                    displayMinWidth={"0" as const}
-                    displayWidth={"100%" as const}
-                    loading={"lazy" as const}
-                    src={{
-                      src: allegoryOfAgoraphobiajpgRqpfMjqq1,
-                      fullWidth: 6030,
-                      fullHeight: 3930,
-                      aspectRatio: undefined
-                    }}
-                  />
+                  <Reveal
+                    className={classNames("__wab_instance", sty.reveal__fz6Fc)}
+                    delay={1000 as const}
+                    duration={1500 as const}
+                    triggerOnce={true}
+                  >
+                    <p.PlasmicImg
+                      alt={"" as const}
+                      className={classNames(sty.img__rykaG)}
+                      displayHeight={"180px" as const}
+                      displayMaxHeight={"none" as const}
+                      displayMaxWidth={"none" as const}
+                      displayMinHeight={"0" as const}
+                      displayMinWidth={"0" as const}
+                      displayWidth={"100%" as const}
+                      loading={"lazy" as const}
+                      src={{
+                        src: allegoryOfAgoraphobiajpgRqpfMjqq1,
+                        fullWidth: 6030,
+                        fullHeight: 3930,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </Reveal>
                 </a>
 
                 <a
@@ -330,99 +244,34 @@ function PlasmicHomepage__RenderFunc(props: {
                   )}
                   href={`/shades`}
                 >
-                  <p.PlasmicImg
-                    alt={"" as const}
-                    className={classNames(sty.img__lmTmf)}
-                    displayHeight={"180px" as const}
-                    displayMaxHeight={"none" as const}
-                    displayMaxWidth={"none" as const}
-                    displayMinHeight={"0" as const}
-                    displayMinWidth={"0" as const}
-                    displayWidth={"100%" as const}
-                    loading={"lazy" as const}
-                    src={{
-                      src: violaGrappeXMapeintureProcompngNI20KBB,
-                      fullWidth: 1059,
-                      fullHeight: 389,
-                      aspectRatio: undefined
-                    }}
-                  />
+                  <Reveal
+                    className={classNames("__wab_instance", sty.reveal__uizk3)}
+                    delay={1100 as const}
+                    duration={1500 as const}
+                    triggerOnce={true}
+                  >
+                    <p.PlasmicImg
+                      alt={"" as const}
+                      className={classNames(sty.img__lmTmf)}
+                      displayHeight={"180px" as const}
+                      displayMaxHeight={"none" as const}
+                      displayMaxWidth={"none" as const}
+                      displayMinHeight={"0" as const}
+                      displayMinWidth={"0" as const}
+                      displayWidth={"100%" as const}
+                      loading={"lazy" as const}
+                      src={{
+                        src: violaGrappeXMapeintureProcompngNI20KBB,
+                        fullWidth: 1059,
+                        fullHeight: 389,
+                        aspectRatio: undefined
+                      }}
+                    />
+                  </Reveal>
                 </a>
               </div>
             </div>
           ) : null}
-
-          <div
-            data-plasmic-name={"latestTx"}
-            data-plasmic-override={overrides.latestTx}
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.latestTx
-            )}
-          >
-            {"Enter some text"}
-          </div>
-
-          <p.Stack
-            as={"button"}
-            data-plasmic-name={"buy"}
-            data-plasmic-override={overrides.buy}
-            hasGap={true}
-            className={classNames(projectcss.all, projectcss.button, sty.buy)}
-          >
-            {true ? (
-              <div
-                data-plasmic-name={"startIconContainer"}
-                data-plasmic-override={overrides.startIconContainer}
-                className={classNames(projectcss.all, sty.startIconContainer)}
-              >
-                {p.renderPlasmicSlot({
-                  defaultContents: (
-                    <ChecksvgIcon
-                      className={classNames(projectcss.all, sty.svg__b42E)}
-                      role={"img"}
-                    />
-                  ),
-
-                  value: args.startIcon,
-                  className: classNames(sty.slotTargetStartIcon)
-                })}
-              </div>
-            ) : null}
-
-            <div
-              data-plasmic-name={"contentContainer"}
-              data-plasmic-override={overrides.contentContainer}
-              className={classNames(projectcss.all, sty.contentContainer)}
-            >
-              {p.renderPlasmicSlot({
-                defaultContents: "Buy",
-                value: args.children,
-                className: classNames(sty.slotTargetChildren)
-              })}
-            </div>
-
-            {false ? (
-              <div
-                data-plasmic-name={"endIconContainer"}
-                data-plasmic-override={overrides.endIconContainer}
-                className={classNames(projectcss.all, sty.endIconContainer)}
-              >
-                {p.renderPlasmicSlot({
-                  defaultContents: (
-                    <IconIcon
-                      className={classNames(projectcss.all, sty.svg___2DC0Q)}
-                      role={"img"}
-                    />
-                  ),
-
-                  value: args.endIcon,
-                  className: classNames(sty.slotTargetEndIcon)
-                })}
-              </div>
-            ) : null}
-          </p.Stack>
 
           <div
             data-plasmic-name={"footer"}
@@ -484,26 +333,9 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "header",
-    "connect",
-    "h1",
-    "latestTx",
-    "buy",
-    "startIconContainer",
-    "contentContainer",
-    "endIconContainer",
-    "footer"
-  ],
-  header: ["header", "connect"],
-  connect: ["connect"],
+  root: ["root", "header", "h1", "footer"],
+  header: ["header"],
   h1: ["h1"],
-  latestTx: ["latestTx"],
-  buy: ["buy", "startIconContainer", "contentContainer", "endIconContainer"],
-  startIconContainer: ["startIconContainer"],
-  contentContainer: ["contentContainer"],
-  endIconContainer: ["endIconContainer"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -511,14 +343,8 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  header: "div";
-  connect: typeof Button;
+  header: typeof Header;
   h1: "h1";
-  latestTx: "div";
-  buy: "button";
-  startIconContainer: "div";
-  contentContainer: "div";
-  endIconContainer: "div";
   footer: "div";
 };
 
@@ -534,15 +360,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicHomepage__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicHomepage__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicHomepage__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicHomepage__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;
@@ -584,18 +410,20 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
-    connect: makeNodeComponent("connect"),
     h1: makeNodeComponent("h1"),
-    latestTx: makeNodeComponent("latestTx"),
-    buy: makeNodeComponent("buy"),
-    startIconContainer: makeNodeComponent("startIconContainer"),
-    contentContainer: makeNodeComponent("contentContainer"),
-    endIconContainer: makeNodeComponent("endIconContainer"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
-    internalArgProps: PlasmicHomepage__ArgProps
+    internalArgProps: PlasmicHomepage__ArgProps,
+
+    // Page metadata
+    pageMetadata: {
+      title: "NFT Deep Wire",
+      description: "Your NFT Marketplace.",
+      ogImageSrc: "",
+      canonical: ""
+    }
   }
 );
 

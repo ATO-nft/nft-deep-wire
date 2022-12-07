@@ -14,6 +14,7 @@ import * as React from "react";
 
 import * as p from "@plasmicapp/react-web";
 import * as ph from "@plasmicapp/host";
+
 import * as pp from "@plasmicapp/react-web";
 import {
   hasVariant,
@@ -61,7 +62,6 @@ export type PlasmicBidButton__VariantMembers = {
     | "clear"
     | "link";
 };
-
 export type PlasmicBidButton__VariantsArgs = {
   showStartIcon?: SingleBooleanChoiceArg<"showStartIcon">;
   showEndIcon?: SingleBooleanChoiceArg<"showEndIcon">;
@@ -84,7 +84,6 @@ export type PlasmicBidButton__VariantsArgs = {
     | "link"
   >;
 };
-
 type VariantPropType = keyof PlasmicBidButton__VariantsArgs;
 export const PlasmicBidButton__VariantProps = new Array<VariantPropType>(
   "showStartIcon",
@@ -101,7 +100,6 @@ export type PlasmicBidButton__ArgsType = {
   endIcon?: React.ReactNode;
   link?: string;
 };
-
 type ArgPropType = keyof PlasmicBidButton__ArgsType;
 export const PlasmicBidButton__ArgProps = new Array<ArgPropType>(
   "children",
@@ -147,26 +145,58 @@ function PlasmicBidButton__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
 
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "showStartIcon",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.showStartIcon
+      },
+      {
+        path: "showEndIcon",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.showEndIcon
+      },
+      {
+        path: "isDisabled",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.isDisabled
+      },
+      {
+        path: "shape",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.shape
+      },
+      {
+        path: "size",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.size
+      },
+      {
+        path: "color",
+        type: "private",
+        initFunc: ($props, $state, $ctx) => $props.color
+      }
+    ],
+    [$props, $ctx]
+  );
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
+
+  const [$queries, setDollarQueries] = React.useState({});
+
   const [isRootFocusVisibleWithin, triggerRootFocusVisibleWithinProps] =
     useTrigger("useFocusVisibleWithin", {
       isTextInput: false
     });
-
   const triggers = {
     focusVisibleWithin_root: isRootFocusVisibleWithin
   };
@@ -189,89 +219,79 @@ function PlasmicBidButton__RenderFunc(props: {
         sty.root,
         {
           [sty.root___focusVisibleWithin]: triggers.focusVisibleWithin_root,
-          [sty.rootcolor_blue]: hasVariant(variants, "color", "blue"),
-          [sty.rootcolor_clear]: hasVariant(variants, "color", "clear"),
-          [sty.rootcolor_green]: hasVariant(variants, "color", "green"),
-          [sty.rootcolor_link]: hasVariant(variants, "color", "link"),
+          [sty.rootcolor_blue]: hasVariant($state, "color", "blue"),
+          [sty.rootcolor_clear]: hasVariant($state, "color", "clear"),
+          [sty.rootcolor_green]: hasVariant($state, "color", "green"),
+          [sty.rootcolor_link]: hasVariant($state, "color", "link"),
           [sty.rootcolor_link_size_minimal]:
-            hasVariant(variants, "color", "link") &&
-            hasVariant(variants, "size", "minimal"),
-          [sty.rootcolor_red]: hasVariant(variants, "color", "red"),
-          [sty.rootcolor_sand]: hasVariant(variants, "color", "sand"),
-          [sty.rootcolor_softBlue]: hasVariant(variants, "color", "softBlue"),
-          [sty.rootcolor_softGreen]: hasVariant(variants, "color", "softGreen"),
-          [sty.rootcolor_softRed]: hasVariant(variants, "color", "softRed"),
-          [sty.rootcolor_softSand]: hasVariant(variants, "color", "softSand"),
-          [sty.rootcolor_softYellow]: hasVariant(
-            variants,
-            "color",
-            "softYellow"
-          ),
-          [sty.rootcolor_white]: hasVariant(variants, "color", "white"),
-          [sty.rootcolor_yellow]: hasVariant(variants, "color", "yellow"),
-          [sty.rootisDisabled]: hasVariant(
-            variants,
-            "isDisabled",
-            "isDisabled"
-          ),
-          [sty.rootshape_round]: hasVariant(variants, "shape", "round"),
+            hasVariant($state, "color", "link") &&
+            hasVariant($state, "size", "minimal"),
+          [sty.rootcolor_red]: hasVariant($state, "color", "red"),
+          [sty.rootcolor_sand]: hasVariant($state, "color", "sand"),
+          [sty.rootcolor_softBlue]: hasVariant($state, "color", "softBlue"),
+          [sty.rootcolor_softGreen]: hasVariant($state, "color", "softGreen"),
+          [sty.rootcolor_softRed]: hasVariant($state, "color", "softRed"),
+          [sty.rootcolor_softSand]: hasVariant($state, "color", "softSand"),
+          [sty.rootcolor_softYellow]: hasVariant($state, "color", "softYellow"),
+          [sty.rootcolor_white]: hasVariant($state, "color", "white"),
+          [sty.rootcolor_yellow]: hasVariant($state, "color", "yellow"),
+          [sty.rootisDisabled]: hasVariant($state, "isDisabled", "isDisabled"),
+          [sty.rootshape_round]: hasVariant($state, "shape", "round"),
           [sty.rootshape_round_size_compact]:
-            hasVariant(variants, "shape", "round") &&
-            hasVariant(variants, "size", "compact"),
-          [sty.rootshape_rounded]: hasVariant(variants, "shape", "rounded"),
+            hasVariant($state, "shape", "round") &&
+            hasVariant($state, "size", "compact"),
+          [sty.rootshape_rounded]: hasVariant($state, "shape", "rounded"),
           [sty.rootshape_rounded_showEndIcon]:
-            hasVariant(variants, "showEndIcon", "showEndIcon") &&
-            hasVariant(variants, "shape", "rounded"),
+            hasVariant($state, "showEndIcon", "showEndIcon") &&
+            hasVariant($state, "shape", "rounded"),
           [sty.rootshape_rounded_showStartIcon]:
-            hasVariant(variants, "shape", "rounded") &&
-            hasVariant(variants, "showStartIcon", "showStartIcon"),
+            hasVariant($state, "shape", "rounded") &&
+            hasVariant($state, "showStartIcon", "showStartIcon"),
           [sty.rootshape_rounded_size_compact]:
-            hasVariant(variants, "size", "compact") &&
-            hasVariant(variants, "shape", "rounded"),
-          [sty.rootshape_sharp]: hasVariant(variants, "shape", "sharp"),
+            hasVariant($state, "size", "compact") &&
+            hasVariant($state, "shape", "rounded"),
+          [sty.rootshape_sharp]: hasVariant($state, "shape", "sharp"),
           [sty.rootshowEndIcon]: hasVariant(
-            variants,
+            $state,
             "showEndIcon",
             "showEndIcon"
           ),
           [sty.rootshowEndIcon_showStartIcon_size_compact]:
-            hasVariant(variants, "size", "compact") &&
-            hasVariant(variants, "showStartIcon", "showStartIcon") &&
-            hasVariant(variants, "showEndIcon", "showEndIcon"),
+            hasVariant($state, "size", "compact") &&
+            hasVariant($state, "showStartIcon", "showStartIcon") &&
+            hasVariant($state, "showEndIcon", "showEndIcon"),
           [sty.rootshowEndIcon_size_compact]:
-            hasVariant(variants, "size", "compact") &&
-            hasVariant(variants, "showEndIcon", "showEndIcon"),
+            hasVariant($state, "size", "compact") &&
+            hasVariant($state, "showEndIcon", "showEndIcon"),
           [sty.rootshowStartIcon]: hasVariant(
-            variants,
+            $state,
             "showStartIcon",
             "showStartIcon"
           ),
           [sty.rootshowStartIcon_size_compact]:
-            hasVariant(variants, "size", "compact") &&
-            hasVariant(variants, "showStartIcon", "showStartIcon"),
-          [sty.rootsize_compact]: hasVariant(variants, "size", "compact"),
-          [sty.rootsize_minimal]: hasVariant(variants, "size", "minimal")
+            hasVariant($state, "size", "compact") &&
+            hasVariant($state, "showStartIcon", "showStartIcon"),
+          [sty.rootsize_compact]: hasVariant($state, "size", "compact"),
+          [sty.rootsize_minimal]: hasVariant($state, "size", "minimal")
         }
       )}
       data-plasmic-trigger-props={[triggerRootFocusVisibleWithinProps]}
     >
-      {(
-        hasVariant(variants, "showStartIcon", "showStartIcon") ? true : false
-      ) ? (
+      {(hasVariant($state, "showStartIcon", "showStartIcon") ? true : false) ? (
         <div
           data-plasmic-name={"startIconContainer"}
           data-plasmic-override={overrides.startIconContainer}
           className={classNames(projectcss.all, sty.startIconContainer, {
             [sty.startIconContainercolor_blue]: hasVariant(
-              variants,
+              $state,
               "color",
               "blue"
             ),
             [sty.startIconContainershape_rounded_showStartIcon]:
-              hasVariant(variants, "shape", "rounded") &&
-              hasVariant(variants, "showStartIcon", "showStartIcon"),
+              hasVariant($state, "shape", "rounded") &&
+              hasVariant($state, "showStartIcon", "showStartIcon"),
             [sty.startIconContainershowStartIcon]: hasVariant(
-              variants,
+              $state,
               "showStartIcon",
               "showStartIcon"
             )
@@ -288,57 +308,57 @@ function PlasmicBidButton__RenderFunc(props: {
             value: args.startIcon,
             className: classNames(sty.slotTargetStartIcon, {
               [sty.slotTargetStartIconcolor_blue]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "blue"
               ),
               [sty.slotTargetStartIconcolor_clear]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "clear"
               ),
               [sty.slotTargetStartIconcolor_link]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "link"
               ),
               [sty.slotTargetStartIconcolor_softBlue]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "softBlue"
               ),
               [sty.slotTargetStartIconcolor_softGreen]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "softGreen"
               ),
               [sty.slotTargetStartIconcolor_softRed]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "softRed"
               ),
               [sty.slotTargetStartIconcolor_softSand]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "softSand"
               ),
               [sty.slotTargetStartIconcolor_softYellow]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "softYellow"
               ),
               [sty.slotTargetStartIconcolor_white]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "white"
               ),
               [sty.slotTargetStartIconcolor_yellow]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "yellow"
               ),
               [sty.slotTargetStartIconshowStartIcon]: hasVariant(
-                variants,
+                $state,
                 "showStartIcon",
                 "showStartIcon"
               )
@@ -354,17 +374,17 @@ function PlasmicBidButton__RenderFunc(props: {
           [sty.contentContainer___focusVisibleWithin]:
             triggers.focusVisibleWithin_root,
           [sty.contentContainerisDisabled]: hasVariant(
-            variants,
+            $state,
             "isDisabled",
             "isDisabled"
           ),
           [sty.contentContainershape_rounded]: hasVariant(
-            variants,
+            $state,
             "shape",
             "rounded"
           ),
           [sty.contentContainershowEndIcon]: hasVariant(
-            variants,
+            $state,
             "showEndIcon",
             "showEndIcon"
           )
@@ -377,95 +397,95 @@ function PlasmicBidButton__RenderFunc(props: {
             [sty.slotTargetChildren___focusVisibleWithin]:
               triggers.focusVisibleWithin_root,
             [sty.slotTargetChildrencolor_blue]: hasVariant(
-              variants,
+              $state,
               "color",
               "blue"
             ),
             [sty.slotTargetChildrencolor_clear]: hasVariant(
-              variants,
+              $state,
               "color",
               "clear"
             ),
             [sty.slotTargetChildrencolor_green]: hasVariant(
-              variants,
+              $state,
               "color",
               "green"
             ),
             [sty.slotTargetChildrencolor_link]: hasVariant(
-              variants,
+              $state,
               "color",
               "link"
             ),
             [sty.slotTargetChildrencolor_link_size_minimal]:
-              hasVariant(variants, "color", "link") &&
-              hasVariant(variants, "size", "minimal"),
+              hasVariant($state, "color", "link") &&
+              hasVariant($state, "size", "minimal"),
             [sty.slotTargetChildrencolor_red]: hasVariant(
-              variants,
+              $state,
               "color",
               "red"
             ),
             [sty.slotTargetChildrencolor_sand]: hasVariant(
-              variants,
+              $state,
               "color",
               "sand"
             ),
             [sty.slotTargetChildrencolor_softBlue]: hasVariant(
-              variants,
+              $state,
               "color",
               "softBlue"
             ),
             [sty.slotTargetChildrencolor_softGreen]: hasVariant(
-              variants,
+              $state,
               "color",
               "softGreen"
             ),
             [sty.slotTargetChildrencolor_softRed]: hasVariant(
-              variants,
+              $state,
               "color",
               "softRed"
             ),
             [sty.slotTargetChildrencolor_softSand]: hasVariant(
-              variants,
+              $state,
               "color",
               "softSand"
             ),
             [sty.slotTargetChildrencolor_softYellow]: hasVariant(
-              variants,
+              $state,
               "color",
               "softYellow"
             ),
             [sty.slotTargetChildrencolor_white]: hasVariant(
-              variants,
+              $state,
               "color",
               "white"
             ),
             [sty.slotTargetChildrencolor_yellow]: hasVariant(
-              variants,
+              $state,
               "color",
               "yellow"
             ),
             [sty.slotTargetChildrenisDisabled]: hasVariant(
-              variants,
+              $state,
               "isDisabled",
               "isDisabled"
             ),
             [sty.slotTargetChildrenshape_rounded]: hasVariant(
-              variants,
+              $state,
               "shape",
               "rounded"
             ),
             [sty.slotTargetChildrenshowEndIcon]: hasVariant(
-              variants,
+              $state,
               "showEndIcon",
               "showEndIcon"
             ),
             [sty.slotTargetChildrenshowStartIcon]: hasVariant(
-              variants,
+              $state,
               "showStartIcon",
               "showStartIcon"
             ),
             [sty.slotTargetChildrensize_minimal]: hasVariant(
-              variants,
+              $state,
               "size",
               "minimal"
             )
@@ -473,23 +493,23 @@ function PlasmicBidButton__RenderFunc(props: {
         })}
       </div>
 
-      {(hasVariant(variants, "showEndIcon", "showEndIcon") ? true : false) ? (
+      {(hasVariant($state, "showEndIcon", "showEndIcon") ? true : false) ? (
         <div
           data-plasmic-name={"endIconContainer"}
           data-plasmic-override={overrides.endIconContainer}
           className={classNames(projectcss.all, sty.endIconContainer, {
             [sty.endIconContainercolor_white]: hasVariant(
-              variants,
+              $state,
               "color",
               "white"
             ),
             [sty.endIconContainercolor_yellow]: hasVariant(
-              variants,
+              $state,
               "color",
               "yellow"
             ),
             [sty.endIconContainershowEndIcon]: hasVariant(
-              variants,
+              $state,
               "showEndIcon",
               "showEndIcon"
             )
@@ -506,52 +526,52 @@ function PlasmicBidButton__RenderFunc(props: {
             value: args.endIcon,
             className: classNames(sty.slotTargetEndIcon, {
               [sty.slotTargetEndIconcolor_clear]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "clear"
               ),
               [sty.slotTargetEndIconcolor_link]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "link"
               ),
               [sty.slotTargetEndIconcolor_softBlue]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "softBlue"
               ),
               [sty.slotTargetEndIconcolor_softGreen]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "softGreen"
               ),
               [sty.slotTargetEndIconcolor_softRed]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "softRed"
               ),
               [sty.slotTargetEndIconcolor_softSand]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "softSand"
               ),
               [sty.slotTargetEndIconcolor_softYellow]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "softYellow"
               ),
               [sty.slotTargetEndIconcolor_white]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "white"
               ),
               [sty.slotTargetEndIconcolor_yellow]: hasVariant(
-                variants,
+                $state,
                 "color",
                 "yellow"
               ),
               [sty.slotTargetEndIconshowEndIcon]: hasVariant(
-                variants,
+                $state,
                 "showEndIcon",
                 "showEndIcon"
               )
@@ -616,15 +636,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicBidButton__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicBidButton__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicBidButton__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicBidButton__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

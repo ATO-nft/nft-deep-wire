@@ -1,6 +1,16 @@
 {
   "props": [
     {
+      "name": "Black",
+      "type": "color",
+      "value": "#000000",
+      "category": "color",
+      "meta": {
+        "projectId": "j5CDP9MgqbRapi7mxENKQG",
+        "id": "9qSNJQr-9"
+      }
+    },
+    {
       "name": "Blue",
       "type": "color",
       "value": "#45A2F8",
