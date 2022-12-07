@@ -403,18 +403,19 @@ function PlasmicNft__RenderFunc(props: {
               ) : null}
             </div>
           ) : null}
-
-          <div
-            data-plasmic-name={"latestTx"}
-            data-plasmic-override={overrides.latestTx}
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.latestTx
-            )}
-          >
-            {"Enter some text"}
-          </div>
+          {true ? (
+            <div
+              data-plasmic-name={"latestTx"}
+              data-plasmic-override={overrides.latestTx}
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.latestTx
+              )}
+            >
+              {"Enter some text"}
+            </div>
+          ) : null}
 
           <h5
             className={classNames(
