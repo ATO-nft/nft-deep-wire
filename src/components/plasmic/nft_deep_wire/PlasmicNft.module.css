@@ -7,7 +7,7 @@
   justify-content: flex-start;
   align-items: center;
   padding-bottom: 0px;
-  background: #000000;
+  background: var(--token-9qSNJQr-9);
   box-shadow: 0px 4px 16px 0px #45a2f880;
   min-width: 0;
   min-height: 0;
@@ -324,6 +324,15 @@
   text-align: center;
   align-self: center;
   margin-top: 13px;
+  min-width: 0;
+}
+.latestTx {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 481px;
+  padding-top: 90px;
+  text-align: center;
   min-width: 0;
 }
 .h5__bkxX {

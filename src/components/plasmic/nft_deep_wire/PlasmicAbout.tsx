@@ -31,7 +31,7 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import Button from "../../Button"; // plasmic-import: a9hmcfoqSQcWZ/component
+import Header from "../../Header"; // plasmic-import: gr_eq2hlK0/component
 
 import { useScreenVariants as useScreenVariantsi1EpI54Sd5XS4R } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: i1epI54SD5xS4r/globalVariant
 
@@ -40,11 +40,7 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_nft_deep_wire.module.css"; // plasmic-import: j5CDP9MgqbRapi7mxENKQG/projectcss
 import sty from "./PlasmicAbout.module.css"; // plasmic-import: BP2l_uTL3G7/css
 
-import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: SpSM8I8Z8pYH6F/icon
-import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: GDo5sayAt37nOm/icon
-
 export type PlasmicAbout__VariantMembers = {};
-
 export type PlasmicAbout__VariantsArgs = {};
 type VariantPropType = keyof PlasmicAbout__VariantsArgs;
 export const PlasmicAbout__VariantProps = new Array<VariantPropType>();
@@ -55,8 +51,7 @@ export const PlasmicAbout__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicAbout__OverridesType = {
   root?: p.Flex<"div">;
-  header?: p.Flex<"div">;
-  connect?: p.Flex<typeof Button>;
+  header?: p.Flex<typeof Header>;
   h1?: p.Flex<"h1">;
   h5?: p.Flex<"h5">;
   footer?: p.Flex<"div">;
@@ -76,20 +71,16 @@ function PlasmicAbout__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const [$queries, setDollarQueries] = React.useState({});
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsi1EpI54Sd5XS4R()
@@ -114,80 +105,11 @@ function PlasmicAbout__RenderFunc(props: {
             sty.root
           )}
         >
-          <div
+          <Header
             data-plasmic-name={"header"}
             data-plasmic-override={overrides.header}
-            className={classNames(projectcss.all, sty.header)}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox___13GMk)}>
-              <a
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.__wab_text,
-                  sty.link__wakxP
-                )}
-                href={`/`}
-              >
-                <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ fontWeight: 700 }}
-                  >
-                    {"NDW"}
-                  </span>
-                </React.Fragment>
-              </a>
-            </div>
-
-            {true ? (
-              <div className={classNames(projectcss.all, sty.freeBox__rWXd)}>
-                <a
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__oxCv7
-                  )}
-                  href={`/about`}
-                >
-                  {"About"}
-                </a>
-
-                <a
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__gnkle
-                  )}
-                  href={`/`}
-                >
-                  {"Artists"}
-                </a>
-
-                <a
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__yuffv
-                  )}
-                  href={`/vision`}
-                >
-                  {"Vision"}
-                </a>
-
-                <Button
-                  data-plasmic-name={"connect"}
-                  data-plasmic-override={overrides.connect}
-                  className={classNames("__wab_instance", sty.connect)}
-                >
-                  {"Connect"}
-                </Button>
-              </div>
-            ) : null}
-          </div>
+            className={classNames("__wab_instance", sty.header)}
+          />
 
           {(
             hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
@@ -301,9 +223,8 @@ function PlasmicAbout__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "connect", "h1", "h5", "footer"],
-  header: ["header", "connect"],
-  connect: ["connect"],
+  root: ["root", "header", "h1", "h5", "footer"],
+  header: ["header"],
   h1: ["h1"],
   h5: ["h5"],
   footer: ["footer"]
@@ -313,8 +234,7 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  header: "div";
-  connect: typeof Button;
+  header: typeof Header;
   h1: "h1";
   h5: "h5";
   footer: "div";
@@ -332,15 +252,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicAbout__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicAbout__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicAbout__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicAbout__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;
@@ -382,7 +302,6 @@ export const PlasmicAbout = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
-    connect: makeNodeComponent("connect"),
     h1: makeNodeComponent("h1"),
     h5: makeNodeComponent("h5"),
     footer: makeNodeComponent("footer"),

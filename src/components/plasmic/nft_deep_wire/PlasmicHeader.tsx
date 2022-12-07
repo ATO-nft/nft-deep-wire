@@ -44,7 +44,6 @@ import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: SpS
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: GDo5sayAt37nOm/icon
 
 export type PlasmicHeader__VariantMembers = {};
-
 export type PlasmicHeader__VariantsArgs = {};
 type VariantPropType = keyof PlasmicHeader__VariantsArgs;
 export const PlasmicHeader__VariantProps = new Array<VariantPropType>();
@@ -73,20 +72,16 @@ function PlasmicHeader__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const [$queries, setDollarQueries] = React.useState({});
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsi1EpI54Sd5XS4R()
@@ -211,15 +206,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicHeader__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicHeader__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicHeader__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicHeader__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;

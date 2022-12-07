@@ -47,7 +47,6 @@ import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: GDo5sayAt37
 import allegoryOfAgoraphobiajpgRqpfMjqq1 from "./images/allegoryOfAgoraphobiajpg.jpeg"; // plasmic-import: rqpfMjqq1/picture
 
 export type PlasmicNft__VariantMembers = {};
-
 export type PlasmicNft__VariantsArgs = {};
 type VariantPropType = keyof PlasmicNft__VariantsArgs;
 export const PlasmicNft__VariantProps = new Array<VariantPropType>();
@@ -62,6 +61,7 @@ export type PlasmicNft__OverridesType = {
   h1?: p.Flex<"h1">;
   reveal?: p.Flex<typeof Reveal>;
   buy?: p.Flex<typeof BidButton>;
+  latestTx?: p.Flex<"div">;
   bidButton?: p.Flex<typeof BidButton>;
   footer?: p.Flex<"div">;
 };
@@ -80,20 +80,16 @@ function PlasmicNft__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(
-    () =>
-      Object.assign(
-        {},
-
-        props.args
-      ),
-    [props.args]
-  );
+  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const currentUser = p.useCurrentUser?.() || {};
+
+  const [$queries, setDollarQueries] = React.useState({});
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsi1EpI54Sd5XS4R()
@@ -408,6 +404,18 @@ function PlasmicNft__RenderFunc(props: {
             </div>
           ) : null}
 
+          <div
+            data-plasmic-name={"latestTx"}
+            data-plasmic-override={overrides.latestTx}
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.latestTx
+            )}
+          >
+            {"Enter some text"}
+          </div>
+
           <h5
             className={classNames(
               projectcss.all,
@@ -516,11 +524,21 @@ function PlasmicNft__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "h1", "reveal", "buy", "bidButton", "footer"],
+  root: [
+    "root",
+    "header",
+    "h1",
+    "reveal",
+    "buy",
+    "latestTx",
+    "bidButton",
+    "footer"
+  ],
   header: ["header"],
   h1: ["h1"],
   reveal: ["reveal", "buy"],
   buy: ["buy"],
+  latestTx: ["latestTx"],
   bidButton: ["bidButton"],
   footer: ["footer"]
 } as const;
@@ -533,6 +551,7 @@ type NodeDefaultElementType = {
   h1: "h1";
   reveal: typeof Reveal;
   buy: typeof BidButton;
+  latestTx: "div";
   bidButton: typeof BidButton;
   footer: "div";
 };
@@ -549,15 +568,15 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicNft__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicNft__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    // Specify args directly as props
-    Omit<PlasmicNft__ArgsType, ReservedPropsType> &
-    // Specify overrides for each element directly as props
-    Omit<
+    /* Specify args directly as props*/ Omit<
+      PlasmicNft__ArgsType,
+      ReservedPropsType
+    > &
+    /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
     > &
-    // Specify props for the root element
-    Omit<
+    /* Specify props for the root element*/ Omit<
       Partial<React.ComponentProps<NodeDefaultElementType[T]>>,
       ReservedPropsType | VariantPropType | ArgPropType | DescendantsType<T>
     >;
@@ -602,6 +621,7 @@ export const PlasmicNft = Object.assign(
     h1: makeNodeComponent("h1"),
     reveal: makeNodeComponent("reveal"),
     buy: makeNodeComponent("buy"),
+    latestTx: makeNodeComponent("latestTx"),
     bidButton: makeNodeComponent("bidButton"),
     footer: makeNodeComponent("footer"),
 
