@@ -485,13 +485,13 @@ function PlasmicShades__RenderFunc(props: {
             data-plasmic-override={overrides.footer}
             className={classNames(projectcss.all, sty.footer)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__dr3Iy)}>
+            <div className={classNames(projectcss.all, sty.freeBox__v2Nk5)}>
               <a
                 className={classNames(
                   projectcss.all,
                   projectcss.a,
                   projectcss.__wab_text,
-                  sty.link__apk6F
+                  sty.link___026YF
                 )}
               >
                 {hasVariant(globalVariants, "screen", "mobileOnly")
@@ -501,13 +501,13 @@ function PlasmicShades__RenderFunc(props: {
             </div>
 
             {true ? (
-              <div className={classNames(projectcss.all, sty.freeBox__v6Ia3)}>
+              <div className={classNames(projectcss.all, sty.freeBox___87TZ7)}>
                 <a
                   className={classNames(
                     projectcss.all,
                     projectcss.a,
                     projectcss.__wab_text,
-                    sty.link___5Lmi
+                    sty.link___4GKxr
                   )}
                   href={`/`}
                 >
@@ -524,7 +524,7 @@ function PlasmicShades__RenderFunc(props: {
                       projectcss.all,
                       projectcss.a,
                       projectcss.__wab_text,
-                      sty.link__a7I8H
+                      sty.link__okHm0
                     )}
                   >
                     {"Contact us"}

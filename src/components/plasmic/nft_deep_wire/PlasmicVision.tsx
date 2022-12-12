@@ -168,13 +168,13 @@ function PlasmicVision__RenderFunc(props: {
             data-plasmic-override={overrides.footer}
             className={classNames(projectcss.all, sty.footer)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__xscma)}>
+            <div className={classNames(projectcss.all, sty.freeBox__ysYtw)}>
               <a
                 className={classNames(
                   projectcss.all,
                   projectcss.a,
                   projectcss.__wab_text,
-                  sty.link__fl2K3
+                  sty.link__n0Dby
                 )}
               >
                 {hasVariant(globalVariants, "screen", "mobileOnly")
@@ -184,13 +184,13 @@ function PlasmicVision__RenderFunc(props: {
             </div>
 
             {true ? (
-              <div className={classNames(projectcss.all, sty.freeBox__kNmc)}>
+              <div className={classNames(projectcss.all, sty.freeBox__ihbeu)}>
                 <a
                   className={classNames(
                     projectcss.all,
                     projectcss.a,
                     projectcss.__wab_text,
-                    sty.link__vxrRf
+                    sty.link__pulHc
                   )}
                   href={`/`}
                 >
@@ -207,7 +207,7 @@ function PlasmicVision__RenderFunc(props: {
                       projectcss.all,
                       projectcss.a,
                       projectcss.__wab_text,
-                      sty.link__oYUha
+                      sty.link___88Giv
                     )}
                   >
                     {"Contact us"}

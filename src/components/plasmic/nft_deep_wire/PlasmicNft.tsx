@@ -61,8 +61,12 @@ export type PlasmicNft__OverridesType = {
   h1?: p.Flex<"h1">;
   reveal?: p.Flex<typeof Reveal>;
   buy?: p.Flex<typeof BidButton>;
+  price?: p.Flex<"div">;
+  msgBox?: p.Flex<"div">;
+  nextId?: p.Flex<"h5">;
+  next?: p.Flex<"span">;
   bidButton?: p.Flex<typeof BidButton>;
-  latestTx?: p.Flex<"div">;
+  loader?: p.Flex<"div">;
   footer?: p.Flex<"div">;
 };
 
@@ -201,7 +205,7 @@ function PlasmicNft__RenderFunc(props: {
                 )}
               >
                 {
-                  'Allegory of Agoraphobia\n\n• Mixed media on canvas 190x300cm\n• This piece was made to mention the omnipresent theme of coronavirus, COVID-19. It\nsymbolises the psychosis caused by the virus in social relations, no without reason, and\nhow returning to a « normal life », walking down the streets, created an agoraphobia\nfeeling.\n• The different characters were found on the internet after Googling: "How do people protect\nthemselves from the coronavirus?". Among the images found on the internet are crazy\noutfits, such as the famous dinosaur costume, or people completely covered in plastic.\n• Irony is used here to express how the society\'s behaviour drastically changed during this crisis.\nIt is clear that the mass reacts differently to the individual facing these issues.'
+                  'Allegory of Agoraphobia\n\nMixed media on canvas 190x300cm\n\nThis piece was made to mention the omnipresent theme of coronavirus, COVID-19. It\nsymbolises the psychosis caused by the virus in social relations, no without reason, and\nhow returning to a « normal life », walking down the streets, created an agoraphobia\nfeeling.\n\nThe different characters were found on the internet after Googling: "How do people protect\nthemselves from the coronavirus?". Among the images found on the internet are crazy\noutfits, such as the famous dinosaur costume, or people completely covered in plastic.\n\nIrony is used here to express how the society\'s behaviour drastically changed during this crisis.\n\nIt is clear that the mass reacts differently to the individual facing these issues.'
                 }
               </h5>
 
@@ -403,36 +407,87 @@ function PlasmicNft__RenderFunc(props: {
               ) : null}
             </div>
           ) : null}
+          {true ? (
+            <div
+              data-plasmic-name={"price"}
+              data-plasmic-override={overrides.price}
+              className={classNames(projectcss.all, sty.price)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__atKnh
+                )}
+              >
+                {"0.042 ETH"}
+              </div>
 
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__atKnh
-            )}
-          >
-            {"0.0042 ETH"}
-          </div>
-
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text___4YrfO
+                )}
+              >
+                {"(≈ 53 €)"}
+              </div>
+            </div>
+          ) : null}
           {(
             hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
           ) ? (
             <div className={classNames(projectcss.all, sty.freeBox__yk75)}>
+              {true ? (
+                <div
+                  data-plasmic-name={"msgBox"}
+                  data-plasmic-override={overrides.msgBox}
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.msgBox
+                  )}
+                >
+                  {"[msg]"}
+                </div>
+              ) : null}
+
               <h5
+                data-plasmic-name={"nextId"}
+                data-plasmic-override={overrides.nextId}
                 className={classNames(
                   projectcss.all,
                   projectcss.h5,
                   projectcss.__wab_text,
-                  sty.h5__bkxX
+                  sty.nextId
                 )}
               >
                 <React.Fragment>
-                  <span
-                    className={"plasmic_default__all plasmic_default__span"}
-                    style={{ color: "#8C1C84", fontWeight: 700 }}
-                  >
-                    {"1"}
-                  </span>
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <span
+                      data-plasmic-name={"next"}
+                      data-plasmic-override={overrides.next}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.span,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.next
+                      )}
+                    >
+                      <React.Fragment>
+                        <span
+                          className={
+                            "plasmic_default__all plasmic_default__span"
+                          }
+                          style={{ color: "#8C1C84", fontWeight: 700 }}
+                        >
+                          {"1"}
+                        </span>
+                      </React.Fragment>
+                    </span>
+                  }
                   <React.Fragment>{""}</React.Fragment>
                   <span
                     className={"plasmic_default__all plasmic_default__span"}
@@ -460,32 +515,25 @@ function PlasmicNft__RenderFunc(props: {
               </BidButton>
             </div>
           ) : null}
-          {true ? (
-            <div
-              data-plasmic-name={"latestTx"}
-              data-plasmic-override={overrides.latestTx}
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.latestTx
-              )}
-            >
-              {"Enter some text"}
-            </div>
-          ) : null}
+
+          <div
+            data-plasmic-name={"loader"}
+            data-plasmic-override={overrides.loader}
+            className={classNames(projectcss.all, sty.loader)}
+          />
 
           <div
             data-plasmic-name={"footer"}
             data-plasmic-override={overrides.footer}
             className={classNames(projectcss.all, sty.footer)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__qqcu1)}>
+            <div className={classNames(projectcss.all, sty.freeBox__bN2P1)}>
               <a
                 className={classNames(
                   projectcss.all,
                   projectcss.a,
                   projectcss.__wab_text,
-                  sty.link__qNv37
+                  sty.link__kvFvk
                 )}
               >
                 {hasVariant(globalVariants, "screen", "mobileOnly")
@@ -495,13 +543,13 @@ function PlasmicNft__RenderFunc(props: {
             </div>
 
             {true ? (
-              <div className={classNames(projectcss.all, sty.freeBox__hnRki)}>
+              <div className={classNames(projectcss.all, sty.freeBox__hoRej)}>
                 <a
                   className={classNames(
                     projectcss.all,
                     projectcss.a,
                     projectcss.__wab_text,
-                    sty.link__yvd7H
+                    sty.link__aMla
                   )}
                   href={`/`}
                 >
@@ -518,7 +566,7 @@ function PlasmicNft__RenderFunc(props: {
                       projectcss.all,
                       projectcss.a,
                       projectcss.__wab_text,
-                      sty.link__gTzAk
+                      sty.link__kh5Uh
                     )}
                   >
                     {"Contact us"}
@@ -540,16 +588,24 @@ const PlasmicDescendants = {
     "h1",
     "reveal",
     "buy",
+    "price",
+    "msgBox",
+    "nextId",
+    "next",
     "bidButton",
-    "latestTx",
+    "loader",
     "footer"
   ],
   header: ["header"],
   h1: ["h1"],
   reveal: ["reveal", "buy"],
   buy: ["buy"],
+  price: ["price"],
+  msgBox: ["msgBox"],
+  nextId: ["nextId", "next"],
+  next: ["next"],
   bidButton: ["bidButton"],
-  latestTx: ["latestTx"],
+  loader: ["loader"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -561,8 +617,12 @@ type NodeDefaultElementType = {
   h1: "h1";
   reveal: typeof Reveal;
   buy: typeof BidButton;
+  price: "div";
+  msgBox: "div";
+  nextId: "h5";
+  next: "span";
   bidButton: typeof BidButton;
-  latestTx: "div";
+  loader: "div";
   footer: "div";
 };
 
@@ -631,8 +691,12 @@ export const PlasmicNft = Object.assign(
     h1: makeNodeComponent("h1"),
     reveal: makeNodeComponent("reveal"),
     buy: makeNodeComponent("buy"),
+    price: makeNodeComponent("price"),
+    msgBox: makeNodeComponent("msgBox"),
+    nextId: makeNodeComponent("nextId"),
+    next: makeNodeComponent("next"),
     bidButton: makeNodeComponent("bidButton"),
-    latestTx: makeNodeComponent("latestTx"),
+    loader: makeNodeComponent("loader"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicNft

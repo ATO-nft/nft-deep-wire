@@ -212,7 +212,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 >
                   <Reveal
                     className={classNames("__wab_instance", sty.reveal__fz6Fc)}
-                    delay={1000 as const}
+                    delay={500 as const}
                     duration={1500 as const}
                     triggerOnce={true}
                   >
@@ -246,7 +246,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 >
                   <Reveal
                     className={classNames("__wab_instance", sty.reveal__uizk3)}
-                    delay={1100 as const}
+                    delay={600 as const}
                     duration={1500 as const}
                     triggerOnce={true}
                   >
@@ -278,13 +278,13 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-override={overrides.footer}
             className={classNames(projectcss.all, sty.footer)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__aRaIh)}>
+            <div className={classNames(projectcss.all, sty.freeBox__wqlU8)}>
               <a
                 className={classNames(
                   projectcss.all,
                   projectcss.a,
                   projectcss.__wab_text,
-                  sty.link__lzgPz
+                  sty.link__rmtdD
                 )}
               >
                 {hasVariant(globalVariants, "screen", "mobileOnly")
@@ -294,13 +294,13 @@ function PlasmicHomepage__RenderFunc(props: {
             </div>
 
             {true ? (
-              <div className={classNames(projectcss.all, sty.freeBox___9MzrC)}>
+              <div className={classNames(projectcss.all, sty.freeBox__mi35R)}>
                 <a
                   className={classNames(
                     projectcss.all,
                     projectcss.a,
                     projectcss.__wab_text,
-                    sty.link__xNqMt
+                    sty.link__rbLKe
                   )}
                   href={`/`}
                 >
@@ -317,7 +317,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       projectcss.all,
                       projectcss.a,
                       projectcss.__wab_text,
-                      sty.link__oOm8P
+                      sty.link__beV5G
                     )}
                   >
                     {"Contact us"}

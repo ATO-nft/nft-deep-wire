@@ -33,7 +33,6 @@ function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
   // const [net, setNet] = useState("");
   // const [bal, setBal] = useState("");
   // const [balWei, setBalWei] = useState(0);
-  const [loading, setLoading] = useState(false);
   // const [party, setParty] = useState(false);
 
   const {
@@ -41,6 +40,8 @@ function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
     setWeb3auth,
     provider,
     setProvider,
+    userAddress,
+    setUserAddress,
   } = useGlobalContext();
 
   useEffect(() => {
@@ -138,7 +139,7 @@ function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
     const rpc = new RPC(provider);
     const address = await rpc.getAccounts();
     // setEtherscanLink("https://ropsten.etherscan.io/address/"+ address);
-    setAddr(address);
+    setUserAddress(address)
     const setShortenAddrString = shortenAddress(String(address))
     // setShortenAddr(setShortenAddrString)
     console.log("address:", address);
