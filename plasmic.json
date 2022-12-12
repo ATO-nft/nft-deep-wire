@@ -218,6 +218,19 @@
           "cssFilePath": "plasmic/nft_deep_wire/PlasmicVision.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "-rNBgT6s2r",
+          "name": "Footer",
+          "type": "managed",
+          "projectId": "j5CDP9MgqbRapi7mxENKQG",
+          "renderModuleFilePath": "plasmic/nft_deep_wire/PlasmicFooter.tsx",
+          "importSpec": {
+            "modulePath": "Footer.tsx"
+          },
+          "cssFilePath": "plasmic/nft_deep_wire/PlasmicFooter.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [

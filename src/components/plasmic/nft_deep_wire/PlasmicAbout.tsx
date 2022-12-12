@@ -32,6 +32,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Header from "../../Header"; // plasmic-import: gr_eq2hlK0/component
+import Footer from "../../Footer"; // plasmic-import: -rNBgT6s2r/component
 
 import { useScreenVariants as useScreenVariantsi1EpI54Sd5XS4R } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: i1epI54SD5xS4r/globalVariant
 
@@ -52,9 +53,10 @@ export const PlasmicAbout__ArgProps = new Array<ArgPropType>();
 export type PlasmicAbout__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<typeof Header>;
+  freeBox?: p.Flex<"div">;
   h1?: p.Flex<"h1">;
   h5?: p.Flex<"h5">;
-  footer?: p.Flex<"div">;
+  footer?: p.Flex<typeof Footer>;
 };
 
 export interface DefaultAboutProps {
@@ -114,7 +116,11 @@ function PlasmicAbout__RenderFunc(props: {
           {(
             hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
           ) ? (
-            <div className={classNames(projectcss.all, sty.freeBox__aK54G)}>
+            <div
+              data-plasmic-name={"freeBox"}
+              data-plasmic-override={overrides.freeBox}
+              className={classNames(projectcss.all, sty.freeBox)}
+            >
               <h1
                 data-plasmic-name={"h1"}
                 data-plasmic-override={overrides.h1}
@@ -163,59 +169,11 @@ function PlasmicAbout__RenderFunc(props: {
             </div>
           ) : null}
 
-          <div
+          <Footer
             data-plasmic-name={"footer"}
             data-plasmic-override={overrides.footer}
-            className={classNames(projectcss.all, sty.footer)}
-          >
-            <div className={classNames(projectcss.all, sty.freeBox__iPeTq)}>
-              <a
-                className={classNames(
-                  projectcss.all,
-                  projectcss.a,
-                  projectcss.__wab_text,
-                  sty.link__kQu3B
-                )}
-              >
-                {hasVariant(globalVariants, "screen", "mobileOnly")
-                  ? "NFT Deep Wire\nAll rights reserved © 2022"
-                  : "NFT Deep Wire | All rights reserved © 2022"}
-              </a>
-            </div>
-
-            {true ? (
-              <div className={classNames(projectcss.all, sty.freeBox__gxtH)}>
-                <a
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    projectcss.__wab_text,
-                    sty.link__nsFmt
-                  )}
-                  href={`/`}
-                >
-                  {"Terms & conditions"}
-                </a>
-
-                {(
-                  hasVariant(globalVariants, "screen", "mobileOnly")
-                    ? true
-                    : false
-                ) ? (
-                  <a
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.a,
-                      projectcss.__wab_text,
-                      sty.link__sd2Us
-                    )}
-                  >
-                    {"Contact us"}
-                  </a>
-                ) : null}
-              </div>
-            ) : null}
-          </div>
+            className={classNames("__wab_instance", sty.footer)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -223,8 +181,9 @@ function PlasmicAbout__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "h1", "h5", "footer"],
+  root: ["root", "header", "freeBox", "h1", "h5", "footer"],
   header: ["header"],
+  freeBox: ["freeBox", "h1", "h5"],
   h1: ["h1"],
   h5: ["h5"],
   footer: ["footer"]
@@ -235,9 +194,10 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: typeof Header;
+  freeBox: "div";
   h1: "h1";
   h5: "h5";
-  footer: "div";
+  footer: typeof Footer;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -302,6 +262,7 @@ export const PlasmicAbout = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
+    freeBox: makeNodeComponent("freeBox"),
     h1: makeNodeComponent("h1"),
     h5: makeNodeComponent("h5"),
     footer: makeNodeComponent("footer"),

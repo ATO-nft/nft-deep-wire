@@ -600,13 +600,13 @@ function PlasmicArtist__RenderFunc(props: {
             data-plasmic-override={overrides.footer}
             className={classNames(projectcss.all, sty.footer)}
           >
-            <div className={classNames(projectcss.all, sty.freeBox__pnsNg)}>
+            <div className={classNames(projectcss.all, sty.freeBox__tUVq3)}>
               <a
                 className={classNames(
                   projectcss.all,
                   projectcss.a,
                   projectcss.__wab_text,
-                  sty.link__ycj3P
+                  sty.link__az8YJ
                 )}
               >
                 {hasVariant(globalVariants, "screen", "mobileOnly")
@@ -616,13 +616,13 @@ function PlasmicArtist__RenderFunc(props: {
             </div>
 
             {true ? (
-              <div className={classNames(projectcss.all, sty.freeBox___6Jf7O)}>
+              <div className={classNames(projectcss.all, sty.freeBox__c2WjH)}>
                 <a
                   className={classNames(
                     projectcss.all,
                     projectcss.a,
                     projectcss.__wab_text,
-                    sty.link__vHduh
+                    sty.link__xR86K
                   )}
                   href={`/`}
                 >
@@ -639,7 +639,7 @@ function PlasmicArtist__RenderFunc(props: {
                       projectcss.all,
                       projectcss.a,
                       projectcss.__wab_text,
-                      sty.link___9J4Xu
+                      sty.link__uySa4
                     )}
                   >
                     {"Contact us"}

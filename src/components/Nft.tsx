@@ -7,12 +7,9 @@ import {
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
 
 import { useEffect, useState } from "react";
-import { Web3Auth } from "@web3auth/web3auth";
-import { CHAIN_NAMESPACES/*, SafeEventEmitterProvider*/ } from "@web3auth/base";
 import RPC from "./web3/ethersRPC";
 import "./App.css";
-import { shortenAddress} from '@usedapp/core'
-import loader from '../../src/loader.svg';
+import loader from './web3/loader.svg';
 
 import { useGlobalContext } from './Web3Context';
 
@@ -27,76 +24,121 @@ function Nft_(props: NftProps, ref: HTMLElementRefOf<"div">) {
   const {
     provider,
     userAddress,
-
+    setBal
   } = useGlobalContext();
 
   const [txHash, setTxHash] = useState("");
-
+  const [msgId, setMsgId] = useState<number>(0)
   const [loading, setLoading] = useState(false);
-// const [party, setParty] = useState(false);
-// const [freeMoney, setFreeMoney] = useState(false);
+  const [nextId, setNextId] = useState<number>(0);
 
-useEffect(() => {
+  const openSeaBaseUrl = "https://testnets.opensea.io/assets/goerli/"
+  const contractAddress = "0x0a4d43276f5d1693e5876131b7560cd07b9daa2a"
+  const justBoughtId = nextId - 1
+  const openSeaLink = openSeaBaseUrl + "/" + contractAddress + "/" + String(justBoughtId)
 
-}, [provider]);
+  useEffect(() => {
+
+    getNextId()
+    setMsgId(0)
+
+  }, [provider]);
 
 
-// const getBalance = async () => {
-//   if (!provider) {
-//     // console.log("provider not initialized yet");
-//     return;
-//   }
-//   const rpc = new RPC(provider);
-//   const balanceRaw = await rpc.getBalance();
-//   const balanceFormatted = Number(balanceRaw).toFixed(5);
-//   const balance = String(balanceFormatted) + " ETH"
-//   setBal(balance);
-//   // setBalWei(balanceRaw as any * 10 ** 18);
-// };
+  const getBalance = async () => {
+    if (!provider) {
+      return;
+    }
+    const rpc = new RPC(provider);
+    const balanceRaw = await rpc.getBalance();
+    console.log("balanceRaw", balanceRaw)
+    setBal(balanceRaw);
+    return balanceRaw;
+  };
 
-const sendTransaction = async () => {
-  
-  // try {
-  //   // if (balWei * 10 ** 18 < txGasCost ) {
-  //     await getFreeMoney();
-  //   // } 
+  const getNextId = async () => {
+    if (!provider) {
+      return;
+    }
+    const rpc = new RPC(provider);
+    const nextId = await rpc.getNextId(contractAddress);
+    console.log("nextId:", nextId)
+    setNextId(nextId);
+    return nextId;
+  };
 
-  // } catch (error) {
-  //   return error as string;
-  // }
+  const mint = async () => {
 
-  console.log("Minting...");
+    console.log("Minting...");
 
-  console.log("provider:", provider)
+    setLoading(true)
 
-  try {
-    setLoading(true);
-  if (!provider) {
-    console.log("provider not initialized yet");
-    setLoading(false);
-    return;
-  }
-  const rpc = new RPC(provider);  
+    try {
 
-  const tx = await rpc.mint("0x0a4d43276F5D1693e5876131B7560Cd07b9DaA2a");
+      if (!provider) {
+        console.log("provider not initialized yet");
+        setMsgId(1);
+        setLoading(false)
+        return;
 
-  setLoading(false);
+      }
 
-  setTxHash("https://goerli.etherscan.io/tx/" + tx )
-  console.log("txHash: ", txHash)
+      const newBal = await getBalance()
 
-  console.log("done")
+      console.log("newBal:", newBal)
 
-  } catch (error) {
-    return error as string;
-  }
-};
+      if (newBal === 0) {
+        setMsgId(2);
+        setLoading(false)
+        return;
+      }
+
+      setMsgId(0);
+
+      const rpc = new RPC(provider);  
+
+      const tx = await rpc.mint(contractAddress);
+
+      setLoading(false);
+
+      setTxHash("https://goerli.etherscan.io/tx/" + tx )
+      console.log("txHash: ", txHash)
+      getNextId()
+      setMsgId(3);
+      console.log("done")
+
+    } catch (error) {
+      return error as string;
+    }
+  };
 
   return <PlasmicNft root={{ ref }} {...props}
-  
+
+    msgBox={{
+      props: {
+        children: (
+          
+          msgId === 0 ? <p style={{color:"red"}}> </p> :
+          msgId === 1 ? <p style={{color:"red", fontWeight: 'bold'}}>Please login first.</p> :
+          msgId === 2 ? <p style={{color:"red"}}>You currently don’t have enough ETH.<br/><br/>Your ETH wallet address is:<br/><p style={{color:"red", textAlign:'center'}} >{userAddress}</p><p style={{color:"red", textAlign:'center'}}>If you want to fund your wallet with Visa or Mastercard, you can buy <strong>0.027 ETH</strong> using Moonpay:</p>
+          <p><a target='blank' style={{color:"red", fontWeight: 'bold'}} href='https://www.moonpay.com/buy/eth'>https://www.moonpay.com/buy/eth</a></p></p>:
+          msgId === 3 && <p style={{color:"#45a2f8", fontWeight: 'bold'}}>You now own this NFT (view on <a style={{color:"#45a2f8", fontWeight: 'bold'}} target="blank" href={openSeaLink}>OpenSea</a>).</p>
+        
+        )
+      }
+    }}
+
+    next= {{
+      children: nextId
+    }}
+
+    loader={{
+      render: () => (loading === true ? <div><img src={loader} alt="loader"/></div> : "")
+    }}
+
     bidButton= {{
       props: {
-        onClick: () => sendTransaction()
+        onClick: () => mint()
       }
     }}
 
