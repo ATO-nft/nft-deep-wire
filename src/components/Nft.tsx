@@ -13,8 +13,6 @@ import RPC from "./web3/ethersRPC";
 import "./App.css";
 import { shortenAddress} from '@usedapp/core'
 import loader from '../../src/loader.svg';
-import Confetti from 'react-confetti';
-// import YouTube, { YouTubeProps } from 'react-youtube';
 
 import { useGlobalContext } from './Web3Context';
 
@@ -27,138 +25,21 @@ export interface NftProps extends DefaultNftProps {}
 function Nft_(props: NftProps, ref: HTMLElementRefOf<"div">) {
 
   const {
-    // web3auth,
-    // setWeb3auth,
     provider,
-    // setProvider,
     userAddress,
-    isOwner,
-    setIsOwner,
-    // bal
-    // setUserAddress,
-    // userShortenAddr,
-    // setShortenAddr,
-    // signer,
-    // setSigner,
+
   } = useGlobalContext();
 
-//   const [loading, setLoading] = useState(false);
+  const [txHash, setTxHash] = useState("");
+
+  const [loading, setLoading] = useState(false);
 // const [party, setParty] = useState(false);
 // const [freeMoney, setFreeMoney] = useState(false);
-
-
-console.log("userAddr:", userAddress);
 
 useEffect(() => {
 
 }, [provider]);
 
-// useEffect(() => {
-//   const init = async () => {
-//     try {
-
-//     const web3auth = new Web3Auth({
-//       clientId: clientId,
-//       chainConfig: {
-//         chainNamespace: CHAIN_NAMESPACES.EIP155,
-//         chainId: "0x3", 
-//         rpcTarget: endpoint,
-//         displayName: "Ropsten Testnet",
-//         blockExplorer: "https://ropsten.etherscan.io",
-//         ticker: "ETH",
-//         tickerName: "Ethereum",
-//       },
-//     });
-
-//     setWeb3auth(web3auth);
-
-//     await web3auth.initModal();
-
-//       if (web3auth.provider) {
-//         setProvider(web3auth.provider);
-//       };
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   };
-
-//   init();
-// }, []);
-
-// const toggle = async () => {
-//   if (provider) {
-//     await logout();
-//   } else {
-//     await login();
-//   }
-// }
-
-// const show = async () => {
-//   getAccounts();
-//   getChainId();
-//   getBalance();
-//   getUserInfo();
-// }
-
-// const login = async () => {
-//   if (!web3auth) {
-//     // console.log("web3auth not initialized yet");
-//     return;
-//   }
-//   const web3authProvider = await web3auth.connect();
-//   setProvider(web3authProvider);
-//   // console.log("web3authProvider: ", web3authProvider);
-//   await show();
-// };
-
-// const logout = async () => {
-//   if (!web3auth) {
-//     // console.log("web3auth not initialized yet");
-//     return;
-//   }
-//   await web3auth.logout();
-//   setProvider(null);
-//   // setAddr("");
-//   setUserAddr("")
-//   setShortenAddr("");
-//   setEtherscanLink("");
-//   setNet("");
-//   setBal("");
-//   setFirstName("anon")
-//   setPfp("")
-//   // setBalWei(0);
-// };
-
-// const getChainId = async () => {
-//   if (!provider) {
-//     // console.log("provider not initialized yet");
-//     return;
-//   }
-//   const rpc = new RPC(provider);
-//   const chainId = await rpc.getChainId();
-//   if (chainId === 3) {
-//     setNet("Ropsten Testnet");
-//   } else {
-//     setNet(chainId);
-//   }
-  
-// };
-
-// const getAccounts = async () => {
-//   if (!provider) {
-//     // console.log("provider not initialized yet");
-//     return;
-//   }
-//   const rpc = new RPC(provider);
-//   const address = await rpc.getAccounts();
-//   setEtherscanLink("https://ropsten.etherscan.io/address/"+ address);
-//   // setAddr(address);
-//   setUserAddr(address)
-//   const setShortenAddrString = shortenAddress(String(address))
-//   setShortenAddr(setShortenAddrString)
-//   setUserAddr(address)
-
-// };
 
 // const getBalance = async () => {
 //   if (!provider) {
@@ -173,116 +54,52 @@ useEffect(() => {
 //   // setBalWei(balanceRaw as any * 10 ** 18);
 // };
 
-// const sendTransaction = async () => {
-
-//   console.log("Let's go!");
-//   // const txGasCost = 7 * 10 ** 16;
-
-//   try {
-//     // if (balWei * 10 ** 18 < txGasCost ) {
-//       await getFreeMoney();
-      
-//     // } 
-
-//   } catch (error) {
-//     return error as string;
-//   }
-
-//   console.log("Minting...");
-
-//   try {
-//     setLoading(true);
-//     setFreeMoney(true); // 有啦！ 
-//   if (!provider) {
-//     // console.log("provider not initialized yet");
-//     return;
-//   }
-//   const rpc = new RPC(provider);  
-
-//   const name = "Thistle";
-//   const symbol = "THISTLE";
-//   const uri = "https://ipfs.io/ipfs/bafybeich4dqhadr2sai2pzxpayjqd62fgt46wdz425zha6aam7ikaluv2q/metadata.json"
-
-//   const tx = await rpc.mint(name, symbol, uri);
-
-//   await show();
-//   setTxHash("https://ropsten.etherscan.io/tx/" + tx )
-//   console.log("txHash: ", tx)
-//   setParty(true);
-//   setLoading(false);
-//   setTimeout( () => {
-//     setParty(false)
-//     setFreeMoney(false)
+const sendTransaction = async () => {
   
-//   }, 15000
-    
-//   );
-//   console.log("done")
+  // try {
+  //   // if (balWei * 10 ** 18 < txGasCost ) {
+  //     await getFreeMoney();
+  //   // } 
 
-//   } catch (error) {
-//     return error as string;
-//   }
-// };
+  // } catch (error) {
+  //   return error as string;
+  // }
 
-// const getFreeMoney = async () => {
-//   try {
-//     setLoading(true);
-//   if (!provider) {
-//     // console.log("provider not initialized yet");
-//     return;
-//   }
-//   const rpc = new RPC(provider);
-//   await rpc.getFreeMoney(faucet, userAddr);
-//   setLoading(false);
-//   await show();
-//   } catch (error) {
-//     return error as string;
-//   }
-// };
+  console.log("Minting...");
 
-// const getUserInfo = async () => {
-//   if (!web3auth) {
-//     // console.log("web3auth not initialized yet");
-//     return;
-//   }
-//   const user = await web3auth.getUserInfo();
-//   if (user) {
-//     const str = user.name as any
-//     const first = str.split(' ')[0]
-//     setFirstName(first)
-//     setPfp(user.profileImage as any)
-//   }
-//   // console.log(user);
-// };
+  console.log("provider:", provider)
 
-// const giveBack = async () => {
-//   setLoading(true);
+  try {
+    setLoading(true);
+  if (!provider) {
+    console.log("provider not initialized yet");
+    setLoading(false);
+    return;
+  }
+  const rpc = new RPC(provider);  
 
-//   if (!provider) {
-//     // console.log("provider not initialized yet");
-//     return;
-//   }
-//   if (!web3auth) {
-//     // console.log("provider not initialized yet");
-//     return;
-//   }
-//   const rpc = new RPC(provider);
-//   // await rpc.getFreeMoney(faucet, userAddr);
-//   const result = await rpc.giveBack();
-//   console.log(result)
-//   getBalance()
-//   setLoading(false);
-// };
+  const tx = await rpc.mint("0x0a4d43276F5D1693e5876131B7560Cd07b9DaA2a");
 
+  setLoading(false);
 
+  setTxHash("https://goerli.etherscan.io/tx/" + tx )
+  console.log("txHash: ", txHash)
 
-  return <PlasmicNft root={{ ref }} {...props} 
+  console.log("done")
+
+  } catch (error) {
+    return error as string;
+  }
+};
+
+  return <PlasmicNft root={{ ref }} {...props}
   
-  
-  
-  
-  
-  
+    bidButton= {{
+      props: {
+        onClick: () => sendTransaction()
+      }
+    }}
+
   />;
 }
 
