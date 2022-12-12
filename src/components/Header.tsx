@@ -12,6 +12,8 @@ import RPC from "./web3/ethersRPC";
 import "../App.css";
 import { shortenAddress} from '@usedapp/core'
 import loader from './web3/loader.svg';
+import { useGlobalContext } from './Web3Context';
+
 
 export interface HeaderProps extends DefaultHeaderProps {}
 
@@ -21,8 +23,8 @@ const faucet = String(process.env.REACT_APP_FAUCET_PRIVATE_KEY);
 
 function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
 
-  const [web3auth, setWeb3auth] = useState<Web3Auth | null>(null);
-  const [provider, setProvider] = useState<SafeEventEmitterProvider | null>(null);
+  // const [web3auth, setWeb3auth] = useState<Web3Auth | null>(null);
+  // const [provider, setProvider] = useState<SafeEventEmitterProvider | null>(null);
 
   const [addr, setAddr] = useState("");
   // const [shortenAddr, setShortenAddr] = useState("");
@@ -33,6 +35,13 @@ function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
   // const [balWei, setBalWei] = useState(0);
   const [loading, setLoading] = useState(false);
   // const [party, setParty] = useState(false);
+
+  const {
+    web3auth,
+    setWeb3auth,
+    provider,
+    setProvider,
+  } = useGlobalContext();
 
   useEffect(() => {
     show();
@@ -103,11 +112,6 @@ function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
     await web3auth.logout();
     setProvider(null);
     setAddr("");
-    // setShortenAddr("");
-    // setEtherscanLink("");
-    // setNet("");
-    // setBal("");
-    // setBalWei(0);
   };
   
   const getChainId = async () => {
@@ -153,70 +157,6 @@ function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
     console.log("balance:", balance);
     // setBalWei(balanceRaw as any * 10 ** 18);
   };
-  
-  const sendTransaction = async () => {
-  
-    console.log("Let's go!");
-    // const txGasCost = 7 * 10 ** 16;
-  
-    try {
-      // if (balWei * 10 ** 18 < txGasCost ) {
-        await getFreeMoney();
-      // } 
-  
-    } catch (error) {
-      return error as string;
-    }
-  
-    console.log("Minting...");
-  
-    try {
-      setLoading(true);
-    if (!provider) {
-      console.log("provider not initialized yet");
-      setLoading(false);
-      return;
-    }
-    const rpc = new RPC(provider);  
-  
-    const name = "Thistle";
-    const symbol = "THISTLE";
-    const uri = "https://ipfs.io/ipfs/bafybeich4dqhadr2sai2pzxpayjqd62fgt46wdz425zha6aam7ikaluv2q/metadata.json"
-  
-    const tx = await rpc.mint(name, symbol, uri);
-  
-    setLoading(false);
-    await show();
-    setTxHash("https://ropsten.etherscan.io/tx/" + tx )
-    console.log("txHash: ", tx)
-    // setParty(true);
-    // setTimeout( () => {
-    //   setParty(false)}, 15000
-    // );
-  
-    console.log("done")
-  
-    } catch (error) {
-      return error as string;
-    }
-  };
-
-  const getFreeMoney = async () => {
-    try {
-      setLoading(true);
-    if (!provider) {
-      console.log("provider not initialized yet");
-      return;
-    }
-    const rpc = new RPC(provider);
-    await rpc.getFreeMoney(faucet, addr);
-    setLoading(false);
-    await show();
-  
-    } catch (error) {
-      return error as string;
-    }
-  };
 
   return <PlasmicHeader root={{ ref }} {...props} 
 
@@ -225,26 +165,7 @@ function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
       children:(!provider ? "Login" : "Logout"),
       onClick: () => toggle()
     } as any
-  }}
-  
-  // buy={{
-  //   props: {
-  //     children: (loading === true ? 
-
-  //       <img src={loader} alt={loader} /> : 
-  
-  //      <h2 style={{color:"white", textAlign:"center"}}>Mint</h2>),
-  //      onClick: () => sendTransaction()
-  //   }
-  // }}
-
-  // latestTx={{
-  //   props: {
-  //     children: (!txHash ? " " : <a target = "blank" href = {txHash} >View your latest transaction</a>),
-  //   }
-  // }}
-  
-  
+  }}  
   
   />;
 }

@@ -61,8 +61,8 @@ export type PlasmicNft__OverridesType = {
   h1?: p.Flex<"h1">;
   reveal?: p.Flex<typeof Reveal>;
   buy?: p.Flex<typeof BidButton>;
-  latestTx?: p.Flex<"div">;
   bidButton?: p.Flex<typeof BidButton>;
+  latestTx?: p.Flex<"div">;
   footer?: p.Flex<"div">;
 };
 
@@ -403,6 +403,63 @@ function PlasmicNft__RenderFunc(props: {
               ) : null}
             </div>
           ) : null}
+
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__atKnh
+            )}
+          >
+            {"0.0042 ETH"}
+          </div>
+
+          {(
+            hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
+          ) ? (
+            <div className={classNames(projectcss.all, sty.freeBox__yk75)}>
+              <h5
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h5,
+                  projectcss.__wab_text,
+                  sty.h5__bkxX
+                )}
+              >
+                <React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "#8C1C84", fontWeight: 700 }}
+                  >
+                    {"1"}
+                  </span>
+                  <React.Fragment>{""}</React.Fragment>
+                  <span
+                    className={"plasmic_default__all plasmic_default__span"}
+                    style={{ color: "#FBF0F0" }}
+                  >
+                    {" / 150"}
+                  </span>
+                </React.Fragment>
+              </h5>
+
+              <BidButton
+                data-plasmic-name={"bidButton"}
+                data-plasmic-override={overrides.bidButton}
+                className={classNames("__wab_instance", sty.bidButton)}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__jZ8
+                  )}
+                >
+                  {"Buy"}
+                </div>
+              </BidButton>
+            </div>
+          ) : null}
           {true ? (
             <div
               data-plasmic-name={"latestTx"}
@@ -416,54 +473,6 @@ function PlasmicNft__RenderFunc(props: {
               {"Enter some text"}
             </div>
           ) : null}
-
-          <h5
-            className={classNames(
-              projectcss.all,
-              projectcss.h5,
-              projectcss.__wab_text,
-              sty.h5__bkxX
-            )}
-          >
-            <React.Fragment>
-              <span
-                className={"plasmic_default__all plasmic_default__span"}
-                style={{ color: "#8C1C84", fontWeight: 700 }}
-              >
-                {"1"}
-              </span>
-              <React.Fragment>{""}</React.Fragment>
-              <span
-                className={"plasmic_default__all plasmic_default__span"}
-                style={{ color: "#FBF0F0" }}
-              >
-                {" / 150 e"}
-              </span>
-              <React.Fragment>{""}</React.Fragment>
-              <span
-                className={"plasmic_default__all plasmic_default__span"}
-                style={{ color: "#FFFFFF" }}
-              >
-                {"dition"}
-              </span>
-            </React.Fragment>
-          </h5>
-
-          <BidButton
-            data-plasmic-name={"bidButton"}
-            data-plasmic-override={overrides.bidButton}
-            className={classNames("__wab_instance", sty.bidButton)}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__jZ8
-              )}
-            >
-              {"Buy"}
-            </div>
-          </BidButton>
 
           <div
             data-plasmic-name={"footer"}
@@ -531,16 +540,16 @@ const PlasmicDescendants = {
     "h1",
     "reveal",
     "buy",
-    "latestTx",
     "bidButton",
+    "latestTx",
     "footer"
   ],
   header: ["header"],
   h1: ["h1"],
   reveal: ["reveal", "buy"],
   buy: ["buy"],
-  latestTx: ["latestTx"],
   bidButton: ["bidButton"],
+  latestTx: ["latestTx"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -552,8 +561,8 @@ type NodeDefaultElementType = {
   h1: "h1";
   reveal: typeof Reveal;
   buy: typeof BidButton;
-  latestTx: "div";
   bidButton: typeof BidButton;
+  latestTx: "div";
   footer: "div";
 };
 
@@ -622,8 +631,8 @@ export const PlasmicNft = Object.assign(
     h1: makeNodeComponent("h1"),
     reveal: makeNodeComponent("reveal"),
     buy: makeNodeComponent("buy"),
-    latestTx: makeNodeComponent("latestTx"),
     bidButton: makeNodeComponent("bidButton"),
+    latestTx: makeNodeComponent("latestTx"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicNft

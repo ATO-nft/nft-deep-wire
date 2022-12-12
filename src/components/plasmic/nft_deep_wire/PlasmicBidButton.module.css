@@ -118,7 +118,7 @@
   padding-right: 16px;
 }
 .root:hover {
-  background: #282826;
+  background: var(--token-1VxxH-VppOaQ5G);
 }
 .rootcolor_green:hover {
   background: #3cb179;
@@ -168,7 +168,7 @@
   outline: none;
 }
 .root:active {
-  background: #2e2e2b;
+  background: var(--token-1VxxH-VppOaQ5G);
 }
 .rootcolor_green:active {
   background: #4cc38a;
